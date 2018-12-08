@@ -93,7 +93,7 @@
             // 
             this.groupBox7.Controls.Add(this.buttonRemoveWorker);
             this.groupBox7.Controls.Add(this.comboBox4);
-            this.groupBox7.Location = new System.Drawing.Point(619, 190);
+            this.groupBox7.Location = new System.Drawing.Point(619, 181);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(200, 100);
             this.groupBox7.TabIndex = 11;
@@ -212,7 +212,7 @@
             // 
             this.groupBox5.Controls.Add(this.button3);
             this.groupBox5.Controls.Add(this.comboBox3);
-            this.groupBox5.Location = new System.Drawing.Point(309, 407);
+            this.groupBox5.Location = new System.Drawing.Point(309, 378);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(200, 91);
             this.groupBox5.TabIndex = 9;
@@ -348,7 +348,7 @@
             // 
             this.groupBox3.Controls.Add(this.buttonDeleteCar);
             this.groupBox3.Controls.Add(this.listBoxDeleteCar);
-            this.groupBox3.Location = new System.Drawing.Point(309, 214);
+            this.groupBox3.Location = new System.Drawing.Point(309, 204);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 168);
             this.groupBox3.TabIndex = 7;
