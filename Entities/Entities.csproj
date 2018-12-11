@@ -49,7 +49,7 @@
     <Compile Include="AbstractPerson.cs" />
     <Compile Include="AbstractUser.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="FuelType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Worker.cs" />
   </ItemGroup>

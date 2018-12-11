@@ -8,11 +8,11 @@ namespace Entities
 {
     abstract public class AbstractPerson
     {
-        public static int IDCounter = 0;
+        public static int IDCounter = 0; //счётчик ID общий и для работников, и для клиентов, и для администратораЫ
         //поля
         public string Name { get; protected set; }
         public string Surname { get; protected set; }
-        public int ID { get; } = IDCounter++; //ID будут присваиваться по порядку создания объектов
+        public int ID { get; set; } //ID будут присваиваться по порядку создания объектов
 
     }
 }
