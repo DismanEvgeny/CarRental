@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AbstractPerson.cs" />
     <Compile Include="AbstractUser.cs" />
+    <Compile Include="Car.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
