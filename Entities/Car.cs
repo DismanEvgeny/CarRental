@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using Entities.FuelType;
 
 
 namespace Entities
@@ -12,7 +13,7 @@ namespace Entities
         private int ID { get; set; }
         private string brand { get; set; }
         private string categoryID { get; set; }
-        //private FuelType fuel { get; set; }
+        private FuelType fuel { get; set; }
         private short yearOfProduction { get; set; }
         private DateTime dateOfInsurance { get; set; }
         private DateTime dateOfInsuranceEnd { get; set; }
@@ -21,13 +22,13 @@ namespace Entities
         private bool isOperated { get; set; }
 
 
-        public Car(int _ID, string _brand, string _categoryID, /*FuelType _fuel,*/ short _yearOfProduction, 
+        public Car(int _ID, string _brand, string _categoryID, FuelType _fuel, short _yearOfProduction, 
             bool _hasAutomaticTransmission/*, Image _image*/)
         {
             setID(_ID);
             setBrand(_brand);
             setCategoryID(_categoryID);
-            //setFuel(_fuel);
+            setFuel(_fuel);
             setYearOFProduction(_yearOfProduction);
             setTransmission(_hasAutomaticTransmission);
             //setImage(_image);
@@ -115,15 +116,15 @@ namespace Entities
             return this.image;
         }*/
 
-        /*protected void setFuel(FuelType _fuel)
+        protected void setFuel(FuelType _fuel)
         {
             this.fuel = _fuel;
-        }*/
+        }
 
-        /*protected FuelType getFuel()
+        protected FuelType getFuel()
         {
             return this.fuel;
-        }*/
+        }
 
         protected void setState(bool _isOperated)
         {

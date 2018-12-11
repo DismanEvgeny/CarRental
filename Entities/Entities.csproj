@@ -49,6 +49,7 @@
     <Compile Include="AbstractPerson.cs" />
     <Compile Include="AbstractUser.cs" />
     <Compile Include="Car.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="FuelType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
