@@ -73,6 +73,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{42acad20-dd60-4d46-91fc-2dc9821058ad}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\View\Presenters.csproj">
       <Project>{34bae7d0-1d71-4e96-8e7a-5976cb8ec905}</Project>
       <Name>Presenters</Name>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using View;
+using Entities;
 
 namespace CarRental
 {
@@ -37,12 +38,9 @@ namespace CarRental
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            /*string[] names = { "Econom", "Standart", "Business", "Van" };
-            for (int i = 0; i < 4; i++)
-            {
-                listBoxDeleteCategories.Items.Add(names[i]);
-                listBoxCategories.Items.Add(names[i]);
-            }*/
+            /*Worker test1 = new Worker("A", "B", "C", "D");
+            Worker test2 = new Worker("A", "B", "C", "D");
+            toolStripLabelName.Text = $"1: {test1.ID}   2: {test2.ID}";*/                   //лишь проверка
         }
 
         private void toolStripButtonLogin_Click(object sender, EventArgs e)
