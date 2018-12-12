@@ -159,6 +159,7 @@
             this.buttonAddWorker.TabIndex = 6;
             this.buttonAddWorker.Text = "Add";
             this.buttonAddWorker.UseVisualStyleBackColor = true;
+            this.buttonAddWorker.Click += new System.EventHandler(this.buttonAddWorker_Click);
             // 
             // textBoxAddWorkerPassword
             // 
@@ -180,6 +181,7 @@
             this.textBoxAddWorkerName.Name = "textBoxAddWorkerName";
             this.textBoxAddWorkerName.Size = new System.Drawing.Size(116, 20);
             this.textBoxAddWorkerName.TabIndex = 3;
+            //this.textBoxAddWorkerName.TextChanged += new System.EventHandler(this.textBoxAddWorkerName_TextChanged);
             // 
             // label7
             // 

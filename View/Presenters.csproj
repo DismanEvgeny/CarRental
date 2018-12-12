@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenters\AddWorkerPresenter.cs" />
     <Compile Include="Views\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,13 +123,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenters\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{42acad20-dd60-4d46-91fc-2dc9821058ad}</Project>
       <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IServices\IServices.csproj">
+      <Project>{e79cf009-a448-4b80-944a-858bfc66248e}</Project>
+      <Name>IServices</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
