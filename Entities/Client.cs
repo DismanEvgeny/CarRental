@@ -9,15 +9,15 @@ namespace Entities
     public class Client : AbstractPerson
     {
 
-        public bool Sex { get; set; }
-        public int Experience { get; set; }
-        DateTime DateOfRegistration { get; set; }
+        public bool sex { get; set; }
+        public int experience { get; set; }
+        DateTime dateOfRegistration { get; set; }
 
-        public Client(bool sex, int exp, DateTime date)
+        public Client(bool _sex, int _exp, DateTime _date)
         {
-            this.Sex = sex;
-            this.Experience = exp;
-            this.DateOfRegistration = date;
+            this.sex = _sex;
+            this.experience = _exp;
+            this.dateOfRegistration = _date;
             this.ID = IDCounter++;
         }
     }

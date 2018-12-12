@@ -10,8 +10,8 @@ namespace Entities
     {
         public static int IDCounter = 0; //счётчик ID общий и для работников, и для клиентов, и для администратораЫ
         //поля
-        public string Name { get; protected set; }
-        public string Surname { get; protected set; }
+        public string name { get; set; }
+        public string surname { get; set; }
         public int ID { get; set; } //ID будут присваиваться по порядку создания объектов
 
     }

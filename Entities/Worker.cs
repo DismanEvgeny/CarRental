@@ -8,12 +8,12 @@ namespace Entities
 {
     public class Worker : AbstractUser
     {
-        public Worker(string name, string surname, string login, string password)
+        public Worker(string _name, string _surname, string _login, string _password)
         {
-            this.Login = login;
-            this.Name = name;
-            this.Surname = surname;
-            SetPassword(password);
+            this.login = _login;
+            this.name = _name;
+            this.surname = _surname;
+            this.password = _password;
         }
     }
 }

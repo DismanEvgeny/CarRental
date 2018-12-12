@@ -9,20 +9,12 @@ namespace Entities
     abstract public class AbstractUser : AbstractPerson
     {
         //поля
-        public string Login { get; protected set; }
+        public string login { get; set; }
 
-        private string Password;
+        public string password { get; set; }
 
         //методы
-        protected string GetPassword()
-        {
-            return Password;
-        }
 
-        protected void SetPassword(string password)
-        {
-            Password = password;
-        }
 
 
     }
