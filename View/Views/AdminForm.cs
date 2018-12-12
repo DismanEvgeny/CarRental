@@ -18,6 +18,7 @@ namespace View
         private string surname;
         private string login;
         private string password;
+
         public AdminForm()
         {
             InitializeComponent();
@@ -29,9 +30,8 @@ namespace View
             surname = textBoxAddWorkerSurname.Text;
             login = textBoxAddWorkerLogin.Text;
             password = textBoxAddWorkerPassword.Text;
-            WorkerPresenter workerPresenter = new WorkerPresenter();
 
-            if (workerPresenter.addWorker(name, surname, login, password) == false)
+            if (WorkerPresenter.addWorker(name, surname, login, password) == false)
             {
                 MessageBox.Show("Worker is no created!");
             }
@@ -44,18 +44,6 @@ namespace View
                 textBoxAddWorkerPassword.Clear();
             }
 
-           /* if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname) || string.IsNullOrEmpty(login) ||
-                    string.IsNullOrEmpty(password))
-                MessageBox.Show("Chech your fields!");
-            else
-            {
-                AddWorkerPresenter workerPresenter = new AddWorkerPresenter(name, surname, login, password);
-                MessageBox.Show("Worker is created!");
-                textBoxAddWorkerName.Clear();
-                textBoxAddWorkerSurname.Clear();
-                textBoxAddWorkerLogin.Clear();
-                textBoxAddWorkerPassword.Clear();
-            }*/
         }
 
     }

@@ -11,27 +11,22 @@ namespace Presenrers.Presenters
 {
     class WorkerPresenter
     {
-        private Worker worker;
 
         public WorkerPresenter() { }
 
-        /*public WorkerPresenter(string _name, string _surname, string _login, string _password)
-         {
-             //worker = new Worker(_name, _surname, _login, _password);
-         }*/
 
-        public bool addWorker(string _name, string _surname, string _login, string _password)
+        public static bool addWorker(string _name, string _surname, string _login, string _password)
         {
             bool check = false;
 
-            if (string.IsNullOrEmpty(_name) || string.IsNullOrEmpty(_surname) || string.IsNullOrEmpty(_login) ||
-                    string.IsNullOrEmpty(_password)) { return check; }
-            else
+            if (!(string.IsNullOrEmpty(_name) || string.IsNullOrEmpty(_surname) || string.IsNullOrEmpty(_login) ||
+                    string.IsNullOrEmpty(_password)))
             {
-                worker = new Worker(_name, _surname, _login, _password);
+                Worker worker = new Worker(_name, _surname, _login, _password);
                 check = true;
-                return check;
+                //тут будет работа с репозиторием и сервисами
             }
+            return check;
         }
 
     }
