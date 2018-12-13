@@ -46,5 +46,15 @@ namespace View
 
         }
 
+        private void radioButtonAddCarAuthmaticTransmition_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonAddCarManualTransmition_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
