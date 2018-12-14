@@ -34,7 +34,9 @@ namespace Repositories
             
             switch(tableName){
                 case "Clients":
-                    fullName = "[Clients] (Id, Name, Surname, Sex, Date of Registration, Date of Driving Start, Is reliable) values (@Id, @Name, @Surname, @Sex, @Date of Registration, @Date of Driving Start, @Is reliable)";
+                    //fullName = "[Clients] (Id, Name, Surname, Sex, Date of Registration, Date of Driving Start, Is reliable) values (@Id, @Name, @Surname, @Sex, @Date of Registration, @Date of Driving Start, @Is reliable)";
+                    fullName = "[Clients] (Id, Name, Surname, Sex, Date of Registration, Date of Driving Start, Is reliable) values ";
+
                     break;
                 default:
                     fullName = "";
@@ -44,17 +46,22 @@ namespace Repositories
         }
 
 
-        public bool insertInDB(string tableName, string dataLine) //для вставки данных в БД
+        public bool insertInDB(string tableName, string[] dataStrings) //для вставки данных в БД
         {
             string fullTableName;
             if ((fullTableName = getFullTableName(tableName)) == "") {
                 return false;
             };
 
-            string sql = $"INSERT INTO {fullTableName} values (@Id, @Name)";   //!!!! нужно придумать, как в текст вставлять значения
+            string sql = $"INSERT INTO {fullTableName} values ("; //строка-запрос
+            for(int i = 0; i < dataStrings.Length; i++) // добавляем данные в строку-запрос
+            {
+                sql += dataStrings[i] + ", ";
+            }
+            sql = sql.Remove(sql.Length - 1);//чтобы в конце перед скобкой не было пробела
+            sql += ")";
+
             SqlCommand cmd_write = new SqlCommand(sql, conn);
-            /*cmd_write.Parameters.AddWithValue("@Id", id);
-            cmd_write.Parameters.AddWithValue("@Name", name);*/
             cmd_write.ExecuteNonQuery();
 
             return true;
