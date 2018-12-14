@@ -13,12 +13,13 @@ namespace Repositories
         string[] IAuthRepository.getUserFromDB(string login)
         {
             //throw new NotImplementedException();
-            string[] loginAndPassword = null;
+            string[] userString = null;
 
             DataBaseUtils dataBaseUtils = new DataBaseUtils();
 
+            userString = dataBaseUtils.getUsersFromDB(login);
 
-            return loginAndPassword;
+            return userString;
 
         }
     }

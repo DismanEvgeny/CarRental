@@ -17,13 +17,13 @@ namespace Repositories
             path = path.Remove(path.IndexOf("\\bin"), 10) + "\\DB.mdf"; //путь к базе данных
         }
 
-        public void openConnection() //открытие соединения
+        private void openConnection() //открытие соединения
         {
             conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = {path}\\DB.mdf;Integrated Security=True;Connect Timeout=100;User Instance=False";
             conn.Open();
         }
 
-        public void closeConnection() // закрытие соединения
+        private void closeConnection() // закрытие соединения
         {
             conn.Close();
         }
