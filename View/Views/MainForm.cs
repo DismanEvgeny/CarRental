@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using View;
 using Entities;
+using Repositories;
 
 namespace CarRental
 {
@@ -143,6 +144,12 @@ namespace CarRental
             extraForm = new Form();
             extraForm.StartPosition = FormStartPosition.CenterScreen;
             extraForm.Show();
+        }
+
+        private void buttonCheckConnection_Click(object sender, EventArgs e)
+        {
+            AuthRepository authRepository = new AuthRepository();
+            labelCheckConnection.Text = authRepository.checkConnection();
         }
     }
 }

@@ -8,8 +8,14 @@ using IRepositories;
 
 namespace Repositories
 {
-    class AuthRepository : IAuthRepository
+    public class AuthRepository : IAuthRepository
     {
+        public string checkConnection()
+        {
+            DataBaseUtils dataBaseUtils = new DataBaseUtils();
+            return dataBaseUtils.checkConnection();
+        }
+
         string[] IAuthRepository.getUserFromDB(string login)
         {
             //throw new NotImplementedException();
@@ -22,5 +28,6 @@ namespace Repositories
             return userString;
 
         }
+
     }
 }

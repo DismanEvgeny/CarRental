@@ -9,5 +9,8 @@ namespace IRepositories
     public interface IAuthRepository
     {
         string[] getUserFromDB(string login);
+        string checkConnection();
     }
+
+
 }

@@ -14,18 +14,35 @@ namespace Repositories
 
         public DataBaseUtils()
         {
-            path = path.Remove(path.IndexOf("\\bin"), 10) + "\\DB.mdf"; //путь к базе данных
+            path = path.Remove(path.IndexOf("\\bin"), 10) + "\\DataBase.mdf"; //путь к базе данных
         }
 
         private void openConnection() //открытие соединения
         {
-            conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = {path}\\DB.mdf;Integrated Security=True;Connect Timeout=100;User Instance=False";
+            //conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = {path}\\DB.mdf;Integrated Security=True;Connect Timeout=100;User Instance=False";
+            conn.ConnectionString = $"Data Source=(LocalDB)\\v12.0; AttachDbFilename = {path}\\DB.mdf;Integrated Security=True;Connect Timeout=100;User Instance=False";
+
             conn.Open();
         }
 
         private void closeConnection() // закрытие соединения
         {
             conn.Close();
+        }
+
+        public string checkConnection()
+        {
+            try
+            {
+                openConnection();
+            } catch(Exception ex)
+            {
+                return "Govno connection";
+            }
+
+            closeConnection();
+            return "Connection is fine";
+
         }
 
         private string getFullTableName(string tableName) // возвращает полное имя таблицы типа [Имя] (поля) values (@поля)
