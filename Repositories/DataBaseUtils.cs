@@ -17,13 +17,13 @@ namespace Repositories
             path = path.Remove(path.IndexOf("\\bin"), 10) + "\\DB.mdf"; //путь к базе данных
         }
 
-        public void openConnection()
+        public void openConnection() //открытие соединения
         {
             conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = {path}\\DB.mdf;Integrated Security=True;Connect Timeout=100;User Instance=False";
             conn.Open();
         }
 
-        public void closeConnection()
+        public void closeConnection() // закрытие соединения
         {
             conn.Close();
         }
@@ -45,7 +45,6 @@ namespace Repositories
             return fullName;
         }
 
-
         public bool insertInDB(string tableName, string[] dataStrings) //для вставки данных в БД
         {
             string fullTableName;
@@ -65,6 +64,30 @@ namespace Repositories
             cmd_write.ExecuteNonQuery();
 
             return true;
+        }
+
+        public string[] getUsersFromDB( string login ) // поиск пользователя в БД по логину
+        {
+
+            openConnection();
+
+            SqlCommand command = new SqlCommand("Select * from [Users] where [Login]=@log", conn); //строка-запрос, ищем по логину
+            command.Parameters.AddWithValue("@log", login);
+
+            string[] data = new string[5];
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                for (int i = 0; reader.Read(); i++)
+                {
+                    data[i] = reader[i].ToString();
+                }
+
+            }
+            reader.Close();
+            closeConnection();
+
+            return data;
         }
 
     }
