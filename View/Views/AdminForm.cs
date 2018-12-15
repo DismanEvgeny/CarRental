@@ -14,10 +14,6 @@ namespace View
 {
     public partial class AdminForm : Form
     {
-        private string name;
-        private string surname;
-        private string login;
-        private string password;
 
         public AdminForm()
         {
@@ -26,10 +22,10 @@ namespace View
 
         private void buttonAddWorker_Click(object sender, EventArgs e)
         {
-            name = textBoxAddWorkerName.Text;
-            surname = textBoxAddWorkerSurname.Text;
-            login = textBoxAddWorkerLogin.Text;
-            password = textBoxAddWorkerPassword.Text;
+            string name = textBoxAddWorkerName.Text;
+            string surname = textBoxAddWorkerSurname.Text;
+            string login = textBoxAddWorkerLogin.Text;
+            string password = textBoxAddWorkerPassword.Text;
 
             if (WorkerPresenter.addWorker(name, surname, login, password) == false)
             {
@@ -56,5 +52,9 @@ namespace View
 
         }
 
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

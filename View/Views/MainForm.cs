@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using View;
 using Entities;
+using Presenrers.Presenters;
+
 
 namespace CarRental
 {
@@ -45,27 +47,27 @@ namespace CarRental
 
         private void toolStripButtonLogin_Click(object sender, EventArgs e)
         {
-            if (toolStripTextBoxLogin.Text == "admin" && toolStripTextBoxPassword.Text == "admin")
-            {
-                toolStripLabelName.Text = "Administrator";
-                //panelAdmin.Enabled = true;
-               // panelAdmin.Visible = true;
-            }
-            if (toolStripTextBoxLogin.Text == "worker" && toolStripTextBoxPassword.Text == "worker")
-            {
-                toolStripLabelName.Text = "Worker";
-                //panelWorker.Enabled = true;
-                //panelWorker.Visible = true;
-            }
+            string login = toolStripTextBoxLogin.Text;
+            string password = toolStripTextBoxPassword.Text;
+            //MessageBox.Show(login + password);
+            if (!AuthPresenter.authenticate(login, password))
+                MessageBox.Show("Login or password is invalid!");
+            else
+                adminAccess();
         }
 
-       /* private void buttonDeleteCategory_Click(object sender, EventArgs e)
+        private static void adminAccess()
         {
-            string categoryToDelete = listBoxDeleteCategories.SelectedItem.ToString();
-            listBoxCategories.Items.Remove(categoryToDelete);
-            listBoxDeleteCategories.Items.Remove(categoryToDelete);
-            MessageBox.Show($"{categoryToDelete} category is deleted");
-        }*/
+            Form adminForm = new AdminForm();
+        }
+
+        /* private void buttonDeleteCategory_Click(object sender, EventArgs e)
+         {
+             string categoryToDelete = listBoxDeleteCategories.SelectedItem.ToString();
+             listBoxCategories.Items.Remove(categoryToDelete);
+             listBoxDeleteCategories.Items.Remove(categoryToDelete);
+             MessageBox.Show($"{categoryToDelete} category is deleted");
+         }*/
 
         private void button1_Click_1(object sender, EventArgs e)
         {

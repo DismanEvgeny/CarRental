@@ -8,9 +8,9 @@ using IRepositories;
 
 namespace Repositories
 {
-    class AuthRepository : IAuthRepository
+    public class AuthRepository : IAuthRepository
     {
-        string[] IAuthRepository.getUserFromDB(string login)
+        public string[] getUserFromDB(string login)
         {
             //throw new NotImplementedException();
             string[] userString = null;

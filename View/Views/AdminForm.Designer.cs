@@ -30,6 +30,7 @@
         {
             this.panelAdmin = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.buttonRemoveWorker = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBoxAddWorkerSurname = new System.Windows.Forms.TextBox();
@@ -63,17 +64,16 @@
             this.buttonDeleteCar = new System.Windows.Forms.Button();
             this.listBoxDeleteCar = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxAddCategoryTarif = new System.Windows.Forms.TextBox();
+            this.textBoxAddCategoryFine = new System.Windows.Forms.TextBox();
             this.textBoxAddCategoryName = new System.Windows.Forms.TextBox();
             this.buttonAddCategory = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBoxDeleteCategories = new System.Windows.Forms.ListBox();
             this.buttonDeleteCategory = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBoxAddCategoryFine = new System.Windows.Forms.TextBox();
-            this.textBoxAddCategoryTarif = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.panelAdmin.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -109,6 +109,14 @@
             this.groupBox7.TabIndex = 11;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Remove worker";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(40, 23);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 2;
             // 
             // buttonRemoveWorker
             // 
@@ -261,6 +269,7 @@
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Add new car";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // radioButtonAddCarManualTransmition
             // 
@@ -445,6 +454,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add category";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 62);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 13);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Tarif ($/day):";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 94);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(71, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Fine ($/hour):";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 30);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Name:";
+            // 
+            // textBoxAddCategoryTarif
+            // 
+            this.textBoxAddCategoryTarif.Location = new System.Drawing.Point(80, 62);
+            this.textBoxAddCategoryTarif.Name = "textBoxAddCategoryTarif";
+            this.textBoxAddCategoryTarif.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddCategoryTarif.TabIndex = 5;
+            // 
+            // textBoxAddCategoryFine
+            // 
+            this.textBoxAddCategoryFine.Location = new System.Drawing.Point(80, 94);
+            this.textBoxAddCategoryFine.Name = "textBoxAddCategoryFine";
+            this.textBoxAddCategoryFine.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddCategoryFine.TabIndex = 4;
+            // 
             // textBoxAddCategoryName
             // 
             this.textBoxAddCategoryName.Location = new System.Drawing.Point(80, 30);
@@ -489,55 +539,6 @@
             this.buttonDeleteCategory.TabIndex = 0;
             this.buttonDeleteCategory.Text = "Delete";
             this.buttonDeleteCategory.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(40, 23);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 2;
-            // 
-            // textBoxAddCategoryFine
-            // 
-            this.textBoxAddCategoryFine.Location = new System.Drawing.Point(80, 94);
-            this.textBoxAddCategoryFine.Name = "textBoxAddCategoryFine";
-            this.textBoxAddCategoryFine.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddCategoryFine.TabIndex = 4;
-            // 
-            // textBoxAddCategoryTarif
-            // 
-            this.textBoxAddCategoryTarif.Location = new System.Drawing.Point(80, 62);
-            this.textBoxAddCategoryTarif.Name = "textBoxAddCategoryTarif";
-            this.textBoxAddCategoryTarif.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddCategoryTarif.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 30);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Name:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 94);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 13);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Fine ($/hour):";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 62);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 13);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "Tarif ($/day):";
             // 
             // AdminForm
             // 

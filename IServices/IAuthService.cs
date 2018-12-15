@@ -10,7 +10,7 @@ namespace IServices
     public interface IAuthService
     {
         bool getUser(AbstractUser user, string login, string password);
-        bool checkString(string str);
+        bool checkLoginAndPasswordString(string login, string password);
 
     }
 }
