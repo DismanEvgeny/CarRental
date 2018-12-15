@@ -20,7 +20,7 @@ namespace Repositories
         private void openConnection() //открытие соединения
         {
             //conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = {path}\\DB.mdf;Integrated Security=True;Connect Timeout=15;User Instance=False";
-            conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = {path}\\DataBase.mdf;Integrated Security=True;Connect Timeout=15;User Instance=False";
+            conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Users\\DS\\source\\repos\\DismanEvgeny\\CarRental\\Repositories\\DataBase.mdf;Integrated Security=True;Connect Timeout=15;User Instance=False";
 
             conn.Open();
         }
