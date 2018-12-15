@@ -59,6 +59,7 @@ namespace CarRental
         private static void adminAccess()
         {
             Form adminForm = new AdminForm();
+            adminForm.Show();
         }
 
         /* private void buttonDeleteCategory_Click(object sender, EventArgs e)
