@@ -360,7 +360,7 @@
             this.buttonCheckConnection.TabIndex = 15;
             this.buttonCheckConnection.Text = "Check Connection";
             this.buttonCheckConnection.UseVisualStyleBackColor = true;
-            this.buttonCheckConnection.Click += new System.EventHandler(this.buttonCheckConnection_Click);
+         
             // 
             // labelCheckConnection
             // 

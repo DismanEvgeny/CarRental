@@ -25,13 +25,20 @@ namespace Services
         public bool getUser(AbstractUser user, string login, string password)
         {
             if (!checkLoginAndPasswordString(login, password))
+            {
+                Console.WriteLine("checkLoginAndPasswordString");
                 return false;
+            }
 
             AuthRepository authRepository = new AuthRepository();
             string[] str = authRepository.getUserFromDB(login);
 
-            if (str[3] != password)
+            if (str[4] != password)
+            {
+                Console.WriteLine("password = " + str[4]);
+
                 return false;
+            }
 
 
             return true;

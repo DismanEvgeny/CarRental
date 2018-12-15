@@ -55,6 +55,9 @@ namespace Repositories
                     fullName = "[Clients] (Id, Name, Surname, Sex, Date of Registration, Date of Driving Start, Is reliable) values ";
 
                     break;
+                case "Users":
+                    fullName = "[Users](Id, Name, Surname, Login, Password) values";
+                    break;
                 default:
                     fullName = "";
                     break;
@@ -93,14 +96,13 @@ namespace Repositories
 
             string[] data = new string[5];
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                for (int i = 0; reader.Read(); i++)
+                if(reader.Read())
+                for (int i = 0; i < 5; i++)
                 {
                     data[i] = reader[i].ToString();
+                    Console.WriteLine(data[i]);
                 }
 
-            }
             reader.Close();
             closeConnection();
 
