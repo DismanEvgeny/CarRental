@@ -57,6 +57,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelCarsInUse = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panelCategories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentCarDays)).BeginInit();
@@ -87,7 +89,7 @@
             this.toolStripButtonContacts.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonContacts.Image")));
             this.toolStripButtonContacts.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonContacts.Name = "toolStripButtonContacts";
-            this.toolStripButtonContacts.Size = new System.Drawing.Size(54, 22);
+            this.toolStripButtonContacts.Size = new System.Drawing.Size(58, 22);
             this.toolStripButtonContacts.Text = "Contacts";
             this.toolStripButtonContacts.Click += new System.EventHandler(this.toolStripButtonContacts_Click);
             // 
@@ -97,7 +99,7 @@
             this.toolStripButtonHelp.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonHelp.Image")));
             this.toolStripButtonHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonHelp.Name = "toolStripButtonHelp";
-            this.toolStripButtonHelp.Size = new System.Drawing.Size(32, 22);
+            this.toolStripButtonHelp.Size = new System.Drawing.Size(36, 22);
             this.toolStripButtonHelp.Text = "Help";
             this.toolStripButtonHelp.Click += new System.EventHandler(this.toolStripButtonHelp_Click);
             // 
@@ -108,7 +110,7 @@
             this.toolStripButtonLogin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLogin.Image")));
             this.toolStripButtonLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonLogin.Name = "toolStripButtonLogin";
-            this.toolStripButtonLogin.Size = new System.Drawing.Size(24, 22);
+            this.toolStripButtonLogin.Size = new System.Drawing.Size(26, 22);
             this.toolStripButtonLogin.Text = "Do";
             this.toolStripButtonLogin.Click += new System.EventHandler(this.toolStripButtonLogin_Click);
             // 
@@ -122,7 +124,7 @@
             // 
             this.toolStripLabelPassword.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabelPassword.Name = "toolStripLabelPassword";
-            this.toolStripLabelPassword.Size = new System.Drawing.Size(57, 22);
+            this.toolStripLabelPassword.Size = new System.Drawing.Size(60, 22);
             this.toolStripLabelPassword.Text = "Password:";
             // 
             // toolStripTextBoxLogin
@@ -135,7 +137,7 @@
             // 
             this.toolStripLabelLogin.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabelLogin.Name = "toolStripLabelLogin";
-            this.toolStripLabelLogin.Size = new System.Drawing.Size(36, 22);
+            this.toolStripLabelLogin.Size = new System.Drawing.Size(40, 22);
             this.toolStripLabelLogin.Text = "Login:";
             // 
             // toolStripLabelName
@@ -319,7 +321,7 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(64, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(67, 17);
             this.toolStripStatusLabel1.Text = "Cars in use:";
             // 
             // toolStripStatusLabelCarsInUse
@@ -328,6 +330,25 @@
             this.toolStripStatusLabelCarsInUse.Size = new System.Drawing.Size(13, 17);
             this.toolStripStatusLabelCarsInUse.Text = "0";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(318, 40);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Check connection";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(468, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Result";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +356,8 @@
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1064, 528);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panelCategories);
             this.Controls.Add(this.buttonGoToCategory);
@@ -387,6 +410,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelCarsInUse;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

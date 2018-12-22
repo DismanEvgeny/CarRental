@@ -144,5 +144,18 @@ namespace CarRental
             extraForm.StartPosition = FormStartPosition.CenterScreen;
             extraForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection.check())
+            {
+                label1.Text = "Error";
+            }
+            else
+            {
+                label1.Text = "Opened";
+            }
+            
+        }
     }
 }

@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Presenters\AddWorkerPresenter.cs" />
     <Compile Include="Presenters\AuthPresenter.cs" />
+    <Compile Include="Presenters\CheckConnection.cs" />
     <Compile Include="Views\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>

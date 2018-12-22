@@ -32,5 +32,15 @@ namespace Repositories.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=CarRentalDB;Integrated Security=True")]
+        public string CarRentalDBConnectionString {
+            get {
+                return ((string)(this["CarRentalDBConnectionString"]));
+            }
+        }
     }
 }

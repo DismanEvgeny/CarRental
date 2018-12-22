@@ -19,8 +19,8 @@ namespace Repositories
 
         private void openConnection() //открытие соединения
         {
-            //conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = {path}\\DB.mdf;Integrated Security=True;Connect Timeout=15;User Instance=False";
-            conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Users\\DS\\source\\repos\\DismanEvgeny\\CarRental\\Repositories\\DataBase.mdf;Integrated Security=True;Connect Timeout=15;User Instance=False";
+            conn.ConnectionString = "Data Source = localhost; Initial Catalog = CarRentalDB; Integrated Security = True";
+            //conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Users\\user\\source\repos\\DismanEvgeny\\CarRental\\Repositories\\CarRentalDB.xsd;Integrated Security=True;Connect Timeout=10;User Instance=False";
 
             conn.Open();
         }
@@ -30,18 +30,18 @@ namespace Repositories
             conn.Close();
         }
 
-        public string checkConnection()
+        public bool checkConnection()
         {
             try
             {
                 openConnection();
             } catch(Exception ex)
             {
-                return "Govno connection";
+                return false;
             }
 
             closeConnection();
-            return "Connection is fine";
+            return true;
 
         }
 
