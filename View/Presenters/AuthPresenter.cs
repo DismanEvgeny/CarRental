@@ -10,16 +10,16 @@ namespace Presenrers.Presenters
 {
     public class AuthPresenter
     {
-        public static AbstractUser activeUser = null;
+        //public static AbstractUser activeUser = null;
 
-        public static bool authenticate(string login, string password)
+        public static AbstractUser authenticate (AbstractUser active, string login, string password)
         {
             AuthService authService = new AuthService();
+            active = authService.getUser(active, login, password);
+            if (active == null)
+                return null;
 
-            if (!authService.getUser(activeUser, login, password))
-                return false;
-
-            return true;
+            return active;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Administrator: AbstractUser
+    public class Administrator: AbstractUser
     {
         public Administrator(string _name, string _surname, string _login, string _password)
         {

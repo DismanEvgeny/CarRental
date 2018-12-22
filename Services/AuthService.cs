@@ -10,6 +10,18 @@ namespace Services
 {
     public class AuthService : IAuthService
     {
+        private IAuthRepository authRepository;
+
+        public AuthService()
+        {
+            authRepository = new AuthRepository();
+        }
+
+        public AuthService(AuthRepository authRepository)
+        {
+            this.authRepository = authRepository;
+        }
+
         public bool checkLoginAndPasswordString(string login, string password)
         {
             if (login == null || password == null)
@@ -22,12 +34,12 @@ namespace Services
         }
 
 
-        public bool getUser(AbstractUser user, string login, string password)
+        public AbstractUser getUser(AbstractUser active, string login, string password)
         {
             if (!checkLoginAndPasswordString(login, password))
             {
                 Console.WriteLine("checkLoginAndPasswordString");
-                return false;
+                return null;
             }
 
             AuthRepository authRepository = new AuthRepository();
@@ -37,11 +49,15 @@ namespace Services
             {
                 Console.WriteLine("password = " + str[4]);
 
-                return false;
+                return null;
             }
 
 
-            return true;
+                active = new Worker(str[1], str[2], str[3], str[4]);
+            //Console.WriteLine("Worker: "+active.name+" "+active.surname);
+
+
+            return active;
         }
     }
 }

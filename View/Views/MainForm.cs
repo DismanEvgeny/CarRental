@@ -21,45 +21,62 @@ namespace CarRental
         List<Image> images = new List<Image>();
         ushort cars_in_use = 0;
         Form extraForm;
+        static Form adminForm = null;
+        static Form workerForm = null;
+        public AbstractUser activeUser = null;
 
         public MainForm()
         {
             InitializeComponent();
         }
 
-       /* private void button1_Click(object sender, EventArgs e)
-        {
-            //string text = textBox1.Text;
-            MessageBox.Show($"{text} category is added");
-            //listBoxDeleteCategories.Items.Add(text);
-            listBoxCategories.Items.Add(text);
-
-
-
-        }*/
-
+     
         private void MainForm_Load(object sender, EventArgs e)
         {
-            /*Worker test1 = new Worker("A", "B", "C", "D");
-            Worker test2 = new Worker("A", "B", "C", "D");
-            toolStripLabelName.Text = $"1: {test1.ID}   2: {test2.ID}";*/                   //лишь проверка
         }
 
-        private void toolStripButtonLogin_Click(object sender, EventArgs e)
+        private void toolStripButtonLogin_Click(object sender, EventArgs e) //аутентификация
         {
+           
             string login = toolStripTextBoxLogin.Text;
             string password = toolStripTextBoxPassword.Text;
             //MessageBox.Show(login + password);
-            if (!AuthPresenter.authenticate(login, password))
+            activeUser = AuthPresenter.authenticate(activeUser, login, password);
+            if (activeUser == null)
+            {
                 MessageBox.Show("Login or password is invalid!");
-            else
+                return;
+            }
+            
+            if(activeUser.login == "admin")
+            {
                 adminAccess();
+            }
+            else
+            {
+                workerAccess();
+            }
         }
 
-        private static void adminAccess()
+        private static void adminAccess() //создание формы администратора
         {
-            Form adminForm = new AdminForm();
+            if (workerForm != null)
+            {
+                workerForm.Close();
+                workerForm = null;
+            }
+            adminForm = new AdminForm();
             adminForm.Show();
+        }
+        private static void workerAccess() //создание формы работника
+        {
+            if (adminForm != null)
+            {
+                adminForm.Close();
+                adminForm = null;
+            }
+            workerForm = new WorkerForm();
+            workerForm.Show();
         }
 
         /* private void buttonDeleteCategory_Click(object sender, EventArgs e)
@@ -70,14 +87,6 @@ namespace CarRental
              MessageBox.Show($"{categoryToDelete} category is deleted");
          }*/
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            toolStripLabelName.Text = "Administrator";
-            Form adminForm = new AdminForm();
-            adminForm.StartPosition = FormStartPosition.CenterScreen;
-            //adminForm.Enabled = adminForm.Visible = true;
-            adminForm.Show();
-        }
 
         private void buttonGoToCategory_Click(object sender, EventArgs e)
         {
@@ -92,18 +101,6 @@ namespace CarRental
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            toolStripLabelName.Text = "Worker";
-           // panelAdmin.Enabled = panelAdmin.Visible = false;
-            Form workerForm = new WorkerForm();
-            workerForm.StartPosition = FormStartPosition.CenterScreen;
-
-            workerForm.Visible = true;
-            workerForm.Enabled = true;
-            //  panelWorker.Enabled = panelWorker.Visible = true;
-
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
