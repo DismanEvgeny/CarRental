@@ -7,7 +7,7 @@ using Entities;
 
 namespace IRepositories
 {
-    public interface IAddWorkerRepository
+    public interface IWorkerRepository
     {
         bool addToDB(string[] worker);
     }

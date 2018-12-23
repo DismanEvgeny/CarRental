@@ -110,6 +110,24 @@ namespace Repositories
             return data;
         }
 
+        public string getMaxID() // поиск максимального id 
+        {
+
+            openConnection();
+
+            SqlCommand command = new SqlCommand("select * from [Users] where [ID] = (select max(ID) from [Users])", conn); //строка-запрос, ищем по логину
+
+            string data = "";
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+                data = reader[0].ToString();
+
+            reader.Close();
+            closeConnection();
+
+            return data;
+        }
+
         public List<string[]> getCategoriesFromDB()
         {
             List<string[]> categories = new List<string[]>();

@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAddWorkerRepository.cs" />
+    <Compile Include="IWorkerRepository.cs" />
     <Compile Include="IAuthRepository.cs" />
     <Compile Include="ICategoriesRepository.cs" />
     <Compile Include="Program.cs" />

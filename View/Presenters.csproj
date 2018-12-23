@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presenters\AddWorkerPresenter.cs" />
+    <Compile Include="Presenters\WorkerPresenter.cs" />
     <Compile Include="Presenters\AuthPresenter.cs" />
     <Compile Include="Presenters\CategoriesPresenter.cs" />
     <Compile Include="Presenters\CheckConnection.cs" />

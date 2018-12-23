@@ -8,9 +8,16 @@ using Entities;
 
 namespace Repositories
 {
-    public class WorkerRepository : IAddWorkerRepository
+    public class WorkerRepository : IWorkerRepository
     {
         DataBaseUtils utils = new DataBaseUtils();
+
+        public string getID()
+        {
+            return utils.getMaxID();
+        }
+
+
         public bool addToDB(string[] worker)
         { 
             return utils.insertInDB("Users", worker); ;

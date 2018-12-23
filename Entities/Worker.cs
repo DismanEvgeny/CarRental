@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Entities
 {
@@ -18,6 +19,11 @@ namespace Entities
             this.surname = _surname;
             this.password = _password;
             this.isAdmin = _isAdmin;
+        }
+
+        public void setID(int _ID)
+        {
+            this.ID = _ID + 1;
         }
     }
 }

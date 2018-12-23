@@ -10,7 +10,7 @@ namespace Services
 {
     public class WorkerService : IAddWorkerService
     {
-        private IAddWorkerRepository WorkerRepository;
+        private IWorkerRepository WorkerRepository;
 
         public WorkerService()
         {
@@ -33,10 +33,13 @@ namespace Services
             if (!checkData(worker.login, worker.password))
                 return false;
 
+
             WorkerRepository workerRepository = new WorkerRepository();
+            string id = workerRepository.getID();
+            worker.setID(int.Parse(id));
             string[] workerString = new string[6];
 
-            workerString[0] = /*worker.ID.ToString()*/"3";
+            workerString[0] = worker.ID.ToString();
             workerString[1] = worker.name.ToString();
             workerString[2] = worker.surname.ToString();
             workerString[3] = worker.login.ToString();
@@ -45,5 +48,6 @@ namespace Services
 
             return workerRepository.addToDB(workerString);
         }
+
     }
 }

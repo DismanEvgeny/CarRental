@@ -23,11 +23,9 @@ namespace Presenrers.Presenters
                     string.IsNullOrEmpty(_password)))
             {
                 Worker worker = new Worker(_name, _surname, _login, _password, _isAdmin);
-                //check = true;
                 WorkerService service = new WorkerService();
-                check = service.addWorkerToDB(worker);
 
-                //тут будет работа с репозиторием и сервисами
+                check = service.addWorkerToDB(worker);
             }
             return check;
         }
