@@ -28,16 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonContacts = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonHelp = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonLogin = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTextBoxPassword = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabelPassword = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBoxLogin = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabelLogin = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabelName = new System.Windows.Forms.ToolStripLabel();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.labelCategories = new System.Windows.Forms.Label();
             this.listBoxCategories = new System.Windows.Forms.ListBox();
@@ -59,92 +49,17 @@
             this.toolStripStatusLabelCarsInUse = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStrip1.SuspendLayout();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonLogin = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelCategories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentCarDays)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonContacts,
-            this.toolStripButtonHelp,
-            this.toolStripButtonLogin,
-            this.toolStripTextBoxPassword,
-            this.toolStripLabelPassword,
-            this.toolStripTextBoxLogin,
-            this.toolStripLabelLogin,
-            this.toolStripLabelName});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1064, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButtonContacts
-            // 
-            this.toolStripButtonContacts.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonContacts.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonContacts.Image")));
-            this.toolStripButtonContacts.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonContacts.Name = "toolStripButtonContacts";
-            this.toolStripButtonContacts.Size = new System.Drawing.Size(58, 22);
-            this.toolStripButtonContacts.Text = "Contacts";
-            this.toolStripButtonContacts.Click += new System.EventHandler(this.toolStripButtonContacts_Click);
-            // 
-            // toolStripButtonHelp
-            // 
-            this.toolStripButtonHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonHelp.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonHelp.Image")));
-            this.toolStripButtonHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonHelp.Name = "toolStripButtonHelp";
-            this.toolStripButtonHelp.Size = new System.Drawing.Size(36, 22);
-            this.toolStripButtonHelp.Text = "Help";
-            this.toolStripButtonHelp.Click += new System.EventHandler(this.toolStripButtonHelp_Click);
-            // 
-            // toolStripButtonLogin
-            // 
-            this.toolStripButtonLogin.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButtonLogin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonLogin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLogin.Image")));
-            this.toolStripButtonLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonLogin.Name = "toolStripButtonLogin";
-            this.toolStripButtonLogin.Size = new System.Drawing.Size(26, 22);
-            this.toolStripButtonLogin.Text = "Do";
-            this.toolStripButtonLogin.Click += new System.EventHandler(this.toolStripButtonLogin_Click);
-            // 
-            // toolStripTextBoxPassword
-            // 
-            this.toolStripTextBoxPassword.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBoxPassword.Name = "toolStripTextBoxPassword";
-            this.toolStripTextBoxPassword.Size = new System.Drawing.Size(100, 25);
-            // 
-            // toolStripLabelPassword
-            // 
-            this.toolStripLabelPassword.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabelPassword.Name = "toolStripLabelPassword";
-            this.toolStripLabelPassword.Size = new System.Drawing.Size(60, 22);
-            this.toolStripLabelPassword.Text = "Password:";
-            // 
-            // toolStripTextBoxLogin
-            // 
-            this.toolStripTextBoxLogin.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBoxLogin.Name = "toolStripTextBoxLogin";
-            this.toolStripTextBoxLogin.Size = new System.Drawing.Size(100, 25);
-            // 
-            // toolStripLabelLogin
-            // 
-            this.toolStripLabelLogin.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabelLogin.Name = "toolStripLabelLogin";
-            this.toolStripLabelLogin.Size = new System.Drawing.Size(40, 22);
-            this.toolStripLabelLogin.Text = "Login:";
-            // 
-            // toolStripLabelName
-            // 
-            this.toolStripLabelName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.toolStripLabelName.Name = "toolStripLabelName";
-            this.toolStripLabelName.Size = new System.Drawing.Size(0, 22);
             // 
             // labelCategories
             // 
@@ -349,6 +264,62 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Result";
             // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Location = new System.Drawing.Point(241, 5);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(102, 20);
+            this.textBoxPassword.TabIndex = 17;
+            // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.Location = new System.Drawing.Point(69, 5);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(102, 20);
+            this.textBoxLogin.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Login:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(179, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Password:";
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.Location = new System.Drawing.Point(363, 3);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(63, 23);
+            this.buttonLogin.TabIndex = 21;
+            this.buttonLogin.Text = "Log in";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.buttonLogin);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBoxLogin);
+            this.panel1.Controls.Add(this.textBoxPassword);
+            this.panel1.Location = new System.Drawing.Point(627, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(437, 37);
+            this.panel1.TabIndex = 22;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,6 +327,7 @@
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1064, 528);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
@@ -363,36 +335,25 @@
             this.Controls.Add(this.buttonGoToCategory);
             this.Controls.Add(this.listBoxCategories);
             this.Controls.Add(this.labelCategories);
-            this.Controls.Add(this.toolStrip1);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Rental";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.panelCategories.ResumeLayout(false);
             this.panelCategories.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentCarDays)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButtonContacts;
-        private System.Windows.Forms.ToolStripButton toolStripButtonHelp;
-        private System.Windows.Forms.ToolStripButton toolStripButtonLogin;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxPassword;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelPassword;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxLogin;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelLogin;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.Label labelCategories;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelName;
         private System.Windows.Forms.ListBox listBoxCategories;
         private System.Windows.Forms.Button buttonGoToCategory;
         private System.Windows.Forms.Panel panelCategories;
@@ -412,6 +373,12 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelCarsInUse;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
