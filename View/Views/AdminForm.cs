@@ -26,20 +26,30 @@ namespace View
             string surname = textBoxAddWorkerSurname.Text;
             string login = textBoxAddWorkerLogin.Text;
             string password = textBoxAddWorkerPassword.Text;
-            bool isAdmin = false; // нужно добавить на форму штуку
+            bool isAdmin = checkBoxIsAdmin.Checked; // нужно добавить на форму штуку
 
-            if (WorkerPresenter.addWorker(name, surname, login, password, isAdmin) == false)
+            if (textBoxAddWorkerName.Text == "" || textBoxAddWorkerSurname.Text == "" || textBoxAddWorkerLogin.Text == "" 
+                || textBoxAddWorkerPassword.Text == "")
             {
-                MessageBox.Show("Worker is no created!");
+                MessageBox.Show("Fill all fields!");
             }
             else
             {
-                MessageBox.Show("Worker is created!");
-                textBoxAddWorkerName.Clear();
-                textBoxAddWorkerSurname.Clear();
-                textBoxAddWorkerLogin.Clear();
-                textBoxAddWorkerPassword.Clear();
+                if (WorkerPresenter.addWorker(name, surname, login, password, isAdmin) == false)
+                {
+                    MessageBox.Show("Worker is not created!");
+                }
+                else
+                {
+                    MessageBox.Show("Worker is created!");
+                    textBoxAddWorkerName.Clear();
+                    textBoxAddWorkerSurname.Clear();
+                    textBoxAddWorkerLogin.Clear();
+                    textBoxAddWorkerPassword.Clear();
+                }
             }
+ 
+               
 
         }
 
@@ -62,5 +72,10 @@ namespace View
         {
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
         }
+
+       /* private void checkBoxIsAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }

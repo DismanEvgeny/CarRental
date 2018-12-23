@@ -33,6 +33,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.buttonRemoveWorker = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.checkBoxIsAdmin = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.textBoxAddWorkerSurname = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonAddWorker = new System.Windows.Forms.Button();
@@ -76,8 +78,6 @@
             this.buttonDeleteCategory = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelAdminName = new System.Windows.Forms.ToolStripLabel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.checkBoxIsAdmin = new System.Windows.Forms.CheckBox();
             this.panelAdmin.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -151,6 +151,25 @@
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Add new worker";
+            // 
+            // checkBoxIsAdmin
+            // 
+            this.checkBoxIsAdmin.AutoSize = true;
+            this.checkBoxIsAdmin.Location = new System.Drawing.Point(92, 128);
+            this.checkBoxIsAdmin.Name = "checkBoxIsAdmin";
+            this.checkBoxIsAdmin.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxIsAdmin.TabIndex = 10;
+            this.checkBoxIsAdmin.UseVisualStyleBackColor = true;
+           // this.checkBoxIsAdmin.CheckedChanged += new System.EventHandler(this.checkBoxIsAdmin_CheckedChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 128);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 13);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Is administrator:";
             // 
             // textBoxAddWorkerSurname
             // 
@@ -562,24 +581,6 @@
             this.toolStripLabelAdminName.Name = "toolStripLabelAdminName";
             this.toolStripLabelAdminName.Size = new System.Drawing.Size(86, 22);
             this.toolStripLabelAdminName.Text = "toolStripLabel1";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 128);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(80, 13);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "Is administrator:";
-            // 
-            // checkBoxIsAdmin
-            // 
-            this.checkBoxIsAdmin.AutoSize = true;
-            this.checkBoxIsAdmin.Location = new System.Drawing.Point(92, 128);
-            this.checkBoxIsAdmin.Name = "checkBoxIsAdmin";
-            this.checkBoxIsAdmin.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxIsAdmin.TabIndex = 10;
-            this.checkBoxIsAdmin.UseVisualStyleBackColor = true;
             // 
             // AdminForm
             // 

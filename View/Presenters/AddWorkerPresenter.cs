@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Presenrers.Views;
 using IServices;
 using Entities;
+using Services;
 
 namespace Presenrers.Presenters
 {
     class WorkerPresenter
     {
-
         public WorkerPresenter() { }
 
 
@@ -23,7 +23,10 @@ namespace Presenrers.Presenters
                     string.IsNullOrEmpty(_password)))
             {
                 Worker worker = new Worker(_name, _surname, _login, _password, _isAdmin);
-                check = true;
+                //check = true;
+                AddWorkerService service = new AddWorkerService();
+                check = service.addWorkerToDB(worker);
+
                 //тут будет работа с репозиторием и сервисами
             }
             return check;

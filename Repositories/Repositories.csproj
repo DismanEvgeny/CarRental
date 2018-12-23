@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddWorkerRepository.cs" />
     <Compile Include="AuthRepository.cs" />
     <Compile Include="DataBaseUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +80,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{42acad20-dd60-4d46-91fc-2dc9821058ad}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IRepositories\IRepositories.csproj">
       <Project>{04d56e98-3725-4196-a8b4-cee65d841363}</Project>
       <Name>IRepositories</Name>
