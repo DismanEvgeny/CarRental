@@ -74,6 +74,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBoxDeleteCategories = new System.Windows.Forms.ListBox();
             this.buttonDeleteCategory = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabelAdminName = new System.Windows.Forms.ToolStripLabel();
             this.panelAdmin.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -83,6 +85,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAdmin
@@ -540,14 +543,32 @@
             this.buttonDeleteCategory.Text = "Delete";
             this.buttonDeleteCategory.UseVisualStyleBackColor = true;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabelAdminName});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(862, 25);
+            this.toolStrip1.TabIndex = 9;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabelAdminName
+            // 
+            this.toolStripLabelAdminName.Name = "toolStripLabelAdminName";
+            this.toolStripLabelAdminName.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabelAdminName.Text = "toolStripLabel1";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 642);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panelAdmin);
             this.Name = "AdminForm";
             this.Text = "AdminForm";
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             this.panelAdmin.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
@@ -560,7 +581,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -612,5 +636,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelAdminName;
     }
 }

@@ -27,14 +27,14 @@ namespace Services
             if (login == null || password == null)
                 return false;
 
-            if (login.Length > 20 || password.Length > 20)
+            if (login.Length > 30 || password.Length > 30)
                 return false;
 
             return true;
         }
 
 
-        public AbstractUser getUser(AbstractUser active, string login, string password)
+        public Worker getUser(Worker active, string login, string password)
         {
             if (!checkLoginAndPasswordString(login, password))
             {
@@ -53,7 +53,8 @@ namespace Services
             }
 
 
-                active = new Worker(str[1], str[2], str[3], str[4]);
+            bool _isAdmin = str[5] == "1"; // перевод string в bool
+            active = new Worker(str[1], str[2], str[3], str[4], _isAdmin);
             //Console.WriteLine("Worker: "+active.name+" "+active.surname);
 
 

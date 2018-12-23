@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presenrers.Presenters;
+
 
 namespace View
 {
@@ -15,6 +17,11 @@ namespace View
         public WorkerForm()
         {
             InitializeComponent();
+        }
+
+        private void WorkerForm_Load(object sender, EventArgs e)
+        {
+            toolStripLabelWorkerName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
         }
     }
 }

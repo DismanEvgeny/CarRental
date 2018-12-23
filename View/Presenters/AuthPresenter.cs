@@ -10,9 +10,9 @@ namespace Presenrers.Presenters
 {
     public class AuthPresenter
     {
-        //public static AbstractUser activeUser = null;
+        public static Worker activeUser = null;
 
-        public static AbstractUser authenticate (AbstractUser active, string login, string password)
+        public static Worker authenticate (Worker active, string login, string password)
         {
             AuthService authService = new AuthService();
             active = authService.getUser(active, login, password);

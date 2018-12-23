@@ -23,7 +23,7 @@ namespace CarRental
         Form extraForm;
         static Form adminForm = null;
         static Form workerForm = null;
-        public AbstractUser activeUser = null;
+        //public Worker activeUser = null;
 
         public MainForm()
         {
@@ -41,14 +41,14 @@ namespace CarRental
             string login = toolStripTextBoxLogin.Text;
             string password = toolStripTextBoxPassword.Text;
             //MessageBox.Show(login + password);
-            activeUser = AuthPresenter.authenticate(activeUser, login, password);
-            if (activeUser == null)
+            AuthPresenter.activeUser = AuthPresenter.authenticate(AuthPresenter.activeUser, login, password);
+            if (AuthPresenter.activeUser == null)
             {
                 MessageBox.Show("Login or password is invalid!");
                 return;
             }
             
-            if(activeUser.login == "admin")
+            if(AuthPresenter.activeUser.isAdmin)
             {
                 adminAccess();
             }
@@ -64,8 +64,9 @@ namespace CarRental
             {
                 workerForm.Close();
                 workerForm = null;
-            }
+            }    
             adminForm = new AdminForm();
+            
             adminForm.Show();
         }
         private static void workerAccess() //создание формы работника
@@ -76,16 +77,10 @@ namespace CarRental
                 adminForm = null;
             }
             workerForm = new WorkerForm();
+            
             workerForm.Show();
         }
 
-        /* private void buttonDeleteCategory_Click(object sender, EventArgs e)
-         {
-             string categoryToDelete = listBoxDeleteCategories.SelectedItem.ToString();
-             listBoxCategories.Items.Remove(categoryToDelete);
-             listBoxDeleteCategories.Items.Remove(categoryToDelete);
-             MessageBox.Show($"{categoryToDelete} category is deleted");
-         }*/
 
 
         private void buttonGoToCategory_Click(object sender, EventArgs e)
