@@ -36,29 +36,6 @@ namespace CarRental
             
         }
 
-        private void toolStripButtonLogin_Click(object sender, EventArgs e) //аутентификация
-        {
-           
-            string login = toolStripTextBoxLogin.Text;
-            string password = toolStripTextBoxPassword.Text;
-            //MessageBox.Show(login + password);
-            AuthPresenter.activeUser = AuthPresenter.authenticate(AuthPresenter.activeUser, login, password);
-            if (AuthPresenter.activeUser == null)
-            {
-                MessageBox.Show("Login or password is invalid!");
-                return;
-            }
-            
-            if(AuthPresenter.activeUser.isAdmin)
-            {
-                adminAccess();
-            }
-            else
-            {
-                workerAccess();
-            }
-        }
-
         private static void adminAccess() //создание формы администратора
         {
             if (workerForm != null)
@@ -154,7 +131,7 @@ namespace CarRental
             
         }
 
-        private void buttonLogin_Click(object sender, EventArgs e)
+        private void buttonLogin_Click(object sender, EventArgs e) // аутентификация
         {
             string login = textBoxLogin.Text;
             string password = textBoxPassword.Text;
