@@ -27,7 +27,7 @@ namespace View
             string login = textBoxAddWorkerLogin.Text;
             string password = textBoxAddWorkerPassword.Text;
 
-            if (WorkerPresenter.addWorker(name, surname, login, password) == false)
+            if (WorkerPresenter.addWorkerPresenter(name, surname, login, password) == false)
             {
                 MessageBox.Show("Worker is no created!");
             }

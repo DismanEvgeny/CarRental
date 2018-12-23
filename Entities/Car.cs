@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 //using Entities.FuelType;
 
 
@@ -20,12 +21,12 @@ namespace Entities
         private DateTime dateOfInsurance { get; set; }
         private DateTime dateOfInsuranceEnd { get; set; }
         private bool hasAutomaticTransmission { get; set; }
-        //private Image image { get; set;}
+        private Image image { get; set; }
         private bool isOperated { get; set; }
 
 
         public Car(string _brand, string _model, string _categoryID, FuelType _fuel, short _yearOfProduction,
-            bool _hasAutomaticTransmission/*, Image _image*/)
+            bool _hasAutomaticTransmission, Image _image)
         {
             this.ID = IDCounter++;
             this.brand = _brand;
@@ -34,7 +35,7 @@ namespace Entities
             this.fuel = _fuel;
             this.yearOfProduction = _yearOfProduction;
             this.hasAutomaticTransmission = _hasAutomaticTransmission;
-            // this.image = _image;
+            this.image = _image;
         }
     }
 }

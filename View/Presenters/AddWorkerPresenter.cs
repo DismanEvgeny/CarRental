@@ -15,7 +15,7 @@ namespace Presenrers.Presenters
         public WorkerPresenter() { }
 
 
-        public static bool addWorker(string _name, string _surname, string _login, string _password)
+        public static bool addWorkerPresenter(string _name, string _surname, string _login, string _password)
         {
             bool check = false;
 
