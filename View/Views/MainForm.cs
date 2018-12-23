@@ -23,7 +23,7 @@ namespace CarRental
         Form extraForm;
         static Form adminForm = null;
         static Form workerForm = null;
-        //public Worker activeUser = null;
+        List<Category> categories;
 
         public MainForm()
         {
@@ -33,7 +33,11 @@ namespace CarRental
      
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            categories = CategoriesPresenter.getCategories();
+            foreach (Category cat in categories)
+            {
+                listBoxCategories.Items.Add(cat.name);
+            }
         }
 
         private static void adminAccess() //создание формы администратора

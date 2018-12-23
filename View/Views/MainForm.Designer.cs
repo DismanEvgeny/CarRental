@@ -87,9 +87,9 @@
             // 
             // buttonGoToCategory
             // 
-            this.buttonGoToCategory.Location = new System.Drawing.Point(16, 342);
+            this.buttonGoToCategory.Location = new System.Drawing.Point(16, 317);
             this.buttonGoToCategory.Name = "buttonGoToCategory";
-            this.buttonGoToCategory.Size = new System.Drawing.Size(100, 23);
+            this.buttonGoToCategory.Size = new System.Drawing.Size(176, 23);
             this.buttonGoToCategory.TabIndex = 10;
             this.buttonGoToCategory.Text = "Go to category";
             this.buttonGoToCategory.UseVisualStyleBackColor = true;

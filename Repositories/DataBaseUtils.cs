@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+using System.Data.SqlClient; 
 
 namespace Repositories
 {
@@ -50,12 +50,13 @@ namespace Repositories
             
             switch(tableName){
                 case "Clients":
-                    //fullName = "[Clients] (Id, Name, Surname, Sex, Date of Registration, Date of Driving Start, Is reliable) values (@Id, @Name, @Surname, @Sex, @Date of Registration, @Date of Driving Start, @Is reliable)";
                     fullName = "[Clients] (Id, Name, Surname, Sex,  Date of Driving Start, Date of Registration, Is Reliable) values ";
-
                     break;
                 case "Users":
                     fullName = "[Users](Id, Name, Surname, Login, Password, IsAdmin) values";
+                    break;
+                case "Categories":
+                    fullName ="[Categories](Id, Name, Tariff, Fine) values";
                     break;
                 default:
                     fullName = "";
@@ -106,6 +107,26 @@ namespace Repositories
             closeConnection();
 
             return data;
+        }
+
+        public List<string[]> getCategoriesFromDB()
+        {
+            List<string[]> categories = new List<string[]>();
+            string[] readStrings = new string[4];
+            openConnection();
+            SqlCommand command = new SqlCommand("Select * from [Categories]", conn); //строка-запрос, ищем по логину
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    readStrings[i] = reader[i].ToString();
+                }
+                categories.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3] });
+            }
+
+            return categories;
         }
 
     }
