@@ -24,7 +24,7 @@ namespace Presenrers.Presenters
             {
                 Worker worker = new Worker(_name, _surname, _login, _password, _isAdmin);
                 //check = true;
-                AddWorkerService service = new AddWorkerService();
+                WorkerService service = new WorkerService();
                 check = service.addWorkerToDB(worker);
 
                 //тут будет работа с репозиторием и сервисами

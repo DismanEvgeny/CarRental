@@ -8,11 +8,12 @@ using Entities;
 
 namespace Repositories
 {
-    public class AddWorkerRepository : IAddWorkerRepository
+    public class WorkerRepository : IAddWorkerRepository
     {
-        public bool addToDB(Worker worker)
-        {
-            return true;
+        DataBaseUtils utils = new DataBaseUtils();
+        public bool addToDB(string[] worker)
+        { 
+            return utils.insertInDB("Users", worker); ;
         }
     }
 }

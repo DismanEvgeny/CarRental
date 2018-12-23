@@ -9,6 +9,6 @@ namespace IRepositories
 {
     public interface IAddWorkerRepository
     {
-        bool addToDB(Worker worker);
+        bool addToDB(string[] worker);
     }
 }

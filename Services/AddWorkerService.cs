@@ -8,13 +8,13 @@ using Repositories;
 
 namespace Services
 {
-    public class AddWorkerService : IAddWorkerService
+    public class WorkerService : IAddWorkerService
     {
-        private IAddWorkerRepository addWorkerRepository;
+        private IAddWorkerRepository WorkerRepository;
 
-        public AddWorkerService()
+        public WorkerService()
         {
-            addWorkerRepository = new AddWorkerRepository();
+            WorkerRepository = new WorkerRepository();
         }
 
         public bool checkData(string login, string password)
@@ -34,10 +34,17 @@ namespace Services
             if (!checkData(worker.login, worker.password))
                 return check;
 
-            AddWorkerRepository addWorkerRepository = new AddWorkerRepository();
-            check = addWorkerRepository.addToDB(worker);
+            WorkerRepository workerRepository = new WorkerRepository();
+            string[] workerString = new string[6];
 
-            return check;
+            workerString[0] = worker.ID.ToString();
+            workerString[1] = worker.name.ToString();
+            workerString[2] = worker.surname.ToString();
+            workerString[3] = worker.login.ToString();
+            workerString[4] = worker.password.ToString();
+            workerString[5] = worker.isAdmin.ToString();
+
+            return workerRepository.addToDB(workerString);
         }
     }
 }
