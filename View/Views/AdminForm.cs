@@ -26,8 +26,9 @@ namespace View
             string surname = textBoxAddWorkerSurname.Text;
             string login = textBoxAddWorkerLogin.Text;
             string password = textBoxAddWorkerPassword.Text;
+            bool isAdmin = false; // нужно добавить на форму штуку
 
-            if (WorkerPresenter.addWorker(name, surname, login, password) == false)
+            if (WorkerPresenter.addWorker(name, surname, login, password, isAdmin) == false)
             {
                 MessageBox.Show("Worker is no created!");
             }
@@ -55,6 +56,11 @@ namespace View
         private void groupBox4_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+            toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
         }
     }
 }

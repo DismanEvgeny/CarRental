@@ -9,19 +9,18 @@ namespace Repositories
 {
     public class DataBaseUtils
     {
-        private string path = (System.Environment.CurrentDirectory);
+        //private string path = (System.Environment.CurrentDirectory);
         private SqlConnection conn = new SqlConnection();
 
         public DataBaseUtils()
         {
-            path = path.Remove(path.IndexOf("\\bin"), 10) + "\\DataBase.mdf"; //путь к базе данных
+           // path = path.Remove(path.IndexOf("\\bin"), 10) + "\\DataBase.mdf"; //путь к базе данных
         }
 
         private void openConnection() //открытие соединения
         {
             conn.ConnectionString = "Data Source = localhost; Initial Catalog = CarRentalDB; Integrated Security = True";
-            //conn.ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Users\\user\\source\repos\\DismanEvgeny\\CarRental\\Repositories\\CarRentalDB.xsd;Integrated Security=True;Connect Timeout=10;User Instance=False";
-
+           
             conn.Open();
         }
 
@@ -52,11 +51,11 @@ namespace Repositories
             switch(tableName){
                 case "Clients":
                     //fullName = "[Clients] (Id, Name, Surname, Sex, Date of Registration, Date of Driving Start, Is reliable) values (@Id, @Name, @Surname, @Sex, @Date of Registration, @Date of Driving Start, @Is reliable)";
-                    fullName = "[Clients] (Id, Name, Surname, Sex, Date of Registration, Date of Driving Start, Is reliable) values ";
+                    fullName = "[Clients] (Id, Name, Surname, Sex,  Date of Driving Start, Date of Registration, Is Reliable) values ";
 
                     break;
                 case "Users":
-                    fullName = "[Users](Id, Name, Surname, Login, Password) values";
+                    fullName = "[Users](Id, Name, Surname, Login, Password, IsAdmin) values";
                     break;
                 default:
                     fullName = "";
@@ -94,10 +93,10 @@ namespace Repositories
             SqlCommand command = new SqlCommand("Select * from [Users] where [Login]=@log", conn); //строка-запрос, ищем по логину
             command.Parameters.AddWithValue("@log", login);
 
-            string[] data = new string[5];
+            string[] data = new string[6];
             SqlDataReader reader = command.ExecuteReader();
                 if(reader.Read())
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     data[i] = reader[i].ToString();
                     Console.WriteLine(data[i]);

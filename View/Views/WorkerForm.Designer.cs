@@ -33,6 +33,9 @@
             this.buttonViewClient = new System.Windows.Forms.Button();
             this.comboBoxViewClient = new System.Windows.Forms.ComboBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.textBoxComment_return = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimeOfReturning_return = new System.Windows.Forms.DateTimePicker();
             this.textBoxReturnTotalSum = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.buttonReturnTotal = new System.Windows.Forms.Button();
@@ -55,6 +58,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.dateTimeOfReturning_lease = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeOfLeasing = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonLease = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -67,18 +73,15 @@
             this.textBoxLeaseClientSurname = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimeOfLeasing = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeOfReturning_lease = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeOfReturning_return = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxComment_return = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabelWorkerName = new System.Windows.Forms.ToolStripLabel();
             this.panelWorker.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.groupBox9.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelWorker
@@ -141,6 +144,33 @@
             this.groupBox10.TabIndex = 2;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Return car";
+            // 
+            // textBoxComment_return
+            // 
+            this.textBoxComment_return.Location = new System.Drawing.Point(75, 172);
+            this.textBoxComment_return.Multiline = true;
+            this.textBoxComment_return.Name = "textBoxComment_return";
+            this.textBoxComment_return.Size = new System.Drawing.Size(150, 77);
+            this.textBoxComment_return.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 207);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Comment:";
+            // 
+            // dateTimeOfReturning_return
+            // 
+            this.dateTimeOfReturning_return.Location = new System.Drawing.Point(98, 54);
+            this.dateTimeOfReturning_return.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.dateTimeOfReturning_return.MinDate = new System.DateTime(2018, 12, 1, 0, 0, 0, 0);
+            this.dateTimeOfReturning_return.Name = "dateTimeOfReturning_return";
+            this.dateTimeOfReturning_return.Size = new System.Drawing.Size(127, 20);
+            this.dateTimeOfReturning_return.TabIndex = 29;
+            this.dateTimeOfReturning_return.Value = new System.DateTime(2018, 12, 2, 22, 35, 0, 0);
             // 
             // textBoxReturnTotalSum
             // 
@@ -366,6 +396,35 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Lease a car";
             // 
+            // dateTimeOfReturning_lease
+            // 
+            this.dateTimeOfReturning_lease.Location = new System.Drawing.Point(98, 131);
+            this.dateTimeOfReturning_lease.MaxDate = new System.DateTime(2059, 12, 31, 0, 0, 0, 0);
+            this.dateTimeOfReturning_lease.MinDate = new System.DateTime(2018, 12, 1, 0, 0, 0, 0);
+            this.dateTimeOfReturning_lease.Name = "dateTimeOfReturning_lease";
+            this.dateTimeOfReturning_lease.Size = new System.Drawing.Size(127, 20);
+            this.dateTimeOfReturning_lease.TabIndex = 24;
+            this.dateTimeOfReturning_lease.Value = new System.DateTime(2018, 12, 2, 22, 30, 0, 0);
+            // 
+            // dateTimeOfLeasing
+            // 
+            this.dateTimeOfLeasing.Location = new System.Drawing.Point(99, 105);
+            this.dateTimeOfLeasing.MaxDate = new System.DateTime(2059, 12, 31, 0, 0, 0, 0);
+            this.dateTimeOfLeasing.MinDate = new System.DateTime(2018, 12, 1, 0, 0, 0, 0);
+            this.dateTimeOfLeasing.Name = "dateTimeOfLeasing";
+            this.dateTimeOfLeasing.Size = new System.Drawing.Size(126, 20);
+            this.dateTimeOfLeasing.TabIndex = 23;
+            this.dateTimeOfLeasing.Value = new System.DateTime(2018, 12, 1, 22, 30, 0, 0);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 136);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Date of returning:";
+            // 
             // buttonLease
             // 
             this.buttonLease.Location = new System.Drawing.Point(98, 225);
@@ -466,70 +525,32 @@
             this.label18.TabIndex = 10;
             this.label18.Text = "Surname: ";
             // 
-            // label1
+            // toolStrip1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 136);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Date of returning:";
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabelWorkerName});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(583, 25);
+            this.toolStrip1.TabIndex = 14;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // dateTimeOfLeasing
+            // toolStripLabelWorkerName
             // 
-            this.dateTimeOfLeasing.Location = new System.Drawing.Point(99, 105);
-            this.dateTimeOfLeasing.MaxDate = new System.DateTime(2059, 12, 31, 0, 0, 0, 0);
-            this.dateTimeOfLeasing.MinDate = new System.DateTime(2018, 12, 1, 0, 0, 0, 0);
-            this.dateTimeOfLeasing.Name = "dateTimeOfLeasing";
-            this.dateTimeOfLeasing.Size = new System.Drawing.Size(126, 20);
-            this.dateTimeOfLeasing.TabIndex = 23;
-            this.dateTimeOfLeasing.Value = new System.DateTime(2018, 12, 1, 22, 30, 0, 0);
-            // 
-            // dateTimeOfReturning_lease
-            // 
-            this.dateTimeOfReturning_lease.Location = new System.Drawing.Point(98, 131);
-            this.dateTimeOfReturning_lease.MaxDate = new System.DateTime(2059, 12, 31, 0, 0, 0, 0);
-            this.dateTimeOfReturning_lease.MinDate = new System.DateTime(2018, 12, 1, 0, 0, 0, 0);
-            this.dateTimeOfReturning_lease.Name = "dateTimeOfReturning_lease";
-            this.dateTimeOfReturning_lease.Size = new System.Drawing.Size(127, 20);
-            this.dateTimeOfReturning_lease.TabIndex = 24;
-            this.dateTimeOfReturning_lease.Value = new System.DateTime(2018, 12, 2, 22, 30, 0, 0);
-            // 
-            // dateTimeOfReturning_return
-            // 
-            this.dateTimeOfReturning_return.Location = new System.Drawing.Point(98, 54);
-            this.dateTimeOfReturning_return.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
-            this.dateTimeOfReturning_return.MinDate = new System.DateTime(2018, 12, 1, 0, 0, 0, 0);
-            this.dateTimeOfReturning_return.Name = "dateTimeOfReturning_return";
-            this.dateTimeOfReturning_return.Size = new System.Drawing.Size(127, 20);
-            this.dateTimeOfReturning_return.TabIndex = 29;
-            this.dateTimeOfReturning_return.Value = new System.DateTime(2018, 12, 2, 22, 35, 0, 0);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 207);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Comment:";
-            // 
-            // textBoxComment_return
-            // 
-            this.textBoxComment_return.Location = new System.Drawing.Point(75, 172);
-            this.textBoxComment_return.Multiline = true;
-            this.textBoxComment_return.Name = "textBoxComment_return";
-            this.textBoxComment_return.Size = new System.Drawing.Size(150, 77);
-            this.textBoxComment_return.TabIndex = 31;
+            this.toolStripLabelWorkerName.Name = "toolStripLabelWorkerName";
+            this.toolStripLabelWorkerName.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabelWorkerName.Text = "toolStripLabel1";
             // 
             // WorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 642);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panelWorker);
             this.Name = "WorkerForm";
             this.Text = "WorkerForm";
+            this.Load += new System.EventHandler(this.WorkerForm_Load);
             this.panelWorker.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
@@ -539,7 +560,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -590,5 +614,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxComment_return;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelWorkerName;
     }
 }

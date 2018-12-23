@@ -47,8 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractPerson.cs" />
-    <Compile Include="AbstractUser.cs" />
-    <Compile Include="Administrator.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Client.cs" />

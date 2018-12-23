@@ -11,6 +11,7 @@ namespace Entities
 
         public bool sex { get; set; }
         DateTime dateOfRegistration { get; set; }
+        bool isReliable { get; set; }
 
         public Client(bool _sex, DateTime _date)
         {
