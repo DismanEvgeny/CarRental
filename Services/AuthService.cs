@@ -53,7 +53,7 @@ namespace Services
             }
 
 
-            bool _isAdmin = str[5] == "1"; // перевод string в bool
+            bool _isAdmin = (str[5] == "1" || str[5] == "True"); // перевод string в bool
             active = new Worker(str[1], str[2], str[3], str[4], _isAdmin);
             //Console.WriteLine("Worker: "+active.name+" "+active.surname);
 
