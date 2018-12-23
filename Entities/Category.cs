@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Category
+    public class Category
     {
         
         private string ID { get; set; }
-        private string name { get; set; }
+        public string name { get; set; }
         private float tariff { get; set; } 
         private float fine { get; set; }
 

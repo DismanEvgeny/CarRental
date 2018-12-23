@@ -16,8 +16,6 @@ namespace Presenrers.Presenters
         {
             AuthService authService = new AuthService();
             active = authService.getUser(active, login, password);
-            if (active == null)
-                return null;
 
             return active;
         }
