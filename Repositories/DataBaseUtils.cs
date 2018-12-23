@@ -50,13 +50,13 @@ namespace Repositories
             
             switch(tableName){
                 case "Clients":
-                    fullName = "[Clients] (Id, Name, Surname, Sex,  Date of Driving Start, Date of Registration, Is Reliable) values ";
+                    fullName = "[Clients] (Id, Name, Surname, Sex,  Date of Driving Start, Date of Registration, Is Reliable) VALUES ";
                     break;
                 case "Users":
-                    fullName = "[Users](Id, Name, Surname, Login, Password, IsAdmin) values";
+                    fullName = "[Users](Id, Name, Surname, Login, Password, IsAdmin) VALUES";
                     break;
                 case "Categories":
-                    fullName ="[Categories](Id, Name, Tariff, Fine) values";
+                    fullName = "[Categories](Id, Name, Tariff, Fine) VALUES";
                     break;
                 default:
                     fullName = "";
@@ -67,22 +67,23 @@ namespace Repositories
 
         public bool insertInDB(string tableName, string[] dataStrings) //для вставки данных в БД
         {
+            openConnection();
             string fullTableName;
             if ((fullTableName = getFullTableName(tableName)) == "") {
                 return false;
             };
 
-            string sql = $"INSERT INTO {fullTableName} values ("; //строка-запрос
+            string sql = $"INSERT INTO {fullTableName}("; //строка-запрос
             for(int i = 0; i < dataStrings.Length; i++) // добавляем данные в строку-запрос
             {
-                sql += dataStrings[i] + ", ";
+                sql += "\'" + dataStrings[i] + "\', ";
             }
-            sql = sql.Remove(sql.Length - 1);//чтобы в конце перед скобкой не было пробела
+            sql = sql.Remove(sql.Length - 2);//чтобы в конце перед скобкой не было пробела c запятой
             sql += ")";
 
             SqlCommand cmd_write = new SqlCommand(sql, conn);
             cmd_write.ExecuteNonQuery();
-
+            closeConnection();
             return true;
         }
 

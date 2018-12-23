@@ -30,14 +30,13 @@ namespace Services
 
         public bool addWorkerToDB(Worker worker)
         {
-            bool check = false;
             if (!checkData(worker.login, worker.password))
-                return check;
+                return false;
 
             WorkerRepository workerRepository = new WorkerRepository();
             string[] workerString = new string[6];
 
-            workerString[0] = worker.ID.ToString();
+            workerString[0] = /*worker.ID.ToString()*/"3";
             workerString[1] = worker.name.ToString();
             workerString[2] = worker.surname.ToString();
             workerString[3] = worker.login.ToString();
