@@ -15,9 +15,22 @@ namespace View
     public partial class AdminForm : Form
     {
 
+        // private static int worker_counter = 2;
+        private WorkerPresenter workerPresenter;
+        private int workerCounter;
+
         public AdminForm()
         {
+
+            workerPresenter = new WorkerPresenter();
+
             InitializeComponent();
+
+            workerCounter = int.Parse(workerPresenter.getAmountOfUsers());
+            fillWorkerListBox(workerCounter);
+           // MessageBox.Show(workerCounter.ToString());
+
+            //listBox1.Items.Insert(0, name + "       " + surname + "       " + userID);
         }
 
         private void buttonAddWorker_Click(object sender, EventArgs e)
@@ -26,7 +39,10 @@ namespace View
             string surname = textBoxAddWorkerSurname.Text;
             string login = textBoxAddWorkerLogin.Text;
             string password = textBoxAddWorkerPassword.Text;
+            int newID;
             bool isAdmin = checkBoxIsAdmin.Checked; // нужно добавить на форму штуку
+
+
 
             if (textBoxAddWorkerName.Text == "" || textBoxAddWorkerSurname.Text == "" || textBoxAddWorkerLogin.Text == "" 
                 || textBoxAddWorkerPassword.Text == "")
@@ -35,22 +51,25 @@ namespace View
             }
             else
             {
-                if (WorkerPresenter.addWorker(name, surname, login, password, isAdmin) == false)
+                if (workerPresenter.addWorker(name, surname, login, password, isAdmin) == false)
                 {
                     MessageBox.Show("Worker is not created!");
                 }
                 else
                 {
                     MessageBox.Show("Worker is created!");
+                    workerCounter++;
+                    newID = int.Parse(workerPresenter.getAmountOfUsers()) - 1;
+                    listBox1.Items.Insert(workerCounter-1, newID + "      " + textBoxAddWorkerName.Text + 
+                        "      " + textBoxAddWorkerSurname.Text);
                     textBoxAddWorkerName.Clear();
                     textBoxAddWorkerSurname.Clear();
                     textBoxAddWorkerLogin.Clear();
                     textBoxAddWorkerPassword.Clear();
                 }
             }
- 
-               
 
+            //listBox1.Items.Insert(0, name + " " + surname);
         }
 
         private void radioButtonAddCarAuthmaticTransmition_CheckedChanged(object sender, EventArgs e)
@@ -73,9 +92,22 @@ namespace View
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
         }
 
-       /* private void checkBoxIsAdmin_CheckedChanged(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }*/
+        }
+
+        public void fillWorkerListBox(int workerCounter)
+        {
+            string[,] users = new string[workerCounter,3];
+
+            users = workerPresenter.getAllWorkers(workerCounter);
+
+            for (int i = 0; i < workerCounter; i++)
+                listBox1.Items.Insert(i, users[i, 0] + "      " + users[i, 1] + "      " + users[i, 2]);
+            //Console.WriteLine
+            
+        }
+
     }
 }

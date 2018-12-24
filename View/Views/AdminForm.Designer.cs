@@ -108,9 +108,9 @@
             // 
             this.groupBox7.Controls.Add(this.listBox1);
             this.groupBox7.Controls.Add(this.buttonRemoveWorker);
-            this.groupBox7.Location = new System.Drawing.Point(619, 211);
+            this.groupBox7.Location = new System.Drawing.Point(569, 211);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(200, 172);
+            this.groupBox7.Size = new System.Drawing.Size(250, 172);
             this.groupBox7.TabIndex = 11;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Remove worker";
@@ -118,10 +118,11 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(40, 23);
+            this.listBox1.Location = new System.Drawing.Point(27, 26);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Size = new System.Drawing.Size(193, 95);
             this.listBox1.TabIndex = 2;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // buttonRemoveWorker
             // 
@@ -160,7 +161,6 @@
             this.checkBoxIsAdmin.Size = new System.Drawing.Size(15, 14);
             this.checkBoxIsAdmin.TabIndex = 10;
             this.checkBoxIsAdmin.UseVisualStyleBackColor = true;
-           // this.checkBoxIsAdmin.CheckedChanged += new System.EventHandler(this.checkBoxIsAdmin_CheckedChanged);
             // 
             // label14
             // 

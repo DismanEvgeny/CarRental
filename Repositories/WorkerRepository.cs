@@ -22,5 +22,15 @@ namespace Repositories
         { 
             return utils.insertInDB("Users", worker); ;
         }
+
+        public string getAmountOfUsers()
+        {
+            return utils.getUsersAmount();
+        }
+
+        public string[,] getAllUsersFromDB(int workerCounter)
+        {
+            return utils.getAllUsersFromDB(workerCounter); 
+        }
     }
 }

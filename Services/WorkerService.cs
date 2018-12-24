@@ -10,11 +10,11 @@ namespace Services
 {
     public class WorkerService : IAddWorkerService
     {
-        private IWorkerRepository WorkerRepository;
+        private WorkerRepository workerRepository;
 
         public WorkerService()
         {
-            WorkerRepository = new WorkerRepository();
+            workerRepository = new WorkerRepository();
         }
 
         public bool checkData(string login, string password)
@@ -34,7 +34,7 @@ namespace Services
                 return false;
 
 
-            WorkerRepository workerRepository = new WorkerRepository();
+           // WorkerRepository workerRepository = new WorkerRepository();
             string id = workerRepository.getID();
             worker.setID(int.Parse(id));
             string[] workerString = new string[6];
@@ -49,5 +49,14 @@ namespace Services
             return workerRepository.addToDB(workerString);
         }
 
+        public string getUsersAmountFromDB()
+        {
+            return workerRepository.getAmountOfUsers();
+        }
+
+        public string[,] getAllUsers(int workerCounter)
+        {
+            return workerRepository.getAllUsersFromDB(workerCounter);
+        }
     }
 }

@@ -12,10 +12,15 @@ namespace Presenrers.Presenters
 {
     class WorkerPresenter
     {
-        public WorkerPresenter() { }
+        private WorkerService service;
+
+        public WorkerPresenter()
+        {
+            service = new WorkerService();
+        }
 
 
-        public static bool addWorker(string _name, string _surname, string _login, string _password, bool _isAdmin)
+        public /*static*/ bool addWorker(string _name, string _surname, string _login, string _password, bool _isAdmin)
         {
             bool check = false;
 
@@ -23,11 +28,21 @@ namespace Presenrers.Presenters
                     string.IsNullOrEmpty(_password)))
             {
                 Worker worker = new Worker(_name, _surname, _login, _password, _isAdmin);
-                WorkerService service = new WorkerService();
+                //WorkerService service = new WorkerService();
 
                 check = service.addWorkerToDB(worker);
             }
             return check;
+        }
+
+        public string getAmountOfUsers()
+        {
+            return service.getUsersAmountFromDB();
+        }
+
+        public string[,] getAllWorkers(int workerCounter)
+        {
+            return service.getAllUsers(workerCounter);
         }
 
     }

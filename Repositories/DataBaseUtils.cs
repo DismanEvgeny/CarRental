@@ -76,7 +76,7 @@ namespace Repositories
             string sql = $"INSERT INTO {fullTableName}("; //строка-запрос
             for(int i = 0; i < dataStrings.Length; i++) // добавляем данные в строку-запрос
             {
-                sql += "\'" + dataStrings[i] + "\', ";
+                sql += "'" + dataStrings[i] + "', ";
             }
             sql = sql.Remove(sql.Length - 2);//чтобы в конце перед скобкой не было пробела c запятой
             sql += ")";
@@ -103,6 +103,49 @@ namespace Repositories
                     data[i] = reader[i].ToString();
                     Console.WriteLine(data[i]);
                 }
+
+            reader.Close();
+            closeConnection();
+
+            return data;
+        }
+
+        public string[,] getAllUsersFromDB(int userCounter) // поиск пользователя в БД по логину
+        {
+            string[,] users = new string[userCounter, 3];
+            int k = 0;
+            int i = 0;
+            openConnection();
+
+            SqlCommand command = new SqlCommand("Select ID, Name, Surname from Users", conn); //строка-запрос, ищем по логину
+
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+                while (reader.Read())
+                { 
+                    for (int j = 0; j < 3; j++)
+                        users[i, j] = reader[j].ToString();
+                    i++;
+                }
+
+            reader.Close();
+            closeConnection();
+
+            return users;
+        }
+
+        public string getUsersAmount() // количество юзеров в таблице
+        {
+
+            openConnection();
+
+            SqlCommand command = new SqlCommand("Select count(*) from [Users]", conn);
+
+            string data = "";
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+                data = reader[0].ToString();
 
             reader.Close();
             closeConnection();
