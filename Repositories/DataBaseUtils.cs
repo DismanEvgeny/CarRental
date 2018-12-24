@@ -153,6 +153,17 @@ namespace Repositories
             return data;
         }
 
+        public void deleteUserFromDB(string ID) // удаление юзера из таблицы
+        {
+            openConnection();
+
+            SqlCommand command = new SqlCommand("DELETE FROM Users WHERE ID=" + ID, conn);
+            command.ExecuteNonQuery();
+
+            closeConnection();
+        }
+
+
         public string getMaxID() // поиск максимального id 
         {
 

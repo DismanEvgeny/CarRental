@@ -92,10 +92,7 @@ namespace View
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {  }
 
         public void fillWorkerListBox(int workerCounter)
         {
@@ -105,9 +102,18 @@ namespace View
 
             for (int i = 0; i < workerCounter; i++)
                 listBox1.Items.Insert(i, users[i, 0] + "      " + users[i, 1] + "      " + users[i, 2]);
-            //Console.WriteLine
             
         }
 
+        private void buttonRemoveWorker_Click(object sender, EventArgs e)
+        {
+            string itemSelected = listBox1.GetItemText(listBox1.SelectedItem);
+           // int pos = listBox1.SelectedIndex;          
+            string ID = itemSelected.Substring(0, 1);
+            workerPresenter.deleteWorker(ID);
+            listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+
+            MessageBox.Show("Worker is deleted!");
+        }
     }
 }

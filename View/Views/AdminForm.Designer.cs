@@ -132,6 +132,7 @@
             this.buttonRemoveWorker.TabIndex = 1;
             this.buttonRemoveWorker.Text = "Remove";
             this.buttonRemoveWorker.UseVisualStyleBackColor = true;
+            this.buttonRemoveWorker.Click += new System.EventHandler(this.buttonRemoveWorker_Click);
             // 
             // groupBox6
             // 

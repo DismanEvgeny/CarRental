@@ -10,7 +10,7 @@ namespace Services
 {
     public class WorkerService : IAddWorkerService
     {
-        private WorkerRepository workerRepository;
+        private IWorkerRepository workerRepository;
 
         public WorkerService()
         {
@@ -57,6 +57,11 @@ namespace Services
         public string[,] getAllUsers(int workerCounter)
         {
             return workerRepository.getAllUsersFromDB(workerCounter);
+        }
+
+        public void deleteUser(string ID)
+        {
+            workerRepository.deleteUserFromDB(ID);
         }
     }
 }

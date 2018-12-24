@@ -20,7 +20,7 @@ namespace Presenrers.Presenters
         }
 
 
-        public /*static*/ bool addWorker(string _name, string _surname, string _login, string _password, bool _isAdmin)
+        public bool addWorker(string _name, string _surname, string _login, string _password, bool _isAdmin)
         {
             bool check = false;
 
@@ -43,6 +43,11 @@ namespace Presenrers.Presenters
         public string[,] getAllWorkers(int workerCounter)
         {
             return service.getAllUsers(workerCounter);
+        }
+
+        public void deleteWorker(string ID)
+        {
+             service.deleteUser(ID);
         }
 
     }
