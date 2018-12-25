@@ -93,12 +93,10 @@ namespace View
         private void AdminForm_Load(object sender, EventArgs e)
         {
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
-
             MainForm.categories = CategoriesPresenter.getCategories();
             foreach (Category cat in MainForm.categories)
             {
                 listBoxDeleteCategories.Items.Add(cat.name);
-                comboBoxAddCarCategories.Items.Add(cat.name);
             }
             comboBoxAddCarCategories.SelectedIndex = 0;
 
@@ -132,12 +130,30 @@ namespace View
             MessageBox.Show("Worker is deleted!");
         }
 
-        private void buttonAddCarImage_Click(object sender, EventArgs e)
+        /*private void label15_Click(object sender, EventArgs e)
         {
-            if(openFileDialogAddCarLoadImage.ShowDialog() == DialogResult.Cancel)
-                return;
-            //string fileName = openFileDialogAddCarLoadImage.FileName;
-            textBoxAddCarImage.Text = openFileDialogAddCarLoadImage.FileName;
+
+        }*/
+
+        private void textBoxAddCategoryName_TextChanged(object sender, EventArgs e) {}
+
+        private void textBoxAddCategoryTarif_TextChanged(object sender, EventArgs e) {}
+
+        private void textBoxAddCategoryFine_TextChanged(object sender, EventArgs e) {}
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
+
+        private void buttonAddCategory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /*private void label15_Click(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }
