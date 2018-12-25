@@ -177,6 +177,15 @@ namespace Repositories
             closeConnection();
         }
 
+        public void deleteCar(string ID)
+        {
+            openConnection();
+
+            SqlCommand newCommand = new SqlCommand("DELETE FROM Cars WHERE Id='" + ID + "'", conn);
+            newCommand.ExecuteNonQuery();
+
+            closeConnection();
+        }
 
         public string getsMaxID(string tableName) // поиск максимального id 
         {
@@ -237,18 +246,18 @@ namespace Repositories
         public List<string[]> getCarsFromDB()
         {
             List<string[]> cars = new List<string[]>();
-            string[] readStrings = new string[10];
+            string[] readStrings = new string[8];
             openConnection();
             SqlCommand command = new SqlCommand("Select * from [Cars]", conn); //строка-запрос, ищем по логину
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 8; i++)
                 {
                     readStrings[i] = reader[i].ToString();
                 }
-                cars.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7], readStrings[8], readStrings[9] });
+                cars.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7] });
 
             }
             return cars;

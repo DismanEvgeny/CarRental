@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelAdmin = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -63,8 +64,8 @@
             this.comboBoxAddCarcategory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBoxDeleteCar = new System.Windows.Forms.ComboBox();
             this.buttonDeleteCar = new System.Windows.Forms.Button();
-            this.listBoxDeleteCar = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -81,6 +82,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelAdminName = new System.Windows.Forms.ToolStripLabel();
             this.openFileDialogAddCarLoadImage = new System.Windows.Forms.OpenFileDialog();
+            this.carRentalDBDataSet = new Presenrers.CarRentalDBDataSet();
+            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carsTableAdapter = new Presenrers.CarRentalDBDataSetTableAdapters.CarsTableAdapter();
             this.panelAdmin.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -90,6 +94,8 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carRentalDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAdmin
@@ -443,31 +449,32 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.comboBoxDeleteCar);
             this.groupBox3.Controls.Add(this.buttonDeleteCar);
-            this.groupBox3.Controls.Add(this.listBoxDeleteCar);
             this.groupBox3.Location = new System.Drawing.Point(309, 356);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 168);
+            this.groupBox3.Size = new System.Drawing.Size(200, 116);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete a car";
             // 
+            // comboBoxDeleteCar
+            // 
+            this.comboBoxDeleteCar.FormattingEnabled = true;
+            this.comboBoxDeleteCar.Location = new System.Drawing.Point(38, 45);
+            this.comboBoxDeleteCar.Name = "comboBoxDeleteCar";
+            this.comboBoxDeleteCar.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDeleteCar.TabIndex = 2;
+            // 
             // buttonDeleteCar
             // 
-            this.buttonDeleteCar.Location = new System.Drawing.Point(40, 126);
+            this.buttonDeleteCar.Location = new System.Drawing.Point(39, 72);
             this.buttonDeleteCar.Name = "buttonDeleteCar";
             this.buttonDeleteCar.Size = new System.Drawing.Size(120, 23);
             this.buttonDeleteCar.TabIndex = 1;
             this.buttonDeleteCar.Text = "Delete";
             this.buttonDeleteCar.UseVisualStyleBackColor = true;
-            // 
-            // listBoxDeleteCar
-            // 
-            this.listBoxDeleteCar.FormattingEnabled = true;
-            this.listBoxDeleteCar.Location = new System.Drawing.Point(40, 25);
-            this.listBoxDeleteCar.Name = "listBoxDeleteCar";
-            this.listBoxDeleteCar.Size = new System.Drawing.Size(120, 95);
-            this.listBoxDeleteCar.TabIndex = 0;
+            this.buttonDeleteCar.Click += new System.EventHandler(this.buttonDeleteCar_Click);
             // 
             // groupBox1
             // 
@@ -610,6 +617,20 @@
             this.toolStripLabelAdminName.Size = new System.Drawing.Size(86, 22);
             this.toolStripLabelAdminName.Text = "toolStripLabel1";
             // 
+            // carRentalDBDataSet
+            // 
+            this.carRentalDBDataSet.DataSetName = "CarRentalDBDataSet";
+            this.carRentalDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // carsBindingSource
+            // 
+            this.carsBindingSource.DataMember = "Cars";
+            this.carsBindingSource.DataSource = this.carRentalDBDataSet;
+            // 
+            // carsTableAdapter
+            // 
+            this.carsTableAdapter.ClearBeforeFill = true;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -633,6 +654,8 @@
             this.groupBox2.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carRentalDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -665,7 +688,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonDeleteCar;
-        private System.Windows.Forms.ListBox listBoxDeleteCar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxAddCategoryName;
         private System.Windows.Forms.Button buttonAddCategory;
@@ -693,5 +715,9 @@
         private System.Windows.Forms.TextBox textBoxAddCarImage;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.OpenFileDialog openFileDialogAddCarLoadImage;
+        private System.Windows.Forms.ComboBox comboBoxDeleteCar;
+        private Presenrers.CarRentalDBDataSet carRentalDBDataSet;
+        private System.Windows.Forms.BindingSource carsBindingSource;
+        private Presenrers.CarRentalDBDataSetTableAdapters.CarsTableAdapter carsTableAdapter;
     }
 }

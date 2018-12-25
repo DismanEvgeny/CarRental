@@ -15,7 +15,7 @@ namespace Repositories
 
         public void deleteCarFromDB(string ID)
         {
-
+            dataBaseUtils.deleteCar(ID);
         }
 
         public List<string[]> getAllCarsFromDB(uint carCounter)

@@ -12,12 +12,12 @@ namespace Entities
     public class Car
     {
         static int IDCounter = 0;
-        private int ID { get; set; }
-        private string brand { get; set; }
-        private string model { get; set; }
+        public int ID { get; set; }
+        public string brand { get; set; }
+        public string model { get; set; }
         private string categoryID { get; set; }
         private FuelType fuel { get; set; }
-        private short yearOfProduction { get; set; }
+        public short yearOfProduction { get; set; }
 
         private bool hasAutomaticTransmission { get; set; }
         private Image image { get; set; }

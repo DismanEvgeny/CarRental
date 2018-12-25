@@ -36,14 +36,21 @@ namespace Services
         public List<Car> getCars()
         {
             uint carCounter = 0;
+
             List<Car> cars = new List<Car>();
             List<string[]> carStrings = carRepository.getAllCarsFromDB(carCounter);
             foreach (string[] str in carStrings)
             {
-                cars.Add(new Car(int.Parse(str[0]), str[1], str[2], str[3], (FuelType)Enum.Parse(typeof(FuelType), str[4]), short.Parse(str[5]), (str[8]=="True"||str[8]=="1"), (Image) new ImageConverter().ConvertFrom(str[9]))); // насчёт преобразования изображения не уверен
+                cars.Add(new Car(int.Parse(str[0]), str[1], str[2], str[3], (FuelType)Enum.Parse(typeof(FuelType), str[4]), short.Parse(str[5]),
+                    (str[6]=="True"||str[6]=="1"), Image.FromFile(str[7])));       
             }
 
             return cars;
+        }
+
+        public void deleteCar(string carId)
+        {
+            carRepository.deleteCarFromDB(carId);
         }
     }
 }

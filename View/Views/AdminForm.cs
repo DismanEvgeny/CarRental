@@ -102,6 +102,8 @@ namespace View
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "carRentalDBDataSet.Cars". При необходимости она может быть перемещена или удалена.
+            this.carsTableAdapter.Fill(this.carRentalDBDataSet.Cars);
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
             MainForm.categories = CategoriesPresenter.getCategories();
             //showCategoriesToDelete();
@@ -111,6 +113,13 @@ namespace View
                 comboBoxAddCarcategory.Items.Add(cat.getName());
             }
             comboBoxAddCarcategory.SelectedIndex = 0;
+
+            MainForm.cars = carsPresenter.getCars();
+            foreach(Car car in MainForm.cars)
+            {
+               comboBoxDeleteCar.Items.Add($"{car.ID} {car.brand} {car.model} {car.yearOfProduction}");
+            }
+            comboBoxDeleteCar.SelectedIndex = 0;
 
             comboBoxAddCarFuelType.DataSource = Enum.GetNames(typeof(FuelType));
             comboBoxAddCarFuelType.SelectedItem = FuelType.Petrol;
@@ -201,11 +210,26 @@ namespace View
             string imageDirectory = textBoxAddCarImage.Text;
             if (carsPresenter.addCar(new string[] { brand, model, categoryName, fuel, year, hasAutomaticTransmition, imageDirectory }))
             {
+               // comboBoxDeleteCar.Refresh();
                 MessageBox.Show("Car is created!");
             } else
             {
                 MessageBox.Show("Error");
             }
+        }
+
+        private void buttonDeleteCar_Click(object sender, EventArgs e)
+        {
+            string carString = comboBoxDeleteCar.Text;
+            string carId = carString.Split(' ')[0];
+            Console.WriteLine("Car to delete Id: "+carId);
+
+            carsPresenter.deleteCar(carId);
+
+            comboBoxDeleteCar.Items.RemoveAt(comboBoxDeleteCar.SelectedIndex);
+            comboBoxDeleteCar.SelectedIndex = 0;
+            MessageBox.Show("Car is deleted!");
+
         }
     }
 }

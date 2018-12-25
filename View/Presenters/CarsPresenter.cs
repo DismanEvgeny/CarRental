@@ -14,12 +14,17 @@ namespace Presenrers.Presenters
 
         public List<Car> getCars()
         {
-            return carsServices.getCars();
+            return new CarsServices().getCars();
         }
 
         public bool addCar(string[] carStrings)
         {
             return carsServices.addCarToDB(carStrings);
+        }
+
+        public void deleteCar(string carId)
+        {
+            carsServices.deleteCar(carId);
         }
 
     }

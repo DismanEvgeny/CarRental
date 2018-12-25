@@ -49,6 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarRentalDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarRentalDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Presenters\CarsPresenter.cs" />
     <Compile Include="Presenters\WorkerPresenter.cs" />
     <Compile Include="Presenters\AuthPresenter.cs" />
@@ -114,6 +119,17 @@
     <EmbeddedResource Include="Views\WorkerForm.resx">
       <DependentUpon>WorkerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CarRentalDBDataSet.xsc">
+      <DependentUpon>CarRentalDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CarRentalDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarRentalDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CarRentalDBDataSet.xss">
+      <DependentUpon>CarRentalDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
