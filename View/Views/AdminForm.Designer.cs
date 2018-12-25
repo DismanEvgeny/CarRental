@@ -46,7 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCheckInsCar = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.radioButtonAddCarManualTransmition = new System.Windows.Forms.RadioButton();
             this.textBoxAddCarBrand = new System.Windows.Forms.TextBox();
@@ -253,7 +253,7 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.comboBox3);
+            this.groupBox5.Controls.Add(this.comboBoxCheckInsCar);
             this.groupBox5.Location = new System.Drawing.Point(309, 530);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(200, 91);
@@ -270,13 +270,13 @@
             this.button3.Text = "Check";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // comboBoxCheckInsCar
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(39, 35);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 0;
+            this.comboBoxCheckInsCar.FormattingEnabled = true;
+            this.comboBoxCheckInsCar.Location = new System.Drawing.Point(39, 35);
+            this.comboBoxCheckInsCar.Name = "comboBoxCheckInsCar";
+            this.comboBoxCheckInsCar.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCheckInsCar.TabIndex = 0;
             // 
             // groupBox4
             // 
@@ -666,7 +666,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxCheckInsCar;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button2;

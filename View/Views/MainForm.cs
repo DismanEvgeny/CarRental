@@ -25,6 +25,9 @@ namespace CarRental
         static Form adminForm = null;
         static Form workerForm = null;
         static public List<Category> categories;
+        static public List<Car> cars;
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -38,6 +41,8 @@ namespace CarRental
             {
                 listBoxCategories.Items.Add(cat.name);
             }
+
+
         }
 
         private static void adminAccess() //создание формы администратора

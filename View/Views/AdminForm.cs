@@ -101,8 +101,11 @@ namespace View
                 comboBoxAddCarCategories.Items.Add(cat.name);
             }
             comboBoxAddCarCategories.SelectedIndex = 0;
+
             comboBoxAddCarFuel.DataSource = Enum.GetNames(typeof(FuelType));
             comboBoxAddCarFuel.SelectedItem = FuelType.Petrol;
+
+            
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {  }

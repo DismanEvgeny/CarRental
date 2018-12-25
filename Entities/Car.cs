@@ -9,7 +9,7 @@ using System.Drawing;
 
 namespace Entities
 {
-    class Car
+    public class Car
     {
         static int IDCounter = 0;
         private int ID { get; set; }
