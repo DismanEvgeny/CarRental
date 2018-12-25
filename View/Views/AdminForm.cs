@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Presenrers.Presenters;
 using Entities;
 using CarRental;
+using Services;
 
 
 namespace View
@@ -21,6 +22,7 @@ namespace View
         private WorkerPresenter workerPresenter;
         private CategoriesPresenter categoryPresenter;
         private int workerCounter;
+        private CarsServices carsServices;
         //List<Category> categories;
 
         public AdminForm()
@@ -28,6 +30,7 @@ namespace View
 
             workerPresenter = new WorkerPresenter();
             categoryPresenter = new CategoriesPresenter();
+            carsServices = new CarsServices();
 
             InitializeComponent();
 
@@ -105,8 +108,9 @@ namespace View
             foreach (Category cat in MainForm.categories)
             {
                 listBoxDeleteCategories.Items.Add(cat.getName());
+                comboBoxAddCarcategory.Items.Add(cat.getName());
             }
-            //comboBoxAddCarcategory.SelectedIndex = 0;
+            comboBoxAddCarcategory.SelectedIndex = 0;
 
             comboBoxAddCarFuelType.DataSource = Enum.GetNames(typeof(FuelType));
             comboBoxAddCarFuelType.SelectedItem = FuelType.Petrol;
@@ -178,5 +182,30 @@ namespace View
             }
         }
 
+        private void buttonAddCarLoadImage_Click(object sender, EventArgs e)
+        {
+            if(openFileDialogAddCarLoadImage.ShowDialog() == DialogResult.Cancel)
+                return;
+            textBoxAddCarImage.Text = openFileDialogAddCarLoadImage.FileName;
+
+        }
+
+        private void buttonAddCar_Click(object sender, EventArgs e)
+        {
+            string brand = textBoxAddCarBrand.Text;
+            string model = textBoxAddCarModel.Text;
+            string categoryName = comboBoxAddCarcategory.Text;
+            string fuel = comboBoxAddCarFuelType.Text;
+            string year = numericUpDownAddCarYear.Value.ToString();
+            string hasAutomaticTransmition = radioButtonAddCarAuthmaticTransmition.Checked.ToString();
+            string imageDirectory = textBoxAddCarImage.Text;
+            if (carsServices.addCarToDB(new string[] { brand, model, categoryName, fuel, year, hasAutomaticTransmition, imageDirectory }))
+            {
+                MessageBox.Show("Car is created!");
+            } else
+            {
+                MessageBox.Show("Error");
+            }
+        }
     }
 }

@@ -14,18 +14,23 @@ namespace Services
     public class CarsServices : ICarsServices
     {
         private ICarRepository carRepository;
+        private DataBaseUtils dataBaseUtils;
         
         public CarsServices()
         {
             carRepository = new CarRepository();
+            dataBaseUtils = new DataBaseUtils();
         }
 
-        public void addCarToDB(string[] carStrings)
+        public bool addCarToDB(string[] carStrings)
         {
-            
-            
+            //получение ID категории, исходя из её имени
+            carStrings[2] = dataBaseUtils.getCategoryFromDB(carStrings[2])[0];
+            Console.WriteLine("Замена: "+ carStrings[2]);
 
-            return carRepository.addToDB(workerString);
+            Image img = Image.FromFile(carStrings[6]);
+
+            return carRepository.insertCarInDB(carStrings, img);
         }
 
         public List<Car> getCars()
@@ -35,7 +40,7 @@ namespace Services
             List<string[]> carStrings = carRepository.getAllCarsFromDB(carCounter);
             foreach (string[] str in carStrings)
             {
-                cars.Add(new Car(int.Parse(str[0]), str[1], str[2], str[3], (FuelType)Enum.Parse(typeof(FuelType), str[4]), short.Parse(str[5]), DateTime.Parse(str[6]), DateTime.Parse(str[7]), (str[8]=="True"||str[8]=="1"), (Image) new ImageConverter().ConvertFrom(str[9]))); // насчёт преобразования изображения не уверен
+                cars.Add(new Car(int.Parse(str[0]), str[1], str[2], str[3], (FuelType)Enum.Parse(typeof(FuelType), str[4]), short.Parse(str[5]), (str[8]=="True"||str[8]=="1"), (Image) new ImageConverter().ConvertFrom(str[9]))); // насчёт преобразования изображения не уверен
             }
 
             return cars;

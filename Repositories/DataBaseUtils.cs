@@ -50,7 +50,7 @@ namespace Repositories
             
             switch(tableName){
                 case "Clients":
-                    fullName = "[Clients] (Id, Name, Surname, Sex,  Date of Driving Start, Date of Registration, Is Reliable) VALUES ";
+                    fullName = "[Clients](Id, Name, Surname, Sex,  Date of Driving Start, Date of Registration, Is Reliable) VALUES ";
                     break;
                 case "Users":
                     fullName = "[Users](Id, Name, Surname, Login, Password, IsAdmin) VALUES";
@@ -59,7 +59,7 @@ namespace Repositories
                     fullName = "[Categories](Id, Name, Tariff, Fine) VALUES";
                     break;
                 case "Cars":
-                    fullName = "[Cars](Id, Brand, Category Id, Fuel, Year Of Production, Date Of Insurance, Date Of Insurance End, Automatic Transmition, Image) VALUES";
+                    fullName = "[Cars](Id, Brand, Model, CategoryId, Fuel, YearOfProduction, AutomaticTransmition, Image) VALUES";
                     break;
                 default:
                     fullName = "";
@@ -85,6 +85,7 @@ namespace Repositories
             sql += ")";
 
             SqlCommand cmd_write = new SqlCommand(sql, conn);
+            Console.WriteLine("COMMAND: " + sql);
             cmd_write.ExecuteNonQuery();
             closeConnection();
             return true;
@@ -203,6 +204,24 @@ namespace Repositories
             }
 
             return categories;
+        }
+
+        public string[] getCategoryFromDB(string categoryName) // поиск категории по её названию
+        {
+            openConnection();
+            SqlCommand command = new SqlCommand($"Select * from [Categories] WHERE Name='{categoryName}'", conn); //строка-запрос, ищем по логину
+            SqlDataReader reader = command.ExecuteReader();
+            string[] readString = new string[4];
+
+            if (reader.Read())
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    readString[i] = reader[i].ToString();
+                }
+
+            }
+            return readString;
         }
 
         public List<string[]> getCarsFromDB()

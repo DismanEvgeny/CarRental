@@ -16,6 +16,12 @@ namespace Repositories
             return dataBaseUtils.getCategoriesFromDB();
         }
 
+        public string getCategoryId(string categoryName)
+        {
+            string[] categoryStrings = dataBaseUtils.getCategoryFromDB(categoryName);
+            return null;
+        }
+
         public bool addToDB(string[] category)
         {
             return dataBaseUtils.insertInDB("Categories", category); ;
