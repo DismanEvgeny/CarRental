@@ -11,9 +11,15 @@ namespace Presenrers.Presenters
     public class CarsPresenter
     {
         private CarsServices carsServices = new CarsServices();
-        public List<Car> GetCars()
+
+        public List<Car> getCars()
         {
             return carsServices.getCars();
+        }
+
+        public void addCar(string[] carStrings)
+        {
+            carsServices.addCarToDB(carStrings);
         }
 
     }

@@ -25,7 +25,7 @@ namespace Entities
         private bool isOperated { get; set; }
 
 
-        public Car(string _brand, string _model, string _categoryID, FuelType _fuel, short _yearOfProduction,
+        public Car(string _brand, string _model, string _categoryID, FuelType _fuel, short _yearOfProduction, DateTime _dateOfInsurance, DateTime _dateOfInsuranceEnd,
             bool _hasAutomaticTransmission, Image _image)
         {
             this.ID = IDCounter++;
@@ -34,6 +34,23 @@ namespace Entities
             this.categoryID = _categoryID;
             this.fuel = _fuel;
             this.yearOfProduction = _yearOfProduction;
+            this.dateOfInsurance = _dateOfInsurance;
+            this.dateOfInsuranceEnd = _dateOfInsuranceEnd;
+            this.hasAutomaticTransmission = _hasAutomaticTransmission;
+            this.image = _image;
+        }
+
+        public Car(int _Id, string _brand, string _model, string _categoryID, FuelType _fuel, short _yearOfProduction, DateTime _dateOfInsurance, DateTime _dateOfInsuranceEnd,
+          bool _hasAutomaticTransmission, Image _image)
+        {
+            this.ID = _Id;
+            this.brand = _brand;
+            this.model = _model;
+            this.categoryID = _categoryID;
+            this.fuel = _fuel;
+            this.yearOfProduction = _yearOfProduction;
+            this.dateOfInsurance = _dateOfInsurance;
+            this.dateOfInsuranceEnd = _dateOfInsuranceEnd;
             this.hasAutomaticTransmission = _hasAutomaticTransmission;
             this.image = _image;
         }

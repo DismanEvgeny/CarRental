@@ -208,18 +208,18 @@ namespace Repositories
         public List<string[]> getCarsFromDB()
         {
             List<string[]> cars = new List<string[]>();
-            string[] readStrings = new string[9];
+            string[] readStrings = new string[10];
             openConnection();
             SqlCommand command = new SqlCommand("Select * from [Cars]", conn); //строка-запрос, ищем по логину
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                for (int i = 0; i < 9; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     readStrings[i] = reader[i].ToString();
                 }
-                cars.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7], readStrings[8] });
+                cars.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7], readStrings[8], readStrings[9] });
 
             }
             return cars;
