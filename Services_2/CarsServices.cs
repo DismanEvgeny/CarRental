@@ -28,8 +28,8 @@ namespace Services
             foreach (string[] str in carStrings)
             {
 
-               // cars.Add(new Car(str[0], str[1], str[2], str[3], short.Parse(str[4]), (str[5]=="True"||str[5]=="1"), new System.Drawing.Image());
-              //  Console.WriteLine(str[1]);
+                cars.Add(new Car(str[0], str[1], str[2], (FuelType)Enum.Parse(typeof(FuelType), str[3]), short.Parse(str[4]), (str[5]=="True"||str[5]=="1"), (Image) new ImageConverter().ConvertFrom(str[6]))); // насчёт преобразования изображения не уверен
+                Console.WriteLine(str[1]);
             }
 
             return cars;

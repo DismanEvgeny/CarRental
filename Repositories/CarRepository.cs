@@ -7,7 +7,7 @@ using IRepositories;
 
 namespace Repositories
 {
-    class CarRepository : ICarRepository
+    public class CarRepository : ICarRepository
     {
         DataBaseUtils dataBaseUtils = new DataBaseUtils();
 
@@ -16,9 +16,9 @@ namespace Repositories
 
         }
 
-        public string[,] getAllCarsFromDB(uint carCounter)
+        public List<string[]> getAllCarsFromDB(uint carCounter)
         {
-            return null;
+            return dataBaseUtils.getCarsFromDB();
         }
 
         public bool insertCarInDB(string[] carString)

@@ -9,7 +9,7 @@ namespace IRepositories
     public interface ICarRepository
     {
         bool insertCarInDB(string[] carString);
-        string[,] getAllCarsFromDB(uint carCounter);
+        List<string[]> getAllCarsFromDB(uint carCounter);
         void deleteCarFromDB(string ID);
 
     }
