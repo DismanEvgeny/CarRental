@@ -1,10 +1,10 @@
 ﻿namespace Entities
 {
-    enum FuelType
+    public enum FuelType
     {
-        PETROL,
-        DIESEL,
-        GAS,
-        ELECTRICITY
+        Petrol,
+        Diesel,
+        Gas,
+        Electricity
     }
 }
