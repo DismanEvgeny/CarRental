@@ -39,7 +39,7 @@ namespace CarRental
             categories = CategoriesPresenter.getCategories();
             foreach (Category cat in categories)
             {
-                listBoxCategories.Items.Add(cat.name);
+                listBoxCategories.Items.Add(cat.getName());
             }
 
 

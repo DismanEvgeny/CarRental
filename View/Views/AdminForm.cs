@@ -19,6 +19,7 @@ namespace View
 
         // private static int worker_counter = 2;
         private WorkerPresenter workerPresenter;
+        private CategoriesPresenter categoryPresenter;
         private int workerCounter;
         //List<Category> categories;
 
@@ -26,14 +27,12 @@ namespace View
         {
 
             workerPresenter = new WorkerPresenter();
+            categoryPresenter = new CategoriesPresenter();
 
             InitializeComponent();
 
             workerCounter = int.Parse(workerPresenter.getAmountOfUsers());
             fillWorkerListBox(workerCounter);
-           // MessageBox.Show(workerCounter.ToString());
-
-            //listBox1.Items.Insert(0, name + "       " + surname + "       " + userID);
         }
 
         private void buttonAddWorker_Click(object sender, EventArgs e)
@@ -90,15 +89,24 @@ namespace View
 
         }
 
+        public void showCategoriesToDelete()
+        {
+            foreach (Category cat in MainForm.categories)
+            {
+                listBoxDeleteCategories.Items.Add(cat.getName());
+            }
+        }
+
         private void AdminForm_Load(object sender, EventArgs e)
         {
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
-            MainForm.categories = CategoriesPresenter.getCategories();
-            foreach (Category cat in MainForm.categories)
+            //MainForm.categories = CategoriesPresenter.getCategories();
+            showCategoriesToDelete();
+           /* foreach (Category cat in MainForm.categories)
             {
-                listBoxDeleteCategories.Items.Add(cat.name);
-            }
-            comboBoxAddCarcategory.SelectedIndex = 0;
+                listBoxDeleteCategories.Items.Add(cat.getName());
+            }*/
+            //comboBoxAddCarcategory.SelectedIndex = 0;
 
             comboBoxAddCarFuelType.DataSource = Enum.GetNames(typeof(FuelType));
             comboBoxAddCarFuelType.SelectedItem = FuelType.Petrol;
@@ -121,8 +129,7 @@ namespace View
 
         private void buttonRemoveWorker_Click(object sender, EventArgs e)
         {
-            string itemSelected = listBox1.GetItemText(listBox1.SelectedItem);
-           // int pos = listBox1.SelectedIndex;          
+            string itemSelected = listBox1.GetItemText(listBox1.SelectedItem);      
             string ID = itemSelected.Substring(0, 1);
             workerPresenter.deleteWorker(ID);
             listBox1.Items.RemoveAt(listBox1.SelectedIndex);
@@ -148,7 +155,36 @@ namespace View
 
         private void buttonAddCategory_Click(object sender, EventArgs e)
         {
+            string name = textBoxAddCategoryName.Text;
+            string tarif = textBoxAddCategoryTarif.Text;
+            string fine = textBoxAddCategoryFine.Text;
+            string ID = textBox1.Text;
 
+            if (textBoxAddCategoryName.Text == "" || textBoxAddCategoryTarif.Text == "" || textBoxAddCategoryFine.Text == ""
+                || textBox1.Text == "")
+            {
+                MessageBox.Show("Fill all fields!");
+            }
+            else
+            {
+                if (categoryPresenter.addCategory(name, tarif, fine, ID) == false)
+                {
+                    MessageBox.Show("Category is not created!");
+                }
+                else
+                {
+                    MessageBox.Show("Category is created!");
+                    // workerCounter++;
+                    // newID = int.Parse(workerPresenter.getAmountOfUsers()) - 1;
+                    //listBox1.Items.Insert(workerCounter - 1, newID + "      " + textBoxAddWorkerName.Text +
+                    //    "      " + textBoxAddWorkerSurname.Text);
+                    showCategoriesToDelete();
+                    textBoxAddCategoryName.Clear();
+                    textBoxAddCategoryTarif.Clear();
+                    textBoxAddCategoryFine.Clear();
+                    textBox1.Clear();
+                }
+            }
         }
 
         /*private void label15_Click(object sender, EventArgs e)

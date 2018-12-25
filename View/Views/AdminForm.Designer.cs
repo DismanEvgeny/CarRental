@@ -417,7 +417,7 @@
             // 
             // textBoxAddCarModel
             // 
-            this.textBoxAddCarModel.Location = new System.Drawing.Point(73, 55);
+            this.textBoxAddCarModel.Location = new System.Drawing.Point(82, 89);
             this.textBoxAddCarModel.Name = "textBoxAddCarModel";
             this.textBoxAddCarModel.Size = new System.Drawing.Size(121, 20);
             this.textBoxAddCarModel.TabIndex = 2;
@@ -582,6 +582,7 @@
             this.listBoxDeleteCategories.Name = "listBoxDeleteCategories";
             this.listBoxDeleteCategories.Size = new System.Drawing.Size(162, 121);
             this.listBoxDeleteCategories.TabIndex = 1;
+            //this.listBoxDeleteCategories.SelectedIndexChanged += new System.EventHandler(this.listBoxDeleteCategories_SelectedIndexChanged);
             // 
             // buttonDeleteCategory
             // 

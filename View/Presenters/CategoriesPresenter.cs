@@ -10,9 +10,31 @@ namespace Presenrers.Presenters
 {
     public class CategoriesPresenter
     {
+        CategoriesServices categoryService;
+
+        public CategoriesPresenter()
+        {
+            categoryService = new CategoriesServices();
+        }
+
         public static List<Category> getCategories()
         {
             return new CategoriesServices().getCategories();
+        }
+
+        public bool addCategory(string _name, string _tarif, string _fine, string _ID)
+        {
+            bool check = false;
+
+            if (!(string.IsNullOrEmpty(_name) || string.IsNullOrEmpty(_tarif.ToString()) ||
+                    string.IsNullOrEmpty(_tarif.ToString()) || string.IsNullOrEmpty(_ID)))
+            {
+                Category category = new Category(_ID, _name, float.Parse(_tarif), float.Parse(_fine));
+                CategoriesServices service = new CategoriesServices();
+
+                check = service.addCategoryToDB(category);
+            }
+            return check;
         }
 
     }
