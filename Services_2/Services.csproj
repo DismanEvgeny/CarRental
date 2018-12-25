@@ -50,10 +50,6 @@
     <Compile Include="WorkerService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarRental\CarRental.csproj">
-      <Project>{bb8e589c-10c4-468e-bcc7-9b382d3eab07}</Project>
-      <Name>CarRental</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{42acad20-dd60-4d46-91fc-2dc9821058ad}</Project>
       <Name>Entities</Name>
@@ -69,14 +65,6 @@
     <ProjectReference Include="..\Repositories\Repositories.csproj">
       <Project>{a19cbc05-4166-4aec-aed0-4c6379c544f7}</Project>
       <Name>Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Services\Services.csproj">
-      <Project>{50c4629f-b2f0-45c5-825c-0e3d04e31e43}</Project>
-      <Name>Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\View\Presenters.csproj">
-      <Project>{34bae7d0-1d71-4e96-8e7a-5976cb8ec905}</Project>
-      <Name>Presenters</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

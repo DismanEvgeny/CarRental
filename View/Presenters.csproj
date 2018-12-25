@@ -137,8 +137,8 @@
       <Project>{e79cf009-a448-4b80-944a-858bfc66248e}</Project>
       <Name>IServices</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Services\Services.csproj">
-      <Project>{50c4629f-b2f0-45c5-825c-0e3d04e31e43}</Project>
+    <ProjectReference Include="..\Services_2\Services.csproj">
+      <Project>{d95c194a-c359-4d3d-8a4b-45a9cfcb1454}</Project>
       <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
