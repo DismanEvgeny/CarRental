@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presenrers.Presenters;
+using Entities;
+using CarRental;
 
 
 namespace View
@@ -18,6 +20,7 @@ namespace View
         // private static int worker_counter = 2;
         private WorkerPresenter workerPresenter;
         private int workerCounter;
+        //List<Category> categories;
 
         public AdminForm()
         {
@@ -90,6 +93,11 @@ namespace View
         private void AdminForm_Load(object sender, EventArgs e)
         {
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
+            MainForm.categories = CategoriesPresenter.getCategories();
+            foreach (Category cat in MainForm.categories)
+            {
+                listBoxDeleteCategories.Items.Add(cat.name);
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {  }

@@ -15,6 +15,7 @@ using Presenrers.Presenters;
 
 namespace CarRental
 {
+
     public partial class MainForm : System.Windows.Forms.Form
     {
         List<string> categoriesNames = new List<string>();
@@ -23,8 +24,7 @@ namespace CarRental
         Form extraForm;
         static Form adminForm = null;
         static Form workerForm = null;
-        List<Category> categories;
-
+        static public List<Category> categories;
         public MainForm()
         {
             InitializeComponent();
