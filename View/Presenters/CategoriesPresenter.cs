@@ -25,10 +25,13 @@ namespace Presenrers.Presenters
         public bool addCategory(string _name, string _tarif, string _fine, string _ID)
         {
             bool check = false;
+            float n;
 
             if (!(string.IsNullOrEmpty(_name) || string.IsNullOrEmpty(_tarif.ToString()) ||
                     string.IsNullOrEmpty(_tarif.ToString()) || string.IsNullOrEmpty(_ID)))
             {
+                if (!float.TryParse(_tarif, out n) || !float.TryParse(_fine, out n))
+                    return check;
                 Category category = new Category(_ID, _name, float.Parse(_tarif), float.Parse(_fine));
                 CategoriesServices service = new CategoriesServices();
 
