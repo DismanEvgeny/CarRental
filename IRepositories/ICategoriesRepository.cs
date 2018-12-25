@@ -9,5 +9,6 @@ namespace IRepositories
     public interface ICategoriesRepository
     {
         List<string[]> getCategories();
+        bool addToDB(string[] category);
     }
 }

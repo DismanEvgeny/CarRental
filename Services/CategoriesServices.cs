@@ -30,5 +30,35 @@ namespace Services
             }
             return categories;
         }
+
+        public bool addCategoryToDB(Category category)
+        {
+            if (!checkData(category.getName(), category.getID()))
+                return false;
+
+
+            //string id = workerRepository.getID();
+            //worker.setID(int.Parse(id));
+            string[] categoryString = new string[4];
+
+            categoryString[0] = category.getID();
+            categoryString[1] = category.getName();
+            categoryString[2] = category.getTarif().ToString();
+            categoryString[3] = category.getFine().ToString();
+
+
+            return categoriesRepository.addToDB(categoryString);
+        }
+
+        public bool checkData(string name, string ID)
+        {
+            if (name == null || ID == null)
+                return false;
+
+            if (name.Length > 30 || ID.Length > 30)
+                return false;
+
+            return true;
+        }
     }
 }

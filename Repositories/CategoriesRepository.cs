@@ -9,10 +9,16 @@ namespace Repositories
 {
     public class CategoriesRepository : ICategoriesRepository
     {
+        DataBaseUtils dataBaseUtils = new DataBaseUtils();
+
         public List<string[]> getCategories()
         {
-            DataBaseUtils dataBaseUtils = new DataBaseUtils();
             return dataBaseUtils.getCategoriesFromDB();
+        }
+
+        public bool addToDB(string[] category)
+        {
+            return dataBaseUtils.insertInDB("Categories", category); ;
         }
     }
 }

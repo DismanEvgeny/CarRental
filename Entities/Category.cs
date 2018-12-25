@@ -10,7 +10,7 @@ namespace Entities
     {
         
         private string ID { get; set; }
-        public string name { get; set; }
+        private string name { get; set; }
         private float tariff { get; set; } 
         private float fine { get; set; }
 
@@ -21,6 +21,26 @@ namespace Entities
             this.tariff = _tariff;
             this.fine = _fine;
 
+        }
+
+        public string getID()
+        {
+            return ID;
+        }
+
+        public float getTarif()
+        {
+            return tariff;
+        }
+
+        public float getFine()
+        {
+            return fine;
+        }
+
+        public string getName()
+        {
+            return name;
         }
     }
 }
