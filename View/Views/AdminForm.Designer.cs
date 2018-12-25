@@ -66,6 +66,8 @@
             this.buttonDeleteCar = new System.Windows.Forms.Button();
             this.listBoxDeleteCar = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -467,6 +469,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
@@ -476,10 +480,28 @@
             this.groupBox1.Controls.Add(this.buttonAddCategory);
             this.groupBox1.Location = new System.Drawing.Point(12, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 170);
+            this.groupBox1.Size = new System.Drawing.Size(200, 217);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add category";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(26, 128);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(21, 13);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "ID:";
+           // this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(80, 128);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label13
             // 
@@ -514,6 +536,7 @@
             this.textBoxAddCategoryTarif.Name = "textBoxAddCategoryTarif";
             this.textBoxAddCategoryTarif.Size = new System.Drawing.Size(100, 20);
             this.textBoxAddCategoryTarif.TabIndex = 5;
+            this.textBoxAddCategoryTarif.TextChanged += new System.EventHandler(this.textBoxAddCategoryTarif_TextChanged);
             // 
             // textBoxAddCategoryFine
             // 
@@ -521,6 +544,7 @@
             this.textBoxAddCategoryFine.Name = "textBoxAddCategoryFine";
             this.textBoxAddCategoryFine.Size = new System.Drawing.Size(100, 20);
             this.textBoxAddCategoryFine.TabIndex = 4;
+            this.textBoxAddCategoryFine.TextChanged += new System.EventHandler(this.textBoxAddCategoryFine_TextChanged);
             // 
             // textBoxAddCategoryName
             // 
@@ -528,21 +552,23 @@
             this.textBoxAddCategoryName.Name = "textBoxAddCategoryName";
             this.textBoxAddCategoryName.Size = new System.Drawing.Size(100, 20);
             this.textBoxAddCategoryName.TabIndex = 3;
+            this.textBoxAddCategoryName.TextChanged += new System.EventHandler(this.textBoxAddCategoryName_TextChanged);
             // 
             // buttonAddCategory
             // 
-            this.buttonAddCategory.Location = new System.Drawing.Point(40, 128);
+            this.buttonAddCategory.Location = new System.Drawing.Point(40, 166);
             this.buttonAddCategory.Name = "buttonAddCategory";
             this.buttonAddCategory.Size = new System.Drawing.Size(120, 23);
             this.buttonAddCategory.TabIndex = 2;
             this.buttonAddCategory.Text = "Add new ";
             this.buttonAddCategory.UseVisualStyleBackColor = true;
+            this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBoxDeleteCategories);
             this.groupBox2.Controls.Add(this.buttonDeleteCategory);
-            this.groupBox2.Location = new System.Drawing.Point(12, 192);
+            this.groupBox2.Location = new System.Drawing.Point(12, 262);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 210);
             this.groupBox2.TabIndex = 6;
@@ -664,5 +690,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabelAdminName;
         private System.Windows.Forms.CheckBox checkBoxIsAdmin;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label15;
     }
 }

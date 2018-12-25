@@ -123,5 +123,31 @@ namespace View
 
             MessageBox.Show("Worker is deleted!");
         }
+
+        /*private void label15_Click(object sender, EventArgs e)
+        {
+
+        }*/
+
+        private void textBoxAddCategoryName_TextChanged(object sender, EventArgs e) {}
+
+        private void textBoxAddCategoryTarif_TextChanged(object sender, EventArgs e) {}
+
+        private void textBoxAddCategoryFine_TextChanged(object sender, EventArgs e) {}
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAddCategory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /*private void label15_Click(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }
