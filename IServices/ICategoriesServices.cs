@@ -10,5 +10,6 @@ namespace IServices
     public interface ICategoriesServices
     {
         List<Category> getCategories();
+        void deleteCategory(string ID);
     }
 }

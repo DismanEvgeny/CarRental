@@ -178,5 +178,15 @@ namespace View
             }
         }
 
+        private void buttonDeleteCategory_Click(object sender, EventArgs e)
+        {
+            string itemSelected = listBoxDeleteCategories.GetItemText(listBoxDeleteCategories.SelectedItem);
+
+            categoryPresenter.deleteCategory(itemSelected);
+            listBoxDeleteCategories.Items.Remove(itemSelected);
+            MessageBox.Show("Category is deleted!");
+        }
+
+        private void listBoxDeleteCategories_SelectedIndexChanged(object sender, EventArgs e){ }
     }
 }

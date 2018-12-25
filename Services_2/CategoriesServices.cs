@@ -57,5 +57,11 @@ namespace Services
 
             return categoriesRepository.addToDB(categoryString);
         }
+
+
+        public void deleteCategory(string name)
+        {
+            categoriesRepository.deleteCategoryFromDB(name);
+        }
     }
 }

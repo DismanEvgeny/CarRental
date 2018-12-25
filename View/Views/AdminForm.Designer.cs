@@ -582,7 +582,7 @@
             this.listBoxDeleteCategories.Name = "listBoxDeleteCategories";
             this.listBoxDeleteCategories.Size = new System.Drawing.Size(162, 121);
             this.listBoxDeleteCategories.TabIndex = 1;
-            //this.listBoxDeleteCategories.SelectedIndexChanged += new System.EventHandler(this.listBoxDeleteCategories_SelectedIndexChanged);
+            this.listBoxDeleteCategories.SelectedIndexChanged += new System.EventHandler(this.listBoxDeleteCategories_SelectedIndexChanged);
             // 
             // buttonDeleteCategory
             // 
@@ -592,6 +592,7 @@
             this.buttonDeleteCategory.TabIndex = 0;
             this.buttonDeleteCategory.Text = "Delete";
             this.buttonDeleteCategory.UseVisualStyleBackColor = true;
+            this.buttonDeleteCategory.Click += new System.EventHandler(this.buttonDeleteCategory_Click);
             // 
             // toolStrip1
             // 

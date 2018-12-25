@@ -25,7 +25,7 @@ namespace Services
             
             
 
-            return carRepository.addToDB(workerString);
+           // return carRepository.addToDB(workerString);
         }
 
         public List<Car> getCars()
