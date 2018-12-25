@@ -56,11 +56,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAddCarFuel = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxAddCarModel = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAddCarCategories = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonDeleteCar = new System.Windows.Forms.Button();
@@ -78,6 +78,10 @@
             this.buttonDeleteCategory = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelAdminName = new System.Windows.Forms.ToolStripLabel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.buttonAddCarImage = new System.Windows.Forms.Button();
+            this.textBoxAddCarImage = new System.Windows.Forms.TextBox();
+            this.openFileDialogAddCarLoadImage = new System.Windows.Forms.OpenFileDialog();
             this.panelAdmin.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -126,7 +130,7 @@
             // 
             // buttonRemoveWorker
             // 
-            this.buttonRemoveWorker.Location = new System.Drawing.Point(40, 124);
+            this.buttonRemoveWorker.Location = new System.Drawing.Point(90, 127);
             this.buttonRemoveWorker.Name = "buttonRemoveWorker";
             this.buttonRemoveWorker.Size = new System.Drawing.Size(120, 23);
             this.buttonRemoveWorker.TabIndex = 1;
@@ -250,7 +254,7 @@
             // 
             this.groupBox5.Controls.Add(this.button3);
             this.groupBox5.Controls.Add(this.comboBox3);
-            this.groupBox5.Location = new System.Drawing.Point(309, 478);
+            this.groupBox5.Location = new System.Drawing.Point(309, 530);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(200, 91);
             this.groupBox5.TabIndex = 9;
@@ -276,6 +280,9 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.textBoxAddCarImage);
+            this.groupBox4.Controls.Add(this.buttonAddCarImage);
+            this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.radioButtonAddCarManualTransmition);
             this.groupBox4.Controls.Add(this.textBoxAddCarBrand);
             this.groupBox4.Controls.Add(this.label9);
@@ -284,15 +291,15 @@
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.comboBox2);
+            this.groupBox4.Controls.Add(this.comboBoxAddCarFuel);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.textBoxAddCarModel);
-            this.groupBox4.Controls.Add(this.comboBox1);
+            this.groupBox4.Controls.Add(this.comboBoxAddCarCategories);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Location = new System.Drawing.Point(309, 16);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 282);
+            this.groupBox4.Size = new System.Drawing.Size(200, 334);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Add new car";
@@ -371,7 +378,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(40, 242);
+            this.button2.Location = new System.Drawing.Point(39, 293);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 23);
             this.button2.TabIndex = 8;
@@ -387,13 +394,13 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Fuel:";
             // 
-            // comboBox2
+            // comboBoxAddCarFuel
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(73, 134);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 6;
+            this.comboBoxAddCarFuel.FormattingEnabled = true;
+            this.comboBoxAddCarFuel.Location = new System.Drawing.Point(73, 134);
+            this.comboBoxAddCarFuel.Name = "comboBoxAddCarFuel";
+            this.comboBoxAddCarFuel.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxAddCarFuel.TabIndex = 6;
             // 
             // label3
             // 
@@ -420,13 +427,13 @@
             this.textBoxAddCarModel.Size = new System.Drawing.Size(121, 20);
             this.textBoxAddCarModel.TabIndex = 2;
             // 
-            // comboBox1
+            // comboBoxAddCarCategories
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(73, 81);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxAddCarCategories.FormattingEnabled = true;
+            this.comboBoxAddCarCategories.Location = new System.Drawing.Point(73, 81);
+            this.comboBoxAddCarCategories.Name = "comboBoxAddCarCategories";
+            this.comboBoxAddCarCategories.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxAddCarCategories.TabIndex = 1;
             // 
             // label1
             // 
@@ -441,7 +448,7 @@
             // 
             this.groupBox3.Controls.Add(this.buttonDeleteCar);
             this.groupBox3.Controls.Add(this.listBoxDeleteCar);
-            this.groupBox3.Location = new System.Drawing.Point(309, 304);
+            this.groupBox3.Location = new System.Drawing.Point(309, 356);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 168);
             this.groupBox3.TabIndex = 7;
@@ -583,6 +590,36 @@
             this.toolStripLabelAdminName.Size = new System.Drawing.Size(86, 22);
             this.toolStripLabelAdminName.Text = "toolStripLabel1";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 212);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(39, 13);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Image:";
+            // 
+            // buttonAddCarImage
+            // 
+            this.buttonAddCarImage.Location = new System.Drawing.Point(40, 238);
+            this.buttonAddCarImage.Name = "buttonAddCarImage";
+            this.buttonAddCarImage.Size = new System.Drawing.Size(119, 23);
+            this.buttonAddCarImage.TabIndex = 16;
+            this.buttonAddCarImage.Text = "Load Image...";
+            this.buttonAddCarImage.UseVisualStyleBackColor = true;
+            this.buttonAddCarImage.Click += new System.EventHandler(this.buttonAddCarImage_Click);
+            // 
+            // textBoxAddCarImage
+            // 
+            this.textBoxAddCarImage.Location = new System.Drawing.Point(51, 212);
+            this.textBoxAddCarImage.Name = "textBoxAddCarImage";
+            this.textBoxAddCarImage.Size = new System.Drawing.Size(143, 20);
+            this.textBoxAddCarImage.TabIndex = 17;
+            // 
+            // openFileDialogAddCarLoadImage
+            // 
+            this.openFileDialogAddCarLoadImage.Title = "Choose Image";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -634,11 +671,11 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxAddCarFuel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxAddCarModel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxAddCarCategories;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonDeleteCar;
@@ -664,5 +701,9 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabelAdminName;
         private System.Windows.Forms.CheckBox checkBoxIsAdmin;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxAddCarImage;
+        private System.Windows.Forms.Button buttonAddCarImage;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.OpenFileDialog openFileDialogAddCarLoadImage;
     }
 }

@@ -58,6 +58,9 @@ namespace Repositories
                 case "Categories":
                     fullName = "[Categories](Id, Name, Tariff, Fine) VALUES";
                     break;
+                case "Cars":
+                    fullName = "[Cars](Id, Brand, Category Id, Fuel, Year Of Production, Date Of Insurance, Date Of Insurance End, Automatic Transmition, Image) VALUES";
+                    break;
                 default:
                     fullName = "";
                     break;
@@ -201,6 +204,7 @@ namespace Repositories
 
             return categories;
         }
+
 
     }
 }

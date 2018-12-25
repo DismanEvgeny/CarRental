@@ -93,11 +93,16 @@ namespace View
         private void AdminForm_Load(object sender, EventArgs e)
         {
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
+
             MainForm.categories = CategoriesPresenter.getCategories();
             foreach (Category cat in MainForm.categories)
             {
                 listBoxDeleteCategories.Items.Add(cat.name);
+                comboBoxAddCarCategories.Items.Add(cat.name);
             }
+            comboBoxAddCarCategories.SelectedIndex = 0;
+            comboBoxAddCarFuel.DataSource = Enum.GetNames(typeof(FuelType));
+            comboBoxAddCarFuel.SelectedItem = FuelType.Petrol;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {  }
@@ -122,6 +127,14 @@ namespace View
             listBox1.Items.RemoveAt(listBox1.SelectedIndex);
 
             MessageBox.Show("Worker is deleted!");
+        }
+
+        private void buttonAddCarImage_Click(object sender, EventArgs e)
+        {
+            if(openFileDialogAddCarLoadImage.ShowDialog() == DialogResult.Cancel)
+                return;
+            //string fileName = openFileDialogAddCarLoadImage.FileName;
+            textBoxAddCarImage.Text = openFileDialogAddCarLoadImage.FileName;
         }
     }
 }
