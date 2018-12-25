@@ -593,6 +593,7 @@
             this.buttonDeleteCategory.TabIndex = 0;
             this.buttonDeleteCategory.Text = "Delete";
             this.buttonDeleteCategory.UseVisualStyleBackColor = true;
+            this.buttonDeleteCategory.Click += new System.EventHandler(this.buttonDeleteCategory_Click);
             // 
             // toolStrip1
             // 

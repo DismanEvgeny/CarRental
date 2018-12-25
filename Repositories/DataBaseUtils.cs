@@ -167,6 +167,16 @@ namespace Repositories
             closeConnection();
         }
 
+        public void deleteCategory(string name) // удаление категории из таблицы
+        {
+            openConnection();
+
+            SqlCommand newCommand = new SqlCommand("DELETE FROM Categories WHERE Name='" + name + "'", conn); 
+            newCommand.ExecuteNonQuery();
+
+            closeConnection();
+        }
+
 
         public string getMaxID() // поиск максимального id 
         {

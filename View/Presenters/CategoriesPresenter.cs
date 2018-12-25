@@ -40,5 +40,10 @@ namespace Presenrers.Presenters
             return check;
         }
 
+        public void deleteCategory(string name)
+        {
+            categoryService.deleteCategory(name);
+        }
+
     }
 }

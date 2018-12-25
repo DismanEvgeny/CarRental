@@ -26,5 +26,11 @@ namespace Repositories
         {
             return dataBaseUtils.insertInDB("Categories", category); ;
         }
+
+
+        public void deleteCategoryFromDB(string name)
+        {
+            dataBaseUtils.deleteCategory(name);
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace IRepositories
     {
         List<string[]> getCategories();
         bool addToDB(string[] category);
+        void deleteCategoryFromDB(string name);
     }
 }
