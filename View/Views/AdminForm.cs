@@ -22,7 +22,7 @@ namespace View
         private WorkerPresenter workerPresenter;
         private CategoriesPresenter categoryPresenter;
         private int workerCounter;
-        private CarsServices carsServices;
+        private CarsPresenter carsPresenter;
         //List<Category> categories;
 
         public AdminForm()
@@ -30,7 +30,7 @@ namespace View
 
             workerPresenter = new WorkerPresenter();
             categoryPresenter = new CategoriesPresenter();
-            carsServices = new CarsServices();
+            carsPresenter = new CarsPresenter();
 
             InitializeComponent();
 
@@ -199,7 +199,7 @@ namespace View
             string year = numericUpDownAddCarYear.Value.ToString();
             string hasAutomaticTransmition = radioButtonAddCarAuthmaticTransmition.Checked.ToString();
             string imageDirectory = textBoxAddCarImage.Text;
-            if (carsServices.addCarToDB(new string[] { brand, model, categoryName, fuel, year, hasAutomaticTransmition, imageDirectory }))
+            if (carsPresenter.addCar(new string[] { brand, model, categoryName, fuel, year, hasAutomaticTransmition, imageDirectory }))
             {
                 MessageBox.Show("Car is created!");
             } else

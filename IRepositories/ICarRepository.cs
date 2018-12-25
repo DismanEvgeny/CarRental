@@ -12,6 +12,7 @@ namespace IRepositories
         bool insertCarInDB(string[] carString, Image img);
         List<string[]> getAllCarsFromDB(uint carCounter);
         void deleteCarFromDB(string ID);
+        string getID();
 
     }
 }

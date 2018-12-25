@@ -178,12 +178,12 @@ namespace Repositories
         }
 
 
-        public string getMaxID() // поиск максимального id 
+        public string getsMaxID(string tableName) // поиск максимального id 
         {
 
             openConnection();
 
-            SqlCommand command = new SqlCommand("select * from [Users] where [ID] = (select max(ID) from [Users])", conn); //строка-запрос, ищем по логину
+            SqlCommand command = new SqlCommand($"select * from [{tableName}] where [ID] = (select max(ID) from [{tableName}])", conn); //строка-запрос, ищем по логину
 
             string data = "";
             SqlDataReader reader = command.ExecuteReader();

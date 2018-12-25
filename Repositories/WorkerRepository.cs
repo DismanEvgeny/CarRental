@@ -14,7 +14,7 @@ namespace Repositories
 
         public string getID()
         {
-            return utils.getMaxID();
+            return utils.getsMaxID("Users");
         }
 
 

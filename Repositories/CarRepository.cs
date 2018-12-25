@@ -23,10 +23,16 @@ namespace Repositories
             return dataBaseUtils.getCarsFromDB();
         }
 
+        public string getID()
+        {
+            return dataBaseUtils.getsMaxID("Cars");
+        }
+
         public bool insertCarInDB(string[] carString, Image img)
         {
-            //костыль
-            string[] carString2 = new string[]{ "0", carString[0], carString[1], carString[2], carString[3], carString[4], carString[5], carString[6] };
+            int maxId = int.Parse(getID()) + 1;
+            string[] carString2 = new string[]{ maxId.ToString(), carString[0], carString[1], carString[2], carString[3], carString[4], carString[5], carString[6] };
+
             return dataBaseUtils.insertInDB("Cars", carString2); ;
         }
     }
