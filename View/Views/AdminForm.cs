@@ -98,10 +98,10 @@ namespace View
             {
                 listBoxDeleteCategories.Items.Add(cat.name);
             }
-            comboBoxAddCarCategories.SelectedIndex = 0;
+            comboBoxAddCarcategory.SelectedIndex = 0;
 
-            comboBoxAddCarFuel.DataSource = Enum.GetNames(typeof(FuelType));
-            comboBoxAddCarFuel.SelectedItem = FuelType.Petrol;
+            comboBoxAddCarFuelType.DataSource = Enum.GetNames(typeof(FuelType));
+            comboBoxAddCarFuelType.SelectedItem = FuelType.Petrol;
 
             
         }
