@@ -36,9 +36,6 @@ namespace Services
             if (!checkData(category.getName(), category.getID()))
                 return false;
 
-
-            //string id = workerRepository.getID();
-            //worker.setID(int.Parse(id));
             string[] categoryString = new string[4];
 
             categoryString[0] = category.getID();

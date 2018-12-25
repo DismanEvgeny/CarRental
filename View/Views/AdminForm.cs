@@ -89,23 +89,23 @@ namespace View
 
         }
 
-        public void showCategoriesToDelete()
+        /*public void showCategoriesToDelete()
         {
             foreach (Category cat in MainForm.categories)
             {
                 listBoxDeleteCategories.Items.Add(cat.getName());
             }
-        }
+        }*/
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
-            //MainForm.categories = CategoriesPresenter.getCategories();
-            showCategoriesToDelete();
-           /* foreach (Category cat in MainForm.categories)
+            MainForm.categories = CategoriesPresenter.getCategories();
+            //showCategoriesToDelete();
+            foreach (Category cat in MainForm.categories)
             {
                 listBoxDeleteCategories.Items.Add(cat.getName());
-            }*/
+            }
             //comboBoxAddCarcategory.SelectedIndex = 0;
 
             comboBoxAddCarFuelType.DataSource = Enum.GetNames(typeof(FuelType));
@@ -169,16 +169,12 @@ namespace View
             {
                 if (categoryPresenter.addCategory(name, tarif, fine, ID) == false)
                 {
-                    MessageBox.Show("Category is not created!");
+                    MessageBox.Show("Category is not created! Invalid input format!");
                 }
                 else
                 {
                     MessageBox.Show("Category is created!");
-                    // workerCounter++;
-                    // newID = int.Parse(workerPresenter.getAmountOfUsers()) - 1;
-                    //listBox1.Items.Insert(workerCounter - 1, newID + "      " + textBoxAddWorkerName.Text +
-                    //    "      " + textBoxAddWorkerSurname.Text);
-                    showCategoriesToDelete();
+                    listBoxDeleteCategories.Items.Add(name);
                     textBoxAddCategoryName.Clear();
                     textBoxAddCategoryTarif.Clear();
                     textBoxAddCategoryFine.Clear();
