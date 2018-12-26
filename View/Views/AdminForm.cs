@@ -219,6 +219,9 @@ namespace View
                 MainForm.cars.Add(newCar);
                 comboBoxDeleteCar.Items.Add($"{newCar.ID} {newCar.brand} {newCar.model} {newCar.yearOfProduction}");
                 MessageBox.Show("Car is created!");
+                textBoxAddCarBrand.Clear();
+                textBoxAddCarModel.Clear();
+                textBoxAddCarImage.Clear();
             } else
             {
                 MessageBox.Show("Error");

@@ -50,7 +50,7 @@ namespace Repositories
             
             switch(tableName){
                 case "Clients":
-                    fullName = "[Clients](Id, Name, Surname, Sex,  DateOfDrivingStart, DateOfRegistration, IsReliable) VALUES ";
+                    fullName = "[Clients](Id, Name, Surname, Sex, DateOfRegistration, IsReliable) VALUES ";
                     break;
                 case "Users":
                     fullName = "[Users](Id, Name, Surname, Login, Password, IsAdmin) VALUES";

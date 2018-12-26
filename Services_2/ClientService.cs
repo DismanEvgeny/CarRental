@@ -24,7 +24,7 @@ namespace Services
             int id = clientRepository.getMaxId();
             Client client = new Client(id, clientStrings[0], clientStrings[1], (clientStrings[2] == "True" || clientStrings[2] == "1"), DateTime.Parse(clientStrings[3]));
             string[] clientStrings2 = new string[] { id.ToString(), clientStrings[0], clientStrings[1], clientStrings[2], clientStrings[3] };
-            if (clientRepository.addClientToDB(clientStrings))
+            if (clientRepository.addClientToDB(clientStrings2))
             {
 
                 return client;
