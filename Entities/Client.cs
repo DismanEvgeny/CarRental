@@ -20,6 +20,7 @@ namespace Entities
             this.sex = _sex;
             this.dateOfRegistration = _date;
             this.ID = _id;
+            this.isReliable = true;
         }
     }
 }

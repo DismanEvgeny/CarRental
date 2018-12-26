@@ -50,7 +50,7 @@ namespace Repositories
             
             switch(tableName){
                 case "Clients":
-                    fullName = "[Clients](Id, Name, Surname, Sex,  Date of Driving Start, Date of Registration, Is Reliable) VALUES ";
+                    fullName = "[Clients](Id, Name, Surname, Sex,  DateOfDrivingStart, DateOfRegistration, IsReliable) VALUES ";
                     break;
                 case "Users":
                     fullName = "[Users](Id, Name, Surname, Login, Password, IsAdmin) VALUES";
@@ -223,7 +223,10 @@ namespace Repositories
 
             reader.Close();
             closeConnection();
-
+            if (data == null || data == "")
+            {
+                data = "0";
+            }
             return data;
         }
 
@@ -282,6 +285,8 @@ namespace Repositories
                 cars.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7] });
 
             }
+            closeConnection();
+
             return cars;
         }
 
@@ -302,6 +307,7 @@ namespace Repositories
                 clients.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7] });
 
             }
+            closeConnection();
             return clients;
         }
 
