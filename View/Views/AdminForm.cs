@@ -31,7 +31,7 @@ namespace View
             workerPresenter = new WorkerPresenter();
             categoryPresenter = new CategoriesPresenter();
             carsPresenter = new CarsPresenter();
-
+            
             InitializeComponent();
 
             workerCounter = int.Parse(workerPresenter.getAmountOfUsers());
@@ -203,14 +203,21 @@ namespace View
         {
             string brand = textBoxAddCarBrand.Text;
             string model = textBoxAddCarModel.Text;
-            string categoryName = comboBoxAddCarcategory.Text;
+            string category = comboBoxAddCarcategory.Text;
             string fuel = comboBoxAddCarFuelType.Text;
             string year = numericUpDownAddCarYear.Value.ToString();
             string hasAutomaticTransmition = radioButtonAddCarAuthmaticTransmition.Checked.ToString();
             string imageDirectory = textBoxAddCarImage.Text;
-            if (carsPresenter.addCar(new string[] { brand, model, categoryName, fuel, year, hasAutomaticTransmition, imageDirectory }))
+            category = categoryPresenter.getCategoryId(category);
+
+            int id = carsPresenter.addCar(new string[] { brand, model, category, fuel, year, hasAutomaticTransmition, imageDirectory });
+            if (id >= 0 )
             {
-               // comboBoxDeleteCar.Refresh();
+                Car newCar = new Car(id, brand, model, category, (FuelType)Enum.Parse(typeof(FuelType), fuel), short.Parse(year), (hasAutomaticTransmition=="True"|| hasAutomaticTransmition=="1"),
+                    Image.FromFile(imageDirectory));
+
+                MainForm.cars.Add(newCar);
+                comboBoxDeleteCar.Items.Add($"{newCar.ID} {newCar.brand} {newCar.model} {newCar.yearOfProduction}");
                 MessageBox.Show("Car is created!");
             } else
             {

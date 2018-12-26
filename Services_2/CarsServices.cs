@@ -22,15 +22,22 @@ namespace Services
             dataBaseUtils = new DataBaseUtils();
         }
 
-        public bool addCarToDB(string[] carStrings)
+        public int addCarToDB(string[] carStrings)
         {
             //получение ID категории, исходя из её имени
-            carStrings[2] = dataBaseUtils.getCategoryFromDB(carStrings[2])[0];
-            Console.WriteLine("Замена: "+ carStrings[2]);
+            //carStrings[2] = dataBaseUtils.getCategoryFromDB(carStrings[2])[0];
+            //Console.WriteLine("Замена: "+ carStrings[2]);
 
             Image img = Image.FromFile(carStrings[6]);
-
+            
             return carRepository.insertCarInDB(carStrings, img);
+        }
+        public Car getCar(string Id)
+        {
+            string[] str = carRepository.getCarFromDB(Id);
+            Car car = new Car(int.Parse(str[0]), str[1], str[2], str[3], (FuelType)Enum.Parse(typeof(FuelType), str[4]), short.Parse(str[5]),
+                    (str[6] == "True" || str[6] == "1"), Image.FromFile(str[7]));
+            return car;
         }
 
         public List<Car> getCars()

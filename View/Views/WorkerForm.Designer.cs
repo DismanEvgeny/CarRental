@@ -50,10 +50,8 @@
             this.buttonAddClient = new System.Windows.Forms.Button();
             this.radioButtonAddClientFemale = new System.Windows.Forms.RadioButton();
             this.radioButtonAddClientMale = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxAddClientSurname = new System.Windows.Forms.TextBox();
+            this.textBoxAddClientName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -75,11 +73,12 @@
             this.label18 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelWorkerName = new System.Windows.Forms.ToolStripLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePickerAddClientDrivingStart = new System.Windows.Forms.DateTimePicker();
             this.panelWorker.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -92,7 +91,7 @@
             this.panelWorker.Controls.Add(this.groupBox9);
             this.panelWorker.Location = new System.Drawing.Point(12, 12);
             this.panelWorker.Name = "panelWorker";
-            this.panelWorker.Size = new System.Drawing.Size(559, 621);
+            this.panelWorker.Size = new System.Drawing.Size(933, 419);
             this.panelWorker.TabIndex = 13;
             // 
             // groupBox11
@@ -138,7 +137,7 @@
             this.groupBox10.Controls.Add(this.label25);
             this.groupBox10.Controls.Add(this.label24);
             this.groupBox10.Controls.Add(this.label23);
-            this.groupBox10.Location = new System.Drawing.Point(297, 307);
+            this.groupBox10.Location = new System.Drawing.Point(594, 14);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(234, 296);
             this.groupBox10.TabIndex = 2;
@@ -235,7 +234,7 @@
             this.comboBoxReturnCar.FormattingEnabled = true;
             this.comboBoxReturnCar.Location = new System.Drawing.Point(98, 27);
             this.comboBoxReturnCar.Name = "comboBoxReturnCar";
-            this.comboBoxReturnCar.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxReturnCar.Size = new System.Drawing.Size(127, 21);
             this.comboBoxReturnCar.TabIndex = 22;
             // 
             // label25
@@ -267,13 +266,13 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.dateTimePickerAddClientDrivingStart);
+            this.groupBox8.Controls.Add(this.label3);
             this.groupBox8.Controls.Add(this.buttonAddClient);
             this.groupBox8.Controls.Add(this.radioButtonAddClientFemale);
             this.groupBox8.Controls.Add(this.radioButtonAddClientMale);
-            this.groupBox8.Controls.Add(this.textBox5);
-            this.groupBox8.Controls.Add(this.numericUpDown2);
-            this.groupBox8.Controls.Add(this.textBox4);
-            this.groupBox8.Controls.Add(this.label16);
+            this.groupBox8.Controls.Add(this.textBoxAddClientSurname);
+            this.groupBox8.Controls.Add(this.textBoxAddClientName);
             this.groupBox8.Controls.Add(this.label15);
             this.groupBox8.Controls.Add(this.label14);
             this.groupBox8.Controls.Add(this.label13);
@@ -292,6 +291,7 @@
             this.buttonAddClient.TabIndex = 9;
             this.buttonAddClient.Text = "Add";
             this.buttonAddClient.UseVisualStyleBackColor = true;
+            this.buttonAddClient.Click += new System.EventHandler(this.buttonAddClient_Click);
             // 
             // radioButtonAddClientFemale
             // 
@@ -315,35 +315,19 @@
             this.radioButtonAddClientMale.Text = "Male";
             this.radioButtonAddClientMale.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // textBoxAddClientSurname
             // 
-            this.textBox5.Location = new System.Drawing.Point(74, 43);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 20);
-            this.textBox5.TabIndex = 6;
+            this.textBoxAddClientSurname.Location = new System.Drawing.Point(74, 43);
+            this.textBoxAddClientSurname.Name = "textBoxAddClientSurname";
+            this.textBoxAddClientSurname.Size = new System.Drawing.Size(145, 20);
+            this.textBoxAddClientSurname.TabIndex = 6;
             // 
-            // numericUpDown2
+            // textBoxAddClientName
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(74, 98);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 5;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(74, 17);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(120, 20);
-            this.textBox4.TabIndex = 4;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 105);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(63, 13);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "Experience:";
+            this.textBoxAddClientName.Location = new System.Drawing.Point(74, 17);
+            this.textBoxAddClientName.Name = "textBoxAddClientName";
+            this.textBoxAddClientName.Size = new System.Drawing.Size(145, 20);
+            this.textBoxAddClientName.TabIndex = 4;
             // 
             // label15
             // 
@@ -408,11 +392,11 @@
             // 
             // dateTimeOfLeasing
             // 
-            this.dateTimeOfLeasing.Location = new System.Drawing.Point(99, 105);
+            this.dateTimeOfLeasing.Location = new System.Drawing.Point(98, 105);
             this.dateTimeOfLeasing.MaxDate = new System.DateTime(2059, 12, 31, 0, 0, 0, 0);
             this.dateTimeOfLeasing.MinDate = new System.DateTime(2018, 12, 1, 0, 0, 0, 0);
             this.dateTimeOfLeasing.Name = "dateTimeOfLeasing";
-            this.dateTimeOfLeasing.Size = new System.Drawing.Size(126, 20);
+            this.dateTimeOfLeasing.Size = new System.Drawing.Size(127, 20);
             this.dateTimeOfLeasing.TabIndex = 23;
             this.dateTimeOfLeasing.Value = new System.DateTime(2018, 12, 1, 22, 30, 0, 0);
             // 
@@ -531,7 +515,7 @@
             this.toolStripLabelWorkerName});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(583, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(961, 25);
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -541,11 +525,29 @@
             this.toolStripLabelWorkerName.Size = new System.Drawing.Size(86, 22);
             this.toolStripLabelWorkerName.Text = "toolStripLabel1";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Driving start:";
+            // 
+            // dateTimePickerAddClientDrivingStart
+            // 
+            this.dateTimePickerAddClientDrivingStart.Location = new System.Drawing.Point(79, 105);
+            this.dateTimePickerAddClientDrivingStart.MaxDate = new System.DateTime(2059, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerAddClientDrivingStart.MinDate = new System.DateTime(1945, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerAddClientDrivingStart.Name = "dateTimePickerAddClientDrivingStart";
+            this.dateTimePickerAddClientDrivingStart.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePickerAddClientDrivingStart.TabIndex = 11;
+            // 
             // WorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 642);
+            this.ClientSize = new System.Drawing.Size(961, 440);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panelWorker);
             this.Name = "WorkerForm";
@@ -557,7 +559,6 @@
             this.groupBox10.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -588,10 +589,8 @@
         private System.Windows.Forms.Button buttonAddClient;
         private System.Windows.Forms.RadioButton radioButtonAddClientFemale;
         private System.Windows.Forms.RadioButton radioButtonAddClientMale;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBoxAddClientSurname;
+        private System.Windows.Forms.TextBox textBoxAddClientName;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -616,5 +615,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabelWorkerName;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAddClientDrivingStart;
+        private System.Windows.Forms.Label label3;
     }
 }

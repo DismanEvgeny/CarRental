@@ -46,6 +46,7 @@
     <Compile Include="CarsServices.cs" />
     <Compile Include="CategoriesServices.cs" />
     <Compile Include="CheckConnectionService.cs" />
+    <Compile Include="ClientService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkerService.cs" />
   </ItemGroup>

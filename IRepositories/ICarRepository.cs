@@ -9,10 +9,11 @@ namespace IRepositories
 {
     public interface ICarRepository
     {
-        bool insertCarInDB(string[] carString, Image img);
+        int insertCarInDB(string[] carString, Image img); //при удачной вставке возвращает ID добавленной машины, иначе -1
         List<string[]> getAllCarsFromDB(uint carCounter);
         void deleteCarFromDB(string ID);
         string getID();
+        string[] getCarFromDB(string Id);
 
     }
 }

@@ -17,9 +17,14 @@ namespace Presenrers.Presenters
             return new CarsServices().getCars();
         }
 
-        public bool addCar(string[] carStrings)
+        public int addCar(string[] carStrings)
         {
             return carsServices.addCarToDB(carStrings);
+        }
+
+        public Car getCar(string Id)
+        {
+            return carsServices.getCar(Id);
         }
 
         public void deleteCar(string carId)

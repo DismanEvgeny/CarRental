@@ -19,13 +19,15 @@ namespace CarRental
     public partial class MainForm : System.Windows.Forms.Form
     {
         List<string> categoriesNames = new List<string>();
-        List<Image> images = new List<Image>();
+
         ushort cars_in_use = 0;
         Form extraForm;
         static Form adminForm = null;
         static Form workerForm = null;
         static public List<Category> categories;
         static public List<Car> cars;
+        static public List<Client> clients;
+
 
 
         public MainForm()
@@ -41,7 +43,7 @@ namespace CarRental
             {
                 listBoxCategories.Items.Add(cat.getName());
             }
-
+            
 
         }
 

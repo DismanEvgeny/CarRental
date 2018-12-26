@@ -45,5 +45,10 @@ namespace Presenrers.Presenters
             categoryService.deleteCategory(name);
         }
 
+        public string getCategoryId(string name)
+        {
+            return categoryService.getCategoryId(name);
+        }
+
     }
 }

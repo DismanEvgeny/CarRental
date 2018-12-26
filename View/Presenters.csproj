@@ -55,6 +55,7 @@
       <DependentUpon>CarRentalDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Presenters\CarsPresenter.cs" />
+    <Compile Include="Presenters\ClientPresenter.cs" />
     <Compile Include="Presenters\WorkerPresenter.cs" />
     <Compile Include="Presenters\AuthPresenter.cs" />
     <Compile Include="Presenters\CategoriesPresenter.cs" />

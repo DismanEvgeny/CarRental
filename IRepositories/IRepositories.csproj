@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICarRepository.cs" />
+    <Compile Include="IClientRepository.cs" />
     <Compile Include="IWorkerRepository.cs" />
     <Compile Include="IAuthRepository.cs" />
     <Compile Include="ICategoriesRepository.cs" />

@@ -11,5 +11,6 @@ namespace IServices
     {
         List<Category> getCategories();
         void deleteCategory(string ID);
+        string getCategoryId(string name);
     }
 }

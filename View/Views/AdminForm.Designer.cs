@@ -461,9 +461,9 @@
             // comboBoxDeleteCar
             // 
             this.comboBoxDeleteCar.FormattingEnabled = true;
-            this.comboBoxDeleteCar.Location = new System.Drawing.Point(38, 45);
+            this.comboBoxDeleteCar.Location = new System.Drawing.Point(9, 34);
             this.comboBoxDeleteCar.Name = "comboBoxDeleteCar";
-            this.comboBoxDeleteCar.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDeleteCar.Size = new System.Drawing.Size(185, 21);
             this.comboBoxDeleteCar.TabIndex = 2;
             // 
             // buttonDeleteCar

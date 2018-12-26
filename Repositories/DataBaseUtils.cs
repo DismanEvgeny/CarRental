@@ -114,6 +114,28 @@ namespace Repositories
             return data;
         }
 
+        public string[] getCarFromDB(string Id)
+        {
+            openConnection();
+
+            SqlCommand command = new SqlCommand("Select * from [Cars] where [Id]=@id", conn); //строка-запрос, ищем по логину
+            command.Parameters.AddWithValue("@id", Id);
+
+            string[] data = new string[8];
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+                for (int i = 0; i < 8; i++)
+                {
+                    data[i] = reader[i].ToString();
+                    Console.WriteLine(data[i]);
+                }
+
+            reader.Close();
+            closeConnection();
+
+            return data;
+        }
+
         public string[,] getAllUsersFromDB(int userCounter) // поиск пользователя в БД по логину
         {
             string[,] users = new string[userCounter, 3];
@@ -187,7 +209,7 @@ namespace Repositories
             closeConnection();
         }
 
-        public string getsMaxID(string tableName) // поиск максимального id 
+        public string getsMaxID(string tableName) // поиск максимального id в таблице 
         {
 
             openConnection();
@@ -261,6 +283,26 @@ namespace Repositories
 
             }
             return cars;
+        }
+
+        public List<string[]> getClientsFromDB()
+        {
+            List<string[]> clients = new List<string[]>();
+            string[] readStrings = new string[7];
+            openConnection();
+            SqlCommand command = new SqlCommand("Select * from [Clients]", conn); //строка-запрос, ищем по логину
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    readStrings[i] = reader[i].ToString();
+                }
+                clients.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7] });
+
+            }
+            return clients;
         }
 
     }

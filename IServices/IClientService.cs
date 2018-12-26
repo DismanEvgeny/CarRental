@@ -7,9 +7,9 @@ using Entities;
 
 namespace IServices
 {
-    public interface ICarsServices
+    public interface IClientService
     {
-        List<Car> getCars();
-        int addCarToDB(string[] carStrings);
+        Client addClient(string[] clientStrings);
+
     }
 }

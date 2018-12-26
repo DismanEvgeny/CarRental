@@ -63,5 +63,10 @@ namespace Services
         {
             categoriesRepository.deleteCategoryFromDB(name);
         }
+
+        public string getCategoryId(string name)
+        {
+            return categoriesRepository.getCategoryId(name);
+        }
     }
 }
