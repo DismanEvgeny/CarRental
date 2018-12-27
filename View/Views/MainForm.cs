@@ -54,7 +54,7 @@ namespace CarRental
             cars = carsPresenter.getCars();
             foreach (Category cat in categories)
             {
-                listBoxCategories.Items.Add(cat.getName());
+                //listBoxCategories.Items.Add(cat.getName());
             }
 
             carsNotOccupied = carsPresenter.getCarsOccupied(false);
@@ -85,21 +85,6 @@ namespace CarRental
             workerForm = new WorkerForm();
             
             workerForm.Show();
-        }
-
-
-
-        private void buttonGoToCategory_Click(object sender, EventArgs e)
-        {
-            if (listBoxCategories.SelectedItem != null)
-            {
-                panelCategories.Visible = panelCategories.Enabled = true;
-
-            } else
-            {
-                MessageBox.Show("Nothing is selected");
-            }
-
         }
 
 
