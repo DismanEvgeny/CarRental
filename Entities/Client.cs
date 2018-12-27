@@ -11,7 +11,7 @@ namespace Entities
        // public string name { get; set; }
         public bool sex { get; set; }
         DateTime dateOfRegistration { get; set; }
-        bool isReliable { get; set; }
+        public bool isReliable { get; set; }
         public string telephoneNumber { get; set; }
 
         public Client(int _id, string _name, string _surname, bool _sex, DateTime _date, string _tel)

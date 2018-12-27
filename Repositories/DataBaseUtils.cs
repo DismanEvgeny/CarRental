@@ -20,7 +20,7 @@ namespace Repositories
 
         private void openConnection() //открытие соединения
         {
-            conn.ConnectionString = "Data Source = localhost; Initial Catalog = CarRentalDB; Integrated Security = True";
+            conn.ConnectionString = "Data Source = localhost; Initial Catalog = CarRentalNewDB; Integrated Security = True";
            
             conn.Open();
         }

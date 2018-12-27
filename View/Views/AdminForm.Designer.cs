@@ -100,6 +100,7 @@
             // 
             // panelAdmin
             // 
+            this.panelAdmin.BackColor = System.Drawing.Color.Transparent;
             this.panelAdmin.Controls.Add(this.groupBox7);
             this.panelAdmin.Controls.Add(this.groupBox6);
             this.panelAdmin.Controls.Add(this.groupBox4);
@@ -108,7 +109,7 @@
             this.panelAdmin.Controls.Add(this.groupBox2);
             this.panelAdmin.Location = new System.Drawing.Point(7, 28);
             this.panelAdmin.Name = "panelAdmin";
-            this.panelAdmin.Size = new System.Drawing.Size(843, 561);
+            this.panelAdmin.Size = new System.Drawing.Size(843, 558);
             this.panelAdmin.TabIndex = 8;
             // 
             // groupBox7
@@ -133,12 +134,13 @@
             // 
             // buttonRemoveWorker
             // 
+            this.buttonRemoveWorker.BackColor = System.Drawing.Color.LightCyan;
             this.buttonRemoveWorker.Location = new System.Drawing.Point(40, 124);
             this.buttonRemoveWorker.Name = "buttonRemoveWorker";
             this.buttonRemoveWorker.Size = new System.Drawing.Size(120, 23);
             this.buttonRemoveWorker.TabIndex = 1;
             this.buttonRemoveWorker.Text = "Remove";
-            this.buttonRemoveWorker.UseVisualStyleBackColor = true;
+            this.buttonRemoveWorker.UseVisualStyleBackColor = false;
             this.buttonRemoveWorker.Click += new System.EventHandler(this.buttonRemoveWorker_Click);
             // 
             // groupBox6
@@ -197,12 +199,13 @@
             // 
             // buttonAddWorker
             // 
+            this.buttonAddWorker.BackColor = System.Drawing.Color.LightCyan;
             this.buttonAddWorker.Location = new System.Drawing.Point(40, 155);
             this.buttonAddWorker.Name = "buttonAddWorker";
             this.buttonAddWorker.Size = new System.Drawing.Size(120, 23);
             this.buttonAddWorker.TabIndex = 6;
             this.buttonAddWorker.Text = "Add";
-            this.buttonAddWorker.UseVisualStyleBackColor = true;
+            this.buttonAddWorker.UseVisualStyleBackColor = false;
             this.buttonAddWorker.Click += new System.EventHandler(this.buttonAddWorker_Click);
             // 
             // textBoxAddWorkerPassword
@@ -282,12 +285,13 @@
             // 
             // buttonAddCarLoadImage
             // 
+            this.buttonAddCarLoadImage.BackColor = System.Drawing.Color.LightCyan;
             this.buttonAddCarLoadImage.Location = new System.Drawing.Point(109, 246);
             this.buttonAddCarLoadImage.Name = "buttonAddCarLoadImage";
             this.buttonAddCarLoadImage.Size = new System.Drawing.Size(85, 23);
             this.buttonAddCarLoadImage.TabIndex = 17;
             this.buttonAddCarLoadImage.Text = "Load Image...";
-            this.buttonAddCarLoadImage.UseVisualStyleBackColor = true;
+            this.buttonAddCarLoadImage.UseVisualStyleBackColor = false;
             this.buttonAddCarLoadImage.Click += new System.EventHandler(this.buttonAddCarLoadImage_Click);
             // 
             // textBoxAddCarImage
@@ -380,12 +384,13 @@
             // 
             // buttonAddCar
             // 
+            this.buttonAddCar.BackColor = System.Drawing.Color.LightCyan;
             this.buttonAddCar.Location = new System.Drawing.Point(39, 293);
             this.buttonAddCar.Name = "buttonAddCar";
             this.buttonAddCar.Size = new System.Drawing.Size(120, 23);
             this.buttonAddCar.TabIndex = 8;
             this.buttonAddCar.Text = "Add";
-            this.buttonAddCar.UseVisualStyleBackColor = true;
+            this.buttonAddCar.UseVisualStyleBackColor = false;
             this.buttonAddCar.Click += new System.EventHandler(this.buttonAddCar_Click);
             // 
             // label4
@@ -468,12 +473,13 @@
             // 
             // buttonDeleteCar
             // 
+            this.buttonDeleteCar.BackColor = System.Drawing.Color.LightCyan;
             this.buttonDeleteCar.Location = new System.Drawing.Point(39, 72);
             this.buttonDeleteCar.Name = "buttonDeleteCar";
             this.buttonDeleteCar.Size = new System.Drawing.Size(120, 23);
             this.buttonDeleteCar.TabIndex = 1;
             this.buttonDeleteCar.Text = "Delete";
-            this.buttonDeleteCar.UseVisualStyleBackColor = true;
+            this.buttonDeleteCar.UseVisualStyleBackColor = false;
             this.buttonDeleteCar.Click += new System.EventHandler(this.buttonDeleteCar_Click);
             // 
             // groupBox1
@@ -564,19 +570,20 @@
             // 
             // buttonAddCategory
             // 
+            this.buttonAddCategory.BackColor = System.Drawing.Color.LightCyan;
             this.buttonAddCategory.Location = new System.Drawing.Point(40, 166);
             this.buttonAddCategory.Name = "buttonAddCategory";
             this.buttonAddCategory.Size = new System.Drawing.Size(120, 23);
             this.buttonAddCategory.TabIndex = 2;
             this.buttonAddCategory.Text = "Add new ";
-            this.buttonAddCategory.UseVisualStyleBackColor = true;
+            this.buttonAddCategory.UseVisualStyleBackColor = false;
             this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBoxDeleteCategories);
             this.groupBox2.Controls.Add(this.buttonDeleteCategory);
-            this.groupBox2.Location = new System.Drawing.Point(12, 262);
+            this.groupBox2.Location = new System.Drawing.Point(12, 241);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 210);
             this.groupBox2.TabIndex = 6;
@@ -594,12 +601,14 @@
             // 
             // buttonDeleteCategory
             // 
+            this.buttonDeleteCategory.BackColor = System.Drawing.Color.LightCyan;
             this.buttonDeleteCategory.Location = new System.Drawing.Point(40, 155);
             this.buttonDeleteCategory.Name = "buttonDeleteCategory";
             this.buttonDeleteCategory.Size = new System.Drawing.Size(120, 23);
             this.buttonDeleteCategory.TabIndex = 0;
             this.buttonDeleteCategory.Text = "Delete";
-            this.buttonDeleteCategory.UseVisualStyleBackColor = true;
+            this.buttonDeleteCategory.UseVisualStyleBackColor = false;
+            this.buttonDeleteCategory.Click += new System.EventHandler(this.buttonDeleteCategory_Click);
             // 
             // toolStrip1
             // 
@@ -614,7 +623,7 @@
             // toolStripLabelAdminName
             // 
             this.toolStripLabelAdminName.Name = "toolStripLabelAdminName";
-            this.toolStripLabelAdminName.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabelAdminName.Size = new System.Drawing.Size(78, 22);
             this.toolStripLabelAdminName.Text = "toolStripLabel1";
             // 
             // carRentalDBDataSet
@@ -635,7 +644,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 590);
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.ClientSize = new System.Drawing.Size(862, 584);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panelAdmin);
             this.Name = "AdminForm";

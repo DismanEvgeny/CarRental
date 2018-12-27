@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,22 +43,24 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(860, 12);
+            this.button1.BackColor = System.Drawing.Color.LightCyan;
+            this.button1.Location = new System.Drawing.Point(849, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 23);
             this.button1.TabIndex = 15;
             this.button1.Text = "Check connection";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1010, 17);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(999, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Result";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBoxPassword
             // 
@@ -94,16 +97,18 @@
             // 
             // buttonLogin
             // 
+            this.buttonLogin.BackColor = System.Drawing.Color.LightCyan;
             this.buttonLogin.Location = new System.Drawing.Point(363, 3);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(63, 23);
             this.buttonLogin.TabIndex = 21;
             this.buttonLogin.Text = "Log in";
-            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.buttonLogin);
             this.panel1.Controls.Add(this.label3);
@@ -120,6 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1046, 458);
             this.Controls.Add(this.panel1);

@@ -45,10 +45,8 @@ namespace View
 
             foreach(Client cl in MainForm.clients)
             {
-                comboBoxViewClient.Items.Add($"{cl.ID} {cl.name} {cl.surname}");
                 comboBoxLeaseCarClients.Items.Add($"{cl.ID} {cl.name} {cl.surname}");
             }
-            comboBoxViewClient.SelectedIndex = 0;
             comboBoxLeaseCarClients.SelectedIndex = 0;
 
             foreach (Category cat in MainForm.categories)
@@ -93,8 +91,6 @@ namespace View
             else
             {
                 MainForm.clients.Add(client);
-                comboBoxViewClient.Items.Add($"{client.ID} {client.name} {client.surname}");
-                comboBoxViewClient.SelectedIndex = 0;
                 comboBoxLeaseCarClients.Items.Add($"{client.ID} {client.name} {client.surname}");
                 MessageBox.Show("Client is added!");
             }
@@ -168,6 +164,20 @@ namespace View
                 MessageBox.Show("Error. Why??");
                 return;
             }
+            buttonLease.Enabled = false;
+            if (clientLease.isReliable )
+            {
+                textBoxLeaseCarIsReliable.Text = "Yes";
+                textBoxLeaseCarIsReliable.BackColor = Color.Green;
+            }
+            else
+            {
+                textBoxLeaseCarIsReliable.Text = "No";
+                textBoxLeaseCarIsReliable.BackColor = Color.Red;
+                buttonLeaseCarCalculate.Enabled = false;
+                return;
+            }
+            buttonLeaseCarCalculate.Enabled = true;
             textBoxLeaseClientName.Text = clientLease.name;
             textBoxLeaseClientSurname.Text = clientLease.surname;
             textBoxLeaseCarTel.Text = "+" + clientLease.telephoneNumber;
@@ -211,7 +221,8 @@ namespace View
                 }
 
                 MainForm.activeContracts.Add(contract);
-            } 
+            }
+            buttonLeaseCarCalculate.Enabled = true;
         }
 
         private void radioButtonReturnBad_CheckedChanged(object sender, EventArgs e)
@@ -305,5 +316,7 @@ namespace View
 
             }
         }
+
+
     }
 }

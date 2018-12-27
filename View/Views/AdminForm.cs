@@ -103,7 +103,6 @@ namespace View
         private void AdminForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "carRentalDBDataSet.Cars". При необходимости она может быть перемещена или удалена.
-            this.carsTableAdapter.Fill(this.carRentalDBDataSet.Cars);
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
             MainForm.categories = CategoriesPresenter.getCategories();
             //showCategoriesToDelete();
@@ -240,6 +239,14 @@ namespace View
             comboBoxDeleteCar.SelectedIndex = 0;
             MessageBox.Show("Car is deleted!");
 
+        }
+
+        private void buttonDeleteCategory_Click(object sender, EventArgs e)
+        {
+            string categoryName = listBoxDeleteCategories.SelectedItem.ToString();
+            categoryPresenter.deleteCategory(categoryName);
+            listBoxDeleteCategories.Items.RemoveAt(listBoxDeleteCategories.SelectedIndex);
+            comboBoxAddCarcategory.Items.Remove(categoryName);
         }
     }
 }

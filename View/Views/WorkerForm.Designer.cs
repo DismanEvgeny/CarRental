@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.panelWorker = new System.Windows.Forms.Panel();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.buttonViewClient = new System.Windows.Forms.Button();
-            this.comboBoxViewClient = new System.Windows.Forms.ComboBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.textBoxRepairCost = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.textBoxComment_return = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimeOfReturning_return = new System.Windows.Forms.DateTimePicker();
@@ -58,6 +57,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textBoxLeaseCarIsReliable = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.comboBoxLeaseCarCategory = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonLeaseCarCalculate = new System.Windows.Forms.Button();
@@ -84,10 +85,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelCarsInUse = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxRepairCost = new System.Windows.Forms.TextBox();
             this.panelWorker.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -97,42 +95,14 @@
             // 
             // panelWorker
             // 
-            this.panelWorker.Controls.Add(this.groupBox11);
+            this.panelWorker.BackColor = System.Drawing.Color.Transparent;
             this.panelWorker.Controls.Add(this.groupBox10);
             this.panelWorker.Controls.Add(this.groupBox8);
             this.panelWorker.Controls.Add(this.groupBox9);
             this.panelWorker.Location = new System.Drawing.Point(12, 12);
             this.panelWorker.Name = "panelWorker";
-            this.panelWorker.Size = new System.Drawing.Size(933, 435);
+            this.panelWorker.Size = new System.Drawing.Size(933, 446);
             this.panelWorker.TabIndex = 13;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.buttonViewClient);
-            this.groupBox11.Controls.Add(this.comboBoxViewClient);
-            this.groupBox11.Location = new System.Drawing.Point(25, 202);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(223, 100);
-            this.groupBox11.TabIndex = 3;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "View clients card";
-            // 
-            // buttonViewClient
-            // 
-            this.buttonViewClient.Location = new System.Drawing.Point(77, 66);
-            this.buttonViewClient.Name = "buttonViewClient";
-            this.buttonViewClient.Size = new System.Drawing.Size(75, 23);
-            this.buttonViewClient.TabIndex = 1;
-            this.buttonViewClient.Text = "View";
-            this.buttonViewClient.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxViewClient
-            // 
-            this.comboBoxViewClient.FormattingEnabled = true;
-            this.comboBoxViewClient.Location = new System.Drawing.Point(51, 39);
-            this.comboBoxViewClient.Name = "comboBoxViewClient";
-            this.comboBoxViewClient.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxViewClient.TabIndex = 0;
             // 
             // groupBox10
             // 
@@ -157,6 +127,23 @@
             this.groupBox10.TabIndex = 2;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Return car";
+            // 
+            // textBoxRepairCost
+            // 
+            this.textBoxRepairCost.Enabled = false;
+            this.textBoxRepairCost.Location = new System.Drawing.Point(99, 99);
+            this.textBoxRepairCost.Name = "textBoxRepairCost";
+            this.textBoxRepairCost.Size = new System.Drawing.Size(162, 20);
+            this.textBoxRepairCost.TabIndex = 33;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 106);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Repair cost:";
             // 
             // textBoxComment_return
             // 
@@ -205,23 +192,25 @@
             // 
             // buttonReturnTotal
             // 
+            this.buttonReturnTotal.BackColor = System.Drawing.Color.LightCyan;
             this.buttonReturnTotal.Location = new System.Drawing.Point(103, 135);
             this.buttonReturnTotal.Name = "buttonReturnTotal";
             this.buttonReturnTotal.Size = new System.Drawing.Size(111, 23);
             this.buttonReturnTotal.TabIndex = 26;
             this.buttonReturnTotal.Text = "Total";
-            this.buttonReturnTotal.UseVisualStyleBackColor = true;
+            this.buttonReturnTotal.UseVisualStyleBackColor = false;
             this.buttonReturnTotal.Click += new System.EventHandler(this.buttonReturnTotal_Click);
             // 
             // buttonReturn
             // 
+            this.buttonReturn.BackColor = System.Drawing.Color.LightCyan;
             this.buttonReturn.Enabled = false;
             this.buttonReturn.Location = new System.Drawing.Point(104, 294);
             this.buttonReturn.Name = "buttonReturn";
             this.buttonReturn.Size = new System.Drawing.Size(111, 23);
             this.buttonReturn.TabIndex = 25;
             this.buttonReturn.Text = "Return";
-            this.buttonReturn.UseVisualStyleBackColor = true;
+            this.buttonReturn.UseVisualStyleBackColor = false;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             // 
             // radioButtonReturnBad
@@ -321,12 +310,13 @@
             // 
             // buttonAddClient
             // 
+            this.buttonAddClient.BackColor = System.Drawing.Color.LightCyan;
             this.buttonAddClient.Location = new System.Drawing.Point(65, 139);
             this.buttonAddClient.Name = "buttonAddClient";
             this.buttonAddClient.Size = new System.Drawing.Size(75, 23);
             this.buttonAddClient.TabIndex = 9;
             this.buttonAddClient.Text = "Add";
-            this.buttonAddClient.UseVisualStyleBackColor = true;
+            this.buttonAddClient.UseVisualStyleBackColor = false;
             this.buttonAddClient.Click += new System.EventHandler(this.buttonAddClient_Click);
             // 
             // radioButtonAddClientFemale
@@ -395,6 +385,8 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.textBoxLeaseCarIsReliable);
+            this.groupBox9.Controls.Add(this.label7);
             this.groupBox9.Controls.Add(this.comboBoxLeaseCarCategory);
             this.groupBox9.Controls.Add(this.label5);
             this.groupBox9.Controls.Add(this.buttonLeaseCarCalculate);
@@ -418,17 +410,34 @@
             this.groupBox9.Controls.Add(this.label18);
             this.groupBox9.Location = new System.Drawing.Point(297, 14);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(277, 402);
+            this.groupBox9.Size = new System.Drawing.Size(277, 419);
             this.groupBox9.TabIndex = 1;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Lease a car";
+            // 
+            // textBoxLeaseCarIsReliable
+            // 
+            this.textBoxLeaseCarIsReliable.Location = new System.Drawing.Point(98, 94);
+            this.textBoxLeaseCarIsReliable.Name = "textBoxLeaseCarIsReliable";
+            this.textBoxLeaseCarIsReliable.ReadOnly = true;
+            this.textBoxLeaseCarIsReliable.Size = new System.Drawing.Size(164, 20);
+            this.textBoxLeaseCarIsReliable.TabIndex = 32;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 101);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Is reliable?";
             // 
             // comboBoxLeaseCarCategory
             // 
             this.comboBoxLeaseCarCategory.FormattingEnabled = true;
             this.comboBoxLeaseCarCategory.Items.AddRange(new object[] {
             "All"});
-            this.comboBoxLeaseCarCategory.Location = new System.Drawing.Point(98, 246);
+            this.comboBoxLeaseCarCategory.Location = new System.Drawing.Point(98, 273);
             this.comboBoxLeaseCarCategory.Name = "comboBoxLeaseCarCategory";
             this.comboBoxLeaseCarCategory.Size = new System.Drawing.Size(164, 21);
             this.comboBoxLeaseCarCategory.TabIndex = 30;
@@ -437,7 +446,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 254);
+            this.label5.Location = new System.Drawing.Point(6, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 29;
@@ -445,22 +454,25 @@
             // 
             // buttonLeaseCarCalculate
             // 
-            this.buttonLeaseCarCalculate.Location = new System.Drawing.Point(20, 355);
+            this.buttonLeaseCarCalculate.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonLeaseCarCalculate.Enabled = false;
+            this.buttonLeaseCarCalculate.Location = new System.Drawing.Point(20, 382);
             this.buttonLeaseCarCalculate.Name = "buttonLeaseCarCalculate";
             this.buttonLeaseCarCalculate.Size = new System.Drawing.Size(75, 23);
             this.buttonLeaseCarCalculate.TabIndex = 28;
             this.buttonLeaseCarCalculate.Text = "Calculate";
-            this.buttonLeaseCarCalculate.UseVisualStyleBackColor = true;
+            this.buttonLeaseCarCalculate.UseVisualStyleBackColor = false;
             this.buttonLeaseCarCalculate.Click += new System.EventHandler(this.buttonLeaseCarCalculate_Click);
             // 
             // buttonLeaseCarChooseClient
             // 
+            this.buttonLeaseCarChooseClient.BackColor = System.Drawing.Color.LightCyan;
             this.buttonLeaseCarChooseClient.Location = new System.Drawing.Point(98, 58);
             this.buttonLeaseCarChooseClient.Name = "buttonLeaseCarChooseClient";
             this.buttonLeaseCarChooseClient.Size = new System.Drawing.Size(164, 23);
             this.buttonLeaseCarChooseClient.TabIndex = 27;
             this.buttonLeaseCarChooseClient.Text = "Choose";
-            this.buttonLeaseCarChooseClient.UseVisualStyleBackColor = true;
+            this.buttonLeaseCarChooseClient.UseVisualStyleBackColor = false;
             this.buttonLeaseCarChooseClient.Click += new System.EventHandler(this.buttonLeaseCarChooseClient_Click);
             // 
             // comboBoxLeaseCarClients
@@ -482,7 +494,7 @@
             // 
             // dateTimeOfReturning_lease
             // 
-            this.dateTimeOfReturning_lease.Location = new System.Drawing.Point(98, 212);
+            this.dateTimeOfReturning_lease.Location = new System.Drawing.Point(98, 239);
             this.dateTimeOfReturning_lease.MaxDate = new System.DateTime(2059, 12, 31, 0, 0, 0, 0);
             this.dateTimeOfReturning_lease.MinDate = new System.DateTime(2018, 12, 1, 0, 0, 0, 0);
             this.dateTimeOfReturning_lease.Name = "dateTimeOfReturning_lease";
@@ -492,7 +504,7 @@
             // 
             // dateTimeOfLeasing
             // 
-            this.dateTimeOfLeasing.Location = new System.Drawing.Point(98, 186);
+            this.dateTimeOfLeasing.Location = new System.Drawing.Point(98, 213);
             this.dateTimeOfLeasing.MaxDate = new System.DateTime(2059, 12, 31, 0, 0, 0, 0);
             this.dateTimeOfLeasing.MinDate = new System.DateTime(2018, 12, 1, 0, 0, 0, 0);
             this.dateTimeOfLeasing.Name = "dateTimeOfLeasing";
@@ -503,7 +515,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 217);
+            this.label1.Location = new System.Drawing.Point(6, 244);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 22;
@@ -511,19 +523,20 @@
             // 
             // buttonLease
             // 
+            this.buttonLease.BackColor = System.Drawing.Color.LightCyan;
             this.buttonLease.Enabled = false;
-            this.buttonLease.Location = new System.Drawing.Point(144, 355);
+            this.buttonLease.Location = new System.Drawing.Point(144, 382);
             this.buttonLease.Name = "buttonLease";
             this.buttonLease.Size = new System.Drawing.Size(75, 23);
             this.buttonLease.TabIndex = 21;
             this.buttonLease.Text = "Lease";
-            this.buttonLease.UseVisualStyleBackColor = true;
+            this.buttonLease.UseVisualStyleBackColor = false;
             this.buttonLease.Click += new System.EventHandler(this.buttonLease_Click);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 309);
+            this.label22.Location = new System.Drawing.Point(6, 336);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(34, 13);
             this.label22.TabIndex = 20;
@@ -531,7 +544,7 @@
             // 
             // textBoxLeaseCarSum
             // 
-            this.textBoxLeaseCarSum.Location = new System.Drawing.Point(98, 302);
+            this.textBoxLeaseCarSum.Location = new System.Drawing.Point(98, 329);
             this.textBoxLeaseCarSum.Name = "textBoxLeaseCarSum";
             this.textBoxLeaseCarSum.ReadOnly = true;
             this.textBoxLeaseCarSum.Size = new System.Drawing.Size(164, 20);
@@ -539,7 +552,7 @@
             // 
             // textBoxLeaseCarTel
             // 
-            this.textBoxLeaseCarTel.Location = new System.Drawing.Point(98, 153);
+            this.textBoxLeaseCarTel.Location = new System.Drawing.Point(98, 180);
             this.textBoxLeaseCarTel.Name = "textBoxLeaseCarTel";
             this.textBoxLeaseCarTel.ReadOnly = true;
             this.textBoxLeaseCarTel.Size = new System.Drawing.Size(164, 20);
@@ -549,7 +562,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 160);
+            this.label21.Location = new System.Drawing.Point(6, 187);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(66, 13);
             this.label21.TabIndex = 17;
@@ -558,7 +571,7 @@
             // comboBoxLeaseCarCar
             // 
             this.comboBoxLeaseCarCar.FormattingEnabled = true;
-            this.comboBoxLeaseCarCar.Location = new System.Drawing.Point(98, 275);
+            this.comboBoxLeaseCarCar.Location = new System.Drawing.Point(98, 302);
             this.comboBoxLeaseCarCar.Name = "comboBoxLeaseCarCar";
             this.comboBoxLeaseCarCar.Size = new System.Drawing.Size(164, 21);
             this.comboBoxLeaseCarCar.TabIndex = 16;
@@ -566,7 +579,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 283);
+            this.label20.Location = new System.Drawing.Point(6, 310);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(29, 13);
             this.label20.TabIndex = 15;
@@ -574,7 +587,7 @@
             // 
             // textBoxLeaseClientName
             // 
-            this.textBoxLeaseClientName.Location = new System.Drawing.Point(98, 101);
+            this.textBoxLeaseClientName.Location = new System.Drawing.Point(98, 128);
             this.textBoxLeaseClientName.Name = "textBoxLeaseClientName";
             this.textBoxLeaseClientName.ReadOnly = true;
             this.textBoxLeaseClientName.Size = new System.Drawing.Size(164, 20);
@@ -583,7 +596,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 186);
+            this.label17.Location = new System.Drawing.Point(6, 213);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(81, 13);
             this.label17.TabIndex = 11;
@@ -591,7 +604,7 @@
             // 
             // textBoxLeaseClientSurname
             // 
-            this.textBoxLeaseClientSurname.Location = new System.Drawing.Point(98, 127);
+            this.textBoxLeaseClientSurname.Location = new System.Drawing.Point(98, 154);
             this.textBoxLeaseClientSurname.Name = "textBoxLeaseClientSurname";
             this.textBoxLeaseClientSurname.ReadOnly = true;
             this.textBoxLeaseClientSurname.Size = new System.Drawing.Size(164, 20);
@@ -600,7 +613,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 108);
+            this.label19.Location = new System.Drawing.Point(6, 135);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 9;
@@ -609,7 +622,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 134);
+            this.label18.Location = new System.Drawing.Point(6, 161);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(55, 13);
             this.label18.TabIndex = 10;
@@ -628,7 +641,7 @@
             // toolStripLabelWorkerName
             // 
             this.toolStripLabelWorkerName.Name = "toolStripLabelWorkerName";
-            this.toolStripLabelWorkerName.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabelWorkerName.Size = new System.Drawing.Size(78, 22);
             this.toolStripLabelWorkerName.Text = "toolStripLabel1";
             // 
             // statusStrip1
@@ -645,7 +658,7 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(70, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(67, 17);
             this.toolStripStatusLabel1.Text = "Cars in use: ";
             // 
             // toolStripStatusLabelCarsInUse
@@ -653,27 +666,11 @@
             this.toolStripStatusLabelCarsInUse.Name = "toolStripStatusLabelCarsInUse";
             this.toolStripStatusLabelCarsInUse.Size = new System.Drawing.Size(0, 17);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 106);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Repair cost:";
-            // 
-            // textBoxRepairCost
-            // 
-            this.textBoxRepairCost.Enabled = false;
-            this.textBoxRepairCost.Location = new System.Drawing.Point(99, 99);
-            this.textBoxRepairCost.Name = "textBoxRepairCost";
-            this.textBoxRepairCost.Size = new System.Drawing.Size(162, 20);
-            this.textBoxRepairCost.TabIndex = 33;
-            // 
             // WorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(961, 470);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -682,7 +679,6 @@
             this.Text = "WorkerForm";
             this.Load += new System.EventHandler(this.WorkerForm_Load);
             this.panelWorker.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -701,9 +697,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelWorker;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Button buttonViewClient;
-        private System.Windows.Forms.ComboBox comboBoxViewClient;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.TextBox textBoxReturnTotalSum;
         private System.Windows.Forms.Label label27;
@@ -758,5 +751,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelCarsInUse;
         private System.Windows.Forms.TextBox textBoxRepairCost;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxLeaseCarIsReliable;
+        private System.Windows.Forms.Label label7;
     }
 }
