@@ -10,6 +10,7 @@ namespace IServices
     public interface ICarsServices
     {
         List<Car> getCars();
+        List<Car> getCars(string categoryId);
         int addCarToDB(string[] carStrings);
     }
 }

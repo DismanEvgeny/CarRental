@@ -214,7 +214,7 @@ namespace View
             if (id >= 0 )
             {
                 Car newCar = new Car(id, brand, model, category, (FuelType)Enum.Parse(typeof(FuelType), fuel), short.Parse(year), (hasAutomaticTransmition=="True"|| hasAutomaticTransmition=="1"),
-                    Image.FromFile(imageDirectory));
+                    Image.FromFile(imageDirectory), false);
 
                 MainForm.cars.Add(newCar);
                 comboBoxDeleteCar.Items.Add($"{newCar.ID} {newCar.brand} {newCar.model} {newCar.yearOfProduction}");

@@ -28,5 +28,10 @@ namespace Presenrers.Presenters
             return clientService.getClients();
         }
 
+        public Client getClient(string clientId)
+        {
+            return clientService.getClient(clientId);
+        }
+
     }
 }

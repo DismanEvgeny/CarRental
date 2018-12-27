@@ -13,6 +13,7 @@ using Entities;
 using Presenrers.Presenters;
 
 
+
 namespace CarRental
 {
 
@@ -27,11 +28,21 @@ namespace CarRental
         static public List<Category> categories;
         static public List<Car> cars;
         static public List<Client> clients;
+        static public List<Car> carsNotOccupied;
+        static public List<Car> carsOccupied;
+        static public List<Contract> activeContracts;
 
+
+        ClientPresenter clientPresenter;
+        CarsPresenter carsPresenter;
+        ContractPresenter contractPresenter;
 
 
         public MainForm()
         {
+            clientPresenter = new ClientPresenter();
+            carsPresenter = new CarsPresenter();
+            contractPresenter = new ContractPresenter();
             InitializeComponent();
         }
 
@@ -39,11 +50,17 @@ namespace CarRental
         private void MainForm_Load(object sender, EventArgs e)
         {
             categories = CategoriesPresenter.getCategories();
+            clients = clientPresenter.getClients();
+            cars = carsPresenter.getCars();
             foreach (Category cat in categories)
             {
                 listBoxCategories.Items.Add(cat.getName());
             }
-            
+
+            carsNotOccupied = carsPresenter.getCarsOccupied(false);
+            carsOccupied = carsPresenter.getCarsOccupied(true);
+
+            activeContracts = contractPresenter.getActiveContracts();
 
         }
 
@@ -89,22 +106,6 @@ namespace CarRental
         private void button5_Click(object sender, EventArgs e)
         {
           //  buttonReturn.Enabled = true;
-        }
-
-        private void buttonLease_Click(object sender, EventArgs e)
-        {
-            cars_in_use++;
-            toolStripStatusLabelCarsInUse.Text = cars_in_use.ToString();
-        }
-
-        private void buttonReturn_Click(object sender, EventArgs e)
-        {
-            if (cars_in_use != 0)
-            {
-                cars_in_use--;
-                toolStripStatusLabelCarsInUse.Text = cars_in_use.ToString();
-
-            }
         }
 
         private void buttonViewClient_Click(object sender, EventArgs e)
@@ -153,7 +154,7 @@ namespace CarRental
                 MessageBox.Show("Login or password is invalid!");
                 return;
             }
-
+            Console.WriteLine("AuthPresenter.activeUser.ID.ToString() "+AuthPresenter.activeUser.ID.ToString());
             if (AuthPresenter.activeUser.isAdmin)
             {
                 adminAccess();

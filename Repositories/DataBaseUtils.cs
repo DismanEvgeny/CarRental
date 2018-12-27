@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
+using Entities;
 
 namespace Repositories
 {
@@ -50,7 +51,7 @@ namespace Repositories
             
             switch(tableName){
                 case "Clients":
-                    fullName = "[Clients](Id, Name, Surname, Sex, DateOfRegistration, IsReliable) VALUES ";
+                    fullName = "[Clients](Id, Name, Surname, Sex, DateOfRegistration, IsReliable, TelephoneNumber) VALUES ";
                     break;
                 case "Users":
                     fullName = "[Users](Id, Name, Surname, Login, Password, IsAdmin) VALUES";
@@ -60,6 +61,9 @@ namespace Repositories
                     break;
                 case "Cars":
                     fullName = "[Cars](Id, Brand, Model, CategoryId, Fuel, YearOfProduction, AutomaticTransmition, Image) VALUES";
+                    break;
+                case "Contracts":
+                    fullName = "[Contracts](Id, ClientId, WorkerId, CarId, DateOfLeasing, DateOfStipulatedReturning, DateOfReturning, Total, Comment) VALUES" ;
                     break;
                 default:
                     fullName = "";
@@ -121,13 +125,12 @@ namespace Repositories
             SqlCommand command = new SqlCommand("Select * from [Cars] where [Id]=@id", conn); //строка-запрос, ищем по логину
             command.Parameters.AddWithValue("@id", Id);
 
-            string[] data = new string[8];
+            string[] data = new string[9];
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
-                for (int i = 0; i < 8; i++)
+                for (int i = 0; i < 9; i++)
                 {
                     data[i] = reader[i].ToString();
-                    Console.WriteLine(data[i]);
                 }
 
             reader.Close();
@@ -225,7 +228,7 @@ namespace Repositories
             closeConnection();
             if (data == null || data == "")
             {
-                data = "0";
+                data = "-1";
             }
             return data;
         }
@@ -265,24 +268,47 @@ namespace Repositories
                 }
 
             }
+            closeConnection();
             return readString;
         }
 
         public List<string[]> getCarsFromDB()
         {
             List<string[]> cars = new List<string[]>();
-            string[] readStrings = new string[8];
+            string[] readStrings = new string[9];
             openConnection();
             SqlCommand command = new SqlCommand("Select * from [Cars]", conn); //строка-запрос, ищем по логину
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                for (int i = 0; i < 8; i++)
+                for (int i = 0; i < 9; i++)
                 {
                     readStrings[i] = reader[i].ToString();
                 }
-                cars.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7] });
+                cars.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7], readStrings[8] });
+
+            }
+            closeConnection();
+
+            return cars;
+        }
+
+        public List<string[]> getCarsFromDB(string categoryId)
+        {
+            List<string[]> cars = new List<string[]>();
+            string[] readStrings = new string[9];
+            openConnection();
+            SqlCommand command = new SqlCommand($"Select * from [Cars] WHERE CategoryId='{categoryId}'", conn); //строка-запрос, ищем по логину
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < 9; i++)
+                {
+                    readStrings[i] = reader[i].ToString();
+                }
+                cars.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7], readStrings[8] });
 
             }
             closeConnection();
@@ -304,12 +330,135 @@ namespace Repositories
                 {
                     readStrings[i] = reader[i].ToString();
                 }
-                clients.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7] });
+                clients.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6] });
 
             }
             closeConnection();
             return clients;
         }
 
+        public string[] getClientFromDB(string clientId)
+        {
+            
+            string[] readStrings = new string[7];
+            openConnection();
+            SqlCommand command = new SqlCommand($"Select * from [Clients] WHERE Id='{clientId}'", conn); //строка-запрос, ищем по логину
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    readStrings[i] = reader[i].ToString();
+                }
+            }
+            closeConnection();
+            return readStrings;
+        }
+
+        public string getWorkerIdFromDB(string login)
+        {
+            openConnection();
+
+            SqlCommand command = new SqlCommand($"select * from [Users] where [Login] ='{login}'", conn); //строка-запрос, ищем по логину
+
+            string data = "";
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+                data = reader[0].ToString();
+
+            reader.Close();
+            closeConnection();
+            if (data == null || data == "")
+            {
+                data = "-1";
+            }
+            return data;
+        }
+
+        public void setOccupied(string carId)
+        {
+            openConnection();
+
+            SqlCommand newCommand = new SqlCommand($"UPDATE [Cars] SET IsOccupied='1' WHERE Id='{carId}'", conn);
+            newCommand.ExecuteNonQuery();
+
+            closeConnection();
+        }
+
+        public uint carsInUse()
+        {
+            openConnection();
+
+            SqlCommand command = new SqlCommand("Select count(*) from [Cars] WHERE IsOccupied='1'", conn);
+
+            string data = "";
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+                data = reader[0].ToString();
+
+            reader.Close();
+            closeConnection();
+
+            return uint.Parse(data);
+        }
+
+        public List<string[]> getCarsOccupiedFromDB(bool isOccupied)
+        {
+            List<string[]> cars = new List<string[]>();
+            string[] readStrings = new string[9];
+            openConnection();
+            SqlCommand command = new SqlCommand($"Select * from [Cars] WHERE IsOccupied='{isOccupied}'", conn); //строка-запрос, ищем по логину
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < 9; i++)
+                {
+                    readStrings[i] = reader[i].ToString();
+                }
+                cars.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7], readStrings[8] });
+
+            }
+            closeConnection();
+
+            return cars;
+        }
+
+        public List<string[]> getActiveContracts()
+        {
+            List<string[]> contracts = new List<string[]>();
+            string[] readStrings = new string[9];
+            openConnection();
+            SqlCommand command = new SqlCommand($"Select * from [Contracts] WHERE Comment=''", conn); //если комментария нет, то контракт считается активным
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < 9; i++)
+                {
+                    readStrings[i] = reader[i].ToString();
+                }
+                contracts.Add(new string[] { readStrings[0], readStrings[1], readStrings[2], readStrings[3], readStrings[4], readStrings[5], readStrings[6], readStrings[7], readStrings[8] });
+
+            }
+            closeConnection();
+
+            return contracts;
+        }
+
+        public void updateContract(Contract contract)
+        {
+            openConnection();
+
+            SqlCommand newCommand = new SqlCommand($"UPDATE [Contracts] SET Comment='{contract.comment}' WHERE Id='{contract.contractID}'", conn);
+            newCommand.ExecuteNonQuery();
+            newCommand.CommandText = $"UPDATE [Contracts] SET DateOfReturning='{contract.dateOfReturning}' WHERE Id='{contract.contractID}'";
+            newCommand.ExecuteNonQuery();
+
+            newCommand.CommandText = $"UPDATE [Cars] SET IsOccupied='0' WHERE Id='{contract.cardID}'";
+            newCommand.ExecuteNonQuery();
+            closeConnection();
+        }
     }
 }

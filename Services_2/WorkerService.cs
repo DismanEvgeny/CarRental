@@ -63,5 +63,10 @@ namespace Services
         {
             workerRepository.deleteUserFromDB(ID);
         }
+
+        public string getWorkerId(string login)
+        {
+            return workerRepository.getWorkerId(login);
+        }
     }
 }

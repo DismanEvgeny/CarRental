@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Contract
+    public class Contract
     {
         private static int IDCounter = 0;
-        private int contractID { get; set; }
-        private int clientID { get; set; }
-        private int workerID { get; set; }
-        private int cardID { get; set; }
-        private DateTime dateOfLeasing { get; set; }
-        private DateTime dateOfStipulatedReturn { get; set; }
-        private DateTime dateOfReturning { get; set; }
+        public int contractID { get; set; }
+        public int clientID { get; set; }
+        public int workerID { get; set; }
+        public int cardID { get; set; }
+        public DateTime dateOfLeasing { get; set; }
+        public DateTime dateOfStipulatedReturn { get; set; }
+        public DateTime dateOfReturning { get; set; }
         private double summ { get; set; }
+        public string comment { get; set; }
 
         public Contract(int _contractID, int _clientID, int _workerID, int _cardID, DateTime _dateOfLeasing,
-            DateTime _dateOfStipulatedReturn, DateTime _dateOfReturning, double _summ)
+            DateTime _dateOfStipulatedReturn, DateTime _dateOfReturning, double _summ, string _comment)
         {
-            this.contractID = IDCounter++;
+            this.contractID = _contractID;
             this.clientID = _clientID;
             this.workerID = _workerID;
             this.cardID = _cardID;
@@ -29,15 +30,8 @@ namespace Entities
             this.dateOfStipulatedReturn = _dateOfStipulatedReturn;
             this.dateOfReturning = _dateOfReturning;
             this.summ = _summ;
+            this.comment = _comment;
         }
 
-        public double calculateSumm(DateTime _dateOfStipulatedReturn, DateTime _dateOfReturning)
-        {
-            if (_dateOfStipulatedReturn.Equals(_dateOfReturning))
-                return this.summ;
-            //_dateOfReturning.Subtract(_dateOfStipulatedReturn);
-           // summ = _dateOfStipulatedReturn - _dateOfReturning;
-            return this.summ;
-        }
     }
 }

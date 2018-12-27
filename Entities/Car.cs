@@ -15,14 +15,14 @@ namespace Entities
         public int ID { get; set; }
         public string brand { get; set; }
         public string model { get; set; }
-        private string categoryID { get; set; }
+        public string categoryID { get; set; }
         private FuelType fuel { get; set; }
         public short yearOfProduction { get; set; }
 
         private bool hasAutomaticTransmission { get; set; }
         private Image image { get; set; }
         private bool isOperated { get; set; }
-
+        public bool isOccupied { get; set; }
 
         public Car(string _brand, string _model, string _categoryID, FuelType _fuel, short _yearOfProduction,
             bool _hasAutomaticTransmission, Image _image)
@@ -35,10 +35,11 @@ namespace Entities
             this.yearOfProduction = _yearOfProduction;
             this.hasAutomaticTransmission = _hasAutomaticTransmission;
             this.image = _image;
+            this.isOccupied = false;
         }
 
         public Car(int _Id, string _brand, string _model, string _categoryID, FuelType _fuel, short _yearOfProduction,
-          bool _hasAutomaticTransmission, Image _image)
+          bool _hasAutomaticTransmission, Image _image, bool _isOccupied)
         {
             this.ID = _Id;
             this.brand = _brand;
@@ -48,6 +49,8 @@ namespace Entities
             this.yearOfProduction = _yearOfProduction;
             this.hasAutomaticTransmission = _hasAutomaticTransmission;
             this.image = _image;
+            this.isOccupied = _isOccupied;
+
         }
     }
 }

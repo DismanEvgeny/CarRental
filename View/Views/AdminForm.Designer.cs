@@ -489,7 +489,7 @@
             this.groupBox1.Controls.Add(this.buttonAddCategory);
             this.groupBox1.Location = new System.Drawing.Point(12, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 217);
+            this.groupBox1.Size = new System.Drawing.Size(240, 217);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add category";
@@ -505,7 +505,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 128);
+            this.textBox1.Location = new System.Drawing.Point(113, 128);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 9;
@@ -516,18 +516,18 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(6, 62);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 13);
+            this.label13.Size = new System.Drawing.Size(84, 13);
             this.label13.TabIndex = 8;
-            this.label13.Text = "Tarif ($/day):";
+            this.label13.Text = "Tarif (BYR/day):";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(6, 94);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 13);
+            this.label12.Size = new System.Drawing.Size(83, 13);
             this.label12.TabIndex = 7;
-            this.label12.Text = "Fine ($/hour):";
+            this.label12.Text = "Fine (BYR/day):";
             // 
             // label11
             // 
@@ -540,7 +540,7 @@
             // 
             // textBoxAddCategoryTarif
             // 
-            this.textBoxAddCategoryTarif.Location = new System.Drawing.Point(80, 62);
+            this.textBoxAddCategoryTarif.Location = new System.Drawing.Point(113, 62);
             this.textBoxAddCategoryTarif.Name = "textBoxAddCategoryTarif";
             this.textBoxAddCategoryTarif.Size = new System.Drawing.Size(100, 20);
             this.textBoxAddCategoryTarif.TabIndex = 5;
@@ -548,7 +548,7 @@
             // 
             // textBoxAddCategoryFine
             // 
-            this.textBoxAddCategoryFine.Location = new System.Drawing.Point(80, 94);
+            this.textBoxAddCategoryFine.Location = new System.Drawing.Point(113, 94);
             this.textBoxAddCategoryFine.Name = "textBoxAddCategoryFine";
             this.textBoxAddCategoryFine.Size = new System.Drawing.Size(100, 20);
             this.textBoxAddCategoryFine.TabIndex = 4;
@@ -556,7 +556,7 @@
             // 
             // textBoxAddCategoryName
             // 
-            this.textBoxAddCategoryName.Location = new System.Drawing.Point(80, 30);
+            this.textBoxAddCategoryName.Location = new System.Drawing.Point(113, 30);
             this.textBoxAddCategoryName.Name = "textBoxAddCategoryName";
             this.textBoxAddCategoryName.Size = new System.Drawing.Size(100, 20);
             this.textBoxAddCategoryName.TabIndex = 3;

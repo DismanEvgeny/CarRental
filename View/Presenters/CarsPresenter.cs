@@ -10,11 +10,21 @@ namespace Presenrers.Presenters
 {
     public class CarsPresenter
     {
-        private CarsServices carsServices = new CarsServices();
+        private CarsServices carsServices;
+
+        public CarsPresenter()
+        {
+            carsServices = new CarsServices();
+        }
 
         public List<Car> getCars()
         {
-            return new CarsServices().getCars();
+            return carsServices.getCars();
+        }
+
+        public List<Car> getCars(string categoryId)
+        {
+            return carsServices.getCars(categoryId);
         }
 
         public int addCar(string[] carStrings)
@@ -27,9 +37,25 @@ namespace Presenrers.Presenters
             return carsServices.getCar(Id);
         }
 
+        public List<Car> getCarsOccupied(bool isOccupied)
+        {
+            return carsServices.getCarsOccupied(isOccupied);
+
+        }
+
         public void deleteCar(string carId)
         {
             carsServices.deleteCar(carId);
+        }
+
+        public void setOccupied(string carId)
+        {
+            carsServices.setOccupied(carId);
+        }
+
+        public uint carsInUse()
+        {
+            return carsServices.carsInUse();
         }
 
     }

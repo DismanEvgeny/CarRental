@@ -37,5 +37,10 @@ namespace Repositories
         {
             utils.deleteUserFromDB(ID);
         }
+
+        public string getWorkerId(string login)
+        {
+            return utils.getWorkerIdFromDB(login);
+        }
     }
 }

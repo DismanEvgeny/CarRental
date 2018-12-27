@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="CarRepository.cs" />
     <Compile Include="ClientRepository.cs" />
+    <Compile Include="ContractRepository.cs" />
     <Compile Include="WorkerRepository.cs" />
     <Compile Include="AuthRepository.cs" />
     <Compile Include="CategoriesRepository.cs" />

@@ -14,5 +14,6 @@ namespace IRepositories
         string getAmountOfUsers();
         string[,] getAllUsersFromDB(int workerCounter);
         void deleteUserFromDB(string ID);
+        string getWorkerId(string login);
     }
 }

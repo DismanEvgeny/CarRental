@@ -50,5 +50,9 @@ namespace Presenrers.Presenters
              service.deleteUser(ID);
         }
 
+        public string getWorkerId(string login)
+        {
+            return service.getWorkerId(login);
+        }
     }
 }

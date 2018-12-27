@@ -9,10 +9,10 @@ namespace Entities
     public class Category
     {
         
-        private string ID { get; set; }
+        public string ID { get; set; }
         private string name { get; set; }
-        private float tariff { get; set; } 
-        private float fine { get; set; }
+        public float tariff { get; set; } 
+        public float fine { get; set; }
 
         public Category(string _ID, string _name, float _tariff, float _fine)
         {

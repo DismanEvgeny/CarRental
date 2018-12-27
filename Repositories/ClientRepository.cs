@@ -31,5 +31,10 @@ namespace Repositories
         {
             return dataBaseUtils.getClientsFromDB();
         }
+
+        public string[] getClient(string clientId)
+        {
+            return dataBaseUtils.getClientFromDB(clientId);
+        }
     }
 }

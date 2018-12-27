@@ -7,9 +7,9 @@ using Entities;
 
 namespace IServices
 {
-    public interface IClientService
+    public interface IContractsServices
     {
-        Client addClient(string[] clientStrings);
-        Client getClient(string clientId);
+        Contract addContract(string[] contractStrings);
+        string getMaxId();
     }
 }

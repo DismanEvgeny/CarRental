@@ -23,6 +23,11 @@ namespace Repositories
             return dataBaseUtils.getCarsFromDB();
         }
 
+        public List<string[]> getCarsFromDB(string categoryId)
+        {
+            return dataBaseUtils.getCarsFromDB(categoryId);
+        }
+
         public string[] getCarFromDB(string Id)
         {
             return dataBaseUtils.getCarFromDB(Id);
@@ -44,6 +49,21 @@ namespace Repositories
             {
                 return -1;
             }
+        }
+
+        public void setOccupied(string carId)
+        {
+            dataBaseUtils.setOccupied(carId);
+        }
+
+        public uint carsInUse()
+        {
+            return dataBaseUtils.carsInUse();
+        }
+
+        public List<string[]> getCarsOccupied(bool isOccupied)
+        {
+            return dataBaseUtils.getCarsOccupiedFromDB(isOccupied);
         }
     }
 }

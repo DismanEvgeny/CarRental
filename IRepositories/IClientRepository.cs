@@ -12,5 +12,6 @@ namespace IRepositories
         bool addClientToDB(string[] clientString);
         int getMaxId();
         List<string[]> getAllClients();
+        string[] getClient(string clientId);
     }
 }

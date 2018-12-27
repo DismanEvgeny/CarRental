@@ -51,6 +51,7 @@
     <Compile Include="ICarsServices.cs" />
     <Compile Include="ICategoriesServices.cs" />
     <Compile Include="IClientService.cs" />
+    <Compile Include="IContractsServices.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
