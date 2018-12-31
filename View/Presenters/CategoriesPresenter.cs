@@ -17,9 +17,9 @@ namespace Presenrers.Presenters
             categoryService = new CategoriesServices();
         }
 
-        public static List<Category> getCategories()
+        public List<Category> getCategories()
         {
-            return new CategoriesServices().getCategories();
+            return categoryService.getCategories();
         }
 
         public bool addCategory(string _name, string _tarif, string _fine, string _ID)

@@ -417,6 +417,7 @@
             // 
             // textBoxLeaseCarIsReliable
             // 
+            this.textBoxLeaseCarIsReliable.BackColor = System.Drawing.Color.Silver;
             this.textBoxLeaseCarIsReliable.Location = new System.Drawing.Point(98, 94);
             this.textBoxLeaseCarIsReliable.Name = "textBoxLeaseCarIsReliable";
             this.textBoxLeaseCarIsReliable.ReadOnly = true;

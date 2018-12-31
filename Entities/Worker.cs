@@ -21,9 +21,10 @@ namespace Entities
             this.isAdmin = _isAdmin;
         }
 
-        public void setID(int _ID)
+        public void setID(int _id)
         {
-            this.ID = _ID + 1;
+            this.ID = _id + 1;
         }
+
     }
 }

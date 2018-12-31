@@ -104,7 +104,7 @@ namespace View
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "carRentalDBDataSet.Cars". При необходимости она может быть перемещена или удалена.
             toolStripLabelAdminName.Text = $"Welcome, {AuthPresenter.activeUser.name} {AuthPresenter.activeUser.surname}";
-            MainForm.categories = CategoriesPresenter.getCategories();
+            MainForm.categories = categoryPresenter.getCategories();
             //showCategoriesToDelete();
             foreach (Category cat in MainForm.categories)
             {

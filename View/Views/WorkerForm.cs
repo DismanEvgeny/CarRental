@@ -223,6 +223,13 @@ namespace View
                 MainForm.activeContracts.Add(contract);
             }
             buttonLeaseCarCalculate.Enabled = true;
+            textBoxLeaseCarIsReliable.BackColor = Color.Gray;
+            textBoxLeaseCarIsReliable.Clear();
+            textBoxLeaseClientName.Clear();
+            textBoxLeaseClientSurname.Clear();
+            textBoxLeaseCarTel.Text = "+375";
+            comboBoxLeaseCarCar.SelectedIndex = 0;
+            textBoxLeaseCarSum.Clear();
         }
 
         private void radioButtonReturnBad_CheckedChanged(object sender, EventArgs e)
@@ -272,6 +279,7 @@ namespace View
             // убрать машину из комбо-бокса возврата +
             // добавить машину в комбо-бокс лизинга +
             // изменить счётчик машин +
+            
 
             string comment = textBoxComment_return.Text;
             string total = textBoxReturnTotalSum.Text.Split(' ')[0];
@@ -316,7 +324,6 @@ namespace View
 
             }
         }
-
 
     }
 }

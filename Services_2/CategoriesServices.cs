@@ -26,7 +26,6 @@ namespace Services
             foreach (string[] str in categoryStrings)
             {
                 categories.Add(new Category(str[0], str[1], float.Parse(str[2]), float.Parse(str[3])));
-                Console.WriteLine(str[1]);
             }
             return categories;
         }

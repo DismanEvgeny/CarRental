@@ -109,7 +109,6 @@ namespace Repositories
                 for (int i = 0; i < 6; i++)
                 {
                     data[i] = reader[i].ToString();
-                    Console.WriteLine(data[i]);
                 }
 
             reader.Close();

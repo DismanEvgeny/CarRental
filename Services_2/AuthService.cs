@@ -38,7 +38,6 @@ namespace Services
         {
             if (!checkLoginAndPasswordString(login, password))
             {
-                Console.WriteLine("checkLoginAndPasswordString");
                 return null;
             }
 
@@ -47,17 +46,12 @@ namespace Services
 
             if (str[4] != password)
             {
-                Console.WriteLine("password = " + str[4]);
-
                 return null;
             }
 
 
-            bool _isAdmin = (str[5] == "1" || str[5] == "True"); // перевод string в bool
+            bool _isAdmin = (str[5] == "1" || str[5] == "True"); 
             active = new Worker(str[1], str[2], str[3], str[4], _isAdmin);
-            //Console.WriteLine("Worker: "+active.name+" "+active.surname);
-
-
             return active;
         }
     }

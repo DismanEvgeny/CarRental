@@ -36,6 +36,7 @@ namespace CarRental
         ClientPresenter clientPresenter;
         CarsPresenter carsPresenter;
         ContractPresenter contractPresenter;
+        CategoriesPresenter categoriesPresenter;
 
 
         public MainForm()
@@ -43,13 +44,14 @@ namespace CarRental
             clientPresenter = new ClientPresenter();
             carsPresenter = new CarsPresenter();
             contractPresenter = new ContractPresenter();
+            categoriesPresenter = new CategoriesPresenter();
             InitializeComponent();
         }
 
      
         private void MainForm_Load(object sender, EventArgs e)
         {
-            categories = CategoriesPresenter.getCategories();
+            categories = categoriesPresenter.getCategories();
             clients = clientPresenter.getClients();
             cars = carsPresenter.getCars();
             foreach (Category cat in categories)
@@ -100,21 +102,6 @@ namespace CarRental
             extraForm.Show();
         }
 
-        private void toolStripButtonContacts_Click(object sender, EventArgs e)
-        {
-            extraForm = new Form();
-
-            extraForm.StartPosition = FormStartPosition.CenterScreen;
-            extraForm.Show();
-        }
-
-        private void toolStripButtonHelp_Click(object sender, EventArgs e)
-        {
-            extraForm = new Form();
-            extraForm.StartPosition = FormStartPosition.CenterScreen;
-            extraForm.Show();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (!CheckConnection.check())
@@ -138,8 +125,8 @@ namespace CarRental
             {
                 MessageBox.Show("Login or password is invalid!");
                 return;
-            }
-            Console.WriteLine("AuthPresenter.activeUser.ID.ToString() "+AuthPresenter.activeUser.ID.ToString());
+            }            
+            textBoxPassword.Clear();
             if (AuthPresenter.activeUser.isAdmin)
             {
                 adminAccess();
@@ -148,11 +135,6 @@ namespace CarRental
             {
                 workerAccess();
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

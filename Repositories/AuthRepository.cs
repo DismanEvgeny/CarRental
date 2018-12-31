@@ -12,7 +12,6 @@ namespace Repositories
     {
         public string[] getUserFromDB(string login)
         {
-            //throw new NotImplementedException();
             string[] userString = null;
 
             DataBaseUtils dataBaseUtils = new DataBaseUtils();
